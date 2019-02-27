@@ -1,0 +1,10 @@
+rule DO_GA
+	when
+		Item DO_GR received command
+	then
+    var String message=""
+	if (receivedCommand==UP) {message="!w!DO_GR!1$\n"}
+	if (receivedCommand==DOWN) {message="!w!DO_GR!-1$\n"}
+    sendCommand(RS485_Gateway_out, message)
+    
+end
