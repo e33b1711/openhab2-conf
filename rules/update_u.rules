@@ -340,7 +340,7 @@ rule U_UG_H1
 	when
 		Item U_UG_H1 received update
 	then
-    val outStr = String::format("!w!U_UG_H1!%1$01d$",(U_UG_H1.state as DecimalType).intValue)
+    val outStr = String::format("!w!U_UG_H1!%1$01d$\n",(U_UG_H1.state as DecimalType).intValue)
     sendCommand(RS485_Gateway_out, outStr)
 end
 
@@ -348,7 +348,7 @@ rule U_UG_H2
 	when
 		Item U_UG_H2 received update
 	then
-    val outStr = String::format("!w!U_UG_H2!%1$01d$",(U_UG_H2.state as DecimalType).intValue)
+    val outStr = String::format("!w!U_UG_H2!%1$01d$\n",(U_UG_H2.state as DecimalType).intValue)
     sendCommand(RS485_Gateway_out, outStr)
 end
 
@@ -356,7 +356,7 @@ rule U_UG_H3
 	when
 		Item U_UG_H3 received update
 	then
-    val outStr = String::format("!w!U_UG_H3!%1$01d$",(U_UG_H3.state as DecimalType).intValue)
+    val outStr = String::format("!w!U_UG_H3!%1$01d$\n",(U_UG_H3.state as DecimalType).intValue)
     sendCommand(RS485_Gateway_out, outStr)
 end
 
@@ -364,7 +364,7 @@ rule U_UG_LA
 	when
 		Item U_UG_LA received update
 	then
-    val outStr = String::format("!w!U_UG_LA!%1$01d$",(U_UG_LA.state as DecimalType).intValue)
+    val outStr = String::format("!w!U_UG_LA!%1$01d$\n",(U_UG_LA.state as DecimalType).intValue)
     sendCommand(RS485_Gateway_out, outStr)
 end
 
@@ -372,7 +372,7 @@ rule U_UG_WK
 	when
 		Item U_UG_WK received update
 	then
-    val outStr = String::format("!w!U_UG_WK!%1$01d$",(U_UG_WK.state as DecimalType).intValue)
+    val outStr = String::format("!w!U_UG_WK!%1$01d$\n",(U_UG_WK.state as DecimalType).intValue)
     sendCommand(RS485_Gateway_out, outStr)
 end
 
@@ -380,7 +380,7 @@ rule U_UG_GA
 	when
 		Item U_UG_GA received update
 	then
-    val outStr = String::format("!w!U_UG_GA!%1$01d$",(U_UG_GA.state as DecimalType).intValue)
+    val outStr = String::format("!w!U_UG_GA!%1$01d$\n",(U_UG_GA.state as DecimalType).intValue)
     sendCommand(RS485_Gateway_out, outStr)
 end
 
@@ -392,7 +392,7 @@ rule U_EG_KU
 	when
 		Item U_EG_KU received update
 	then
-    val outStr = String::format("!w!U_EG_KU!%1$01d$",(U_EG_KU.state as DecimalType).intValue)
+    val outStr = String::format("!w!U_EG_KU!%1$01d$\n",(U_EG_KU.state as DecimalType).intValue)
     sendCommand(RS485_Gateway_out, outStr)
 end
 
@@ -401,7 +401,7 @@ rule U_EG_E1
 	when
 		Item U_EG_E1 received update
 	then
-    val outStr = String::format("!w!U_EG_E1!%1$01d$",(U_EG_E1.state as DecimalType).intValue)
+    val outStr = String::format("!w!U_EG_E1!%1$01d$\n",(U_EG_E1.state as DecimalType).intValue)
     sendCommand(RS485_Gateway_out, outStr)
 end
 
@@ -410,7 +410,7 @@ rule U_EG_E2
 	when
 		Item U_EG_E2 received update
 	then
-    val outStr = String::format("!w!U_EG_E2!%1$01d$",(U_EG_E2.state as DecimalType).intValue)
+    val outStr = String::format("!w!U_EG_E2!%1$01d$\n",(U_EG_E2.state as DecimalType).intValue)
     sendCommand(RS485_Gateway_out, outStr)
 end
 
@@ -419,7 +419,7 @@ rule U_EG_GA
 	when
 		Item U_EG_GA received update
 	then
-    val outStr = String::format("!w!U_EG_GA!%1$01d$",(U_EG_GA.state as DecimalType).intValue)
+    val outStr = String::format("!w!U_EG_GA!%1$01d$\n",(U_EG_GA.state as DecimalType).intValue)
     sendCommand(RS485_Gateway_out, outStr)
 end
 
@@ -428,7 +428,7 @@ rule U_EG_WZ
 	when
 		Item U_EG_WZ received update
 	then
-    val outStr = String::format("!w!U_EG_WZ!%1$01d$",(U_EG_WZ.state as DecimalType).intValue)
+    val outStr = String::format("!w!U_EG_WZ!%1$01d$\n",(U_EG_WZ.state as DecimalType).intValue)
     sendCommand(RS485_Gateway_out, outStr)
 end
 
@@ -437,7 +437,7 @@ rule U_EG_GR
 	when
 		Item U_EG_GR received update
 	then
-    val outStr = String::format("!w!U_EG_GR!%1$01d$",(U_EG_GR.state as DecimalType).intValue)
+    val outStr = String::format("!w!U_EG_GR!%1$01d$\n",(U_EG_GR.state as DecimalType).intValue)
     sendCommand(RS485_Gateway_out, outStr)
 end
 
@@ -446,7 +446,7 @@ rule U_EG_WC
 	when
 		Item U_EG_WC received update
 	then
-    val outStr = String::format("!w!U_EG_WC!%1$01d$",(U_EG_WC.state as DecimalType).intValue)
+    val outStr = String::format("!w!U_EG_WC!%1$01d$\n",(U_EG_WC.state as DecimalType).intValue)
     sendCommand(RS485_Gateway_out, outStr)
 end
 
@@ -458,7 +458,7 @@ rule U_OG_KS
 	when
 		Item U_OG_KS received update
 	then
-    val outStr = String::format("!w!U_OG_KS!%1$01d$",(U_OG_KS.state as DecimalType).intValue)
+    val outStr = String::format("!w!U_OG_KS!%1$01d$\n",(U_OG_KS.state as DecimalType).intValue)
     sendCommand(RS485_Gateway_out, outStr)
 end
 
@@ -467,7 +467,7 @@ rule U_OG_KN
 	when
 		Item U_OG_KN received update
 	then
-    val outStr = String::format("!w!U_OG_KN!%1$01d$",(U_OG_KN.state as DecimalType).intValue)
+    val outStr = String::format("!w!U_OG_KN!%1$01d$\n",(U_OG_KN.state as DecimalType).intValue)
     sendCommand(RS485_Gateway_out, outStr)
 end
 
@@ -476,7 +476,7 @@ rule U_OG_GA
 	when
 		Item U_OG_GA received update
 	then
-    val outStr = String::format("!w!U_OG_GA!%1$01d$",(U_OG_GA.state as DecimalType).intValue)
+    val outStr = String::format("!w!U_OG_GA!%1$01d$\n",(U_OG_GA.state as DecimalType).intValue)
     sendCommand(RS485_Gateway_out, outStr)
 end
 
@@ -485,7 +485,7 @@ rule U_OG_BA
 	when
 		Item U_OG_BA received update
 	then
-    val outStr = String::format("!w!U_OG_BA!%1$01d$",(U_OG_BA.state as DecimalType).intValue)
+    val outStr = String::format("!w!U_OG_BA!%1$01d$\n",(U_OG_BA.state as DecimalType).intValue)
     sendCommand(RS485_Gateway_out, outStr)
 end
 
@@ -493,7 +493,7 @@ rule U_OG_SZ
 	when
 		Item U_OG_SZ received update
 	then
-    val outStr = String::format("!w!U_OG_SZ!%1$01d$",(U_OG_SZ.state as DecimalType).intValue)
+    val outStr = String::format("!w!U_OG_SZ!%1$01d$\n",(U_OG_SZ.state as DecimalType).intValue)
     sendCommand(RS485_Gateway_out, outStr)
 end
 
