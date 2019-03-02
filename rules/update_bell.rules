@@ -12,6 +12,15 @@ rule BELL
 	}
 end
 
+rule SPEAKER_BELL
+	when
+		Item BELL received update ON
+	then
+                 playSound("doorbell.mp3")
+                 setMasterVolume(0.9)
+end
+
+
 rule PUMP
 	when
 		Item PUMP received command

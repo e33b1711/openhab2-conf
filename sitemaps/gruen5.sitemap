@@ -5,21 +5,11 @@ sitemap gruen5 label="Grünbichlstrasse 5"
 	Frame label="Lichter / Verdunkelung" {
 	
 Text label="Keller" icon="cellar" {
-	Frame label="Hobby"  {
 		Switch item=LI_UG_HO
-	}
-	Frame label="Gang"  {
 		Switch item=LI_UG_GA
-	}
-	Frame label="Waschküche"  {
 		Switch item=LI_UG_WK 
-	}
-	Frame label="Lager"  {
 		Switch item=LI_UG_LA
-	}
-	Frame label="Heizkeller"  {
 		Switch item=LI_UG_HK
-	}
 }
 
 Text label="Erdgeschoss" icon="groundfloor" {
