@@ -1,0 +1,27 @@
+//querys all states of the arduino nodes on startup
+
+rule QUERY_TEMP_0
+	when
+		 System started
+		
+	then
+	    	 sendCommand(RS485_Gateway_out, "!post_all!eg_west!0$\n")
+                 Thread::sleep(5000)
+                 sendCommand(RS485_Gateway_out, "!post_all!eg_ost!0$\n")
+                 Thread::sleep(5000)
+                 sendCommand(RS485_Gateway_out, "!post_all!og_west!0$\n")
+                 Thread::sleep(5000)
+                 sendCommand(RS485_Gateway_out, "!post_all!og_ost!0$\n")
+                 Thread::sleep(5000)
+                 sendCommand(RS485_Gateway_out, "!post_all!ug!0$\n")
+                 Thread::sleep(5000)
+                 sendCommand(RS485_Gateway_out, "!post_all!gr!0$\n")
+                 Thread::sleep(5000)	
+end
+
+
+			
+
+
+
+
