@@ -1,6 +1,8 @@
 //querys all states of the arduino nodes on startup
 
-rule QUERY_TEMP_0
+rule QUERY_STATES_ON_START
+
+
 	when
 		 System started
 		
