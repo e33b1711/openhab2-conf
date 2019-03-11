@@ -2,14 +2,8 @@ rule BELL
 	when
 		Item BELL received command
 	then
-	if (receivedCommand==OFF) {
-		sendCommand(RS485_Gateway_out, "!w!BELL!0$\n");
-		postUpdate(BELL, OFF);
-	}
-	if (receivedCommand==ON) {
 		sendCommand(RS485_Gateway_out, "!w!BELL!1$\n");
 		postUpdate(BELL, ON);
-	}
 end
 
 rule SPEAKER_BELL
