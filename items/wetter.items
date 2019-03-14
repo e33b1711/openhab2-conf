@@ -1,0 +1,4 @@
+Group gTestWeather
+Number Test_TemperatureRRD4J "Aussentemperatur [%.1f °C]" <temperature>	(gTestWeather) { channel="yahooweather:weather:test_graz:temperature" }
+Number Test_HumidityRRD4J    "Luftfeuchtigkeit [%d %%]"	  <humidity>	(gTestWeather) { channel="yahooweather:weather:test_graz:humidity"}
+Number Test_PressureRRD4J    "Luftdruck [%.2f mb]"	  <pressure>	(gTestWeather) { channel="yahooweather:weather:test_graz:pressure"}
