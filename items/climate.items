@@ -7,6 +7,11 @@ Group temps_og 			(All)
 Group temps_ug 			(All)
 Group temps_a 			(All)
 
+Group humis_eg 			(All)
+Group humis_og 			(All)
+Group humis_ug 			(All)
+Group humis_a 			(All)
+
 
 /* Indoor Temperatures */
 Number TI_EG_WZ 	"Temperatur Wohnzimmer [%.1f °C]"		<temperature> 		(Temperatur, EG_WZ, RS485_IN, temps_eg)
@@ -49,26 +54,26 @@ Number TS_UG_LA 	"Soll-Temp. Lager [%.1f °C]"			<temperature>	 	(Temperatur_Sol
 
 
 /* Indoor Humidities */
-Number HI_EG_WZ 	"Feuchte Wohnzimmer [%.1f %%]"				<water> 				(Feuchtigkeit, EG_WZ, RS485_IN)
-Number HI_EG_KU 	"Feuchte Küche [%.1f %%]"				<water> 				(Feuchtigkeit, EG_KU, RS485_IN)
-Number HI_EG_EZ 	"Feuchte Esszimmer [%.1f %%]"				<water> 				(Feuchtigkeit, EG_EZ, RS485_IN)
-Number HI_EG_GA 	"Feuchte Gang EG [%.1f %%]"				<water> 				(Feuchtigkeit, EG_GA, RS485_IN)
+Number HI_EG_WZ 	"Feuchte Wohnzimmer [%.1f %%]"				<water> 				(Feuchtigkeit, EG_WZ, RS485_IN, humis_eg)
+Number HI_EG_KU 	"Feuchte Küche [%.1f %%]"				<water> 				(Feuchtigkeit, EG_KU, RS485_IN, humis_eg)
+Number HI_EG_EZ 	"Feuchte Esszimmer [%.1f %%]"				<water> 				(Feuchtigkeit, EG_EZ, RS485_IN, humis_eg)
+Number HI_EG_GA 	"Feuchte Gang EG [%.1f %%]"				<water> 				(Feuchtigkeit, EG_GA, RS485_IN, humis_eg)
 
-Number HI_OG_BA 	"Feuchte Badezimmer [%.1f %%]"				<water> 				(Feuchtigkeit, OG_BA, RS485_IN)
-Number HI_OG_KN 	"Feuchte Leos Zimmer [%.1f %%]"				<water> 				(Feuchtigkeit, OG_KN, RS485_IN)
-Number HI_OG_KS 	"Feuchte Kurbis Zimmer [%.1f %%]"			<water> 				(Feuchtigkeit, OG_KS, RS485_IN)
-Number HI_OG_SZ 	"Feuchte Schlafzimmer [%.1f %%]"			<water> 				(Feuchtigkeit, OG_SZ, RS485_IN)
-Number HI_OG_GA 	"Feuchte Gang OG [%.1f %%]"				<water> 				(Feuchtigkeit, OG_GA, RS485_IN)
+Number HI_OG_BA 	"Feuchte Badezimmer [%.1f %%]"				<water> 				(Feuchtigkeit, OG_BA, RS485_IN, humis_og)
+Number HI_OG_KN 	"Feuchte Leos Zimmer [%.1f %%]"				<water> 				(Feuchtigkeit, OG_KN, RS485_IN, humis_og)
+Number HI_OG_KS 	"Feuchte Kurbis Zimmer [%.1f %%]"			<water> 				(Feuchtigkeit, OG_KS, RS485_IN, humis_og)
+Number HI_OG_SZ 	"Feuchte Schlafzimmer [%.1f %%]"			<water> 				(Feuchtigkeit, OG_SZ, RS485_IN, humis_og)
+Number HI_OG_GA 	"Feuchte Gang OG [%.1f %%]"				<water> 				(Feuchtigkeit, OG_GA, RS485_IN, humis_og)
 
-Number HI_UG_HS 	"Feuchte Hobby Süd [%.1f %%]"				<water> 				(Feuchtigkeit, UG_HO, RS485_IN)
-Number HI_UG_HN 	"Feuchte Hobby Nord [%.1f %%]"				<water> 				(Feuchtigkeit, UG_HO, RS485_IN)
-Number HI_UG_WK 	"Feuchte Waschküche [%.1f %%]"				<water> 				(Feuchtigkeit, UG_WK, RS485_IN)
-Number HI_UG_HK 	"Feuchte Heizkeller [%.1f %%]"				<water> 				(Feuchtigkeit, UG_HK, RS485_IN)
-Number HI_UG_GA 	"Feuchte Gang UG [%.1f %%]"				<water> 				(Feuchtigkeit, UG_GA, RS485_IN)
-Number HI_UG_LA		"Feuchte Lager [%.1f %%]"				<water> 				(Feuchtigkeit, UG_LA, RS485_IN)
+Number HI_UG_HS 	"Feuchte Hobby Süd [%.1f %%]"				<water> 				(Feuchtigkeit, UG_HO, RS485_IN, humis_ug)
+Number HI_UG_HN 	"Feuchte Hobby Nord [%.1f %%]"				<water> 				(Feuchtigkeit, UG_HO, RS485_IN, humis_ug)
+Number HI_UG_WK 	"Feuchte Waschküche [%.1f %%]"				<water> 				(Feuchtigkeit, UG_WK, RS485_IN, humis_ug)
+Number HI_UG_HK 	"Feuchte Heizkeller [%.1f %%]"				<water> 				(Feuchtigkeit, UG_HK, RS485_IN, humis_ug)
+Number HI_UG_GA 	"Feuchte Gang UG [%.1f %%]"				<water> 				(Feuchtigkeit, UG_GA, RS485_IN, humis_ug)
+Number HI_UG_LA		"Feuchte Lager [%.1f %%]"				<water> 				(Feuchtigkeit, UG_LA, RS485_IN, humis_ug)
 
-Number HI_GR 		"Feuchte Garage [%.1f %%]"				<water>	 				(Feuchtigkeit, Garage, RS485_IN)
-Number HI_G2	 	"Feuchte Aussen [%.1f %%]"				<water>			 		(Feuchtigkeit, Aussen, RS485_IN)
+Number HI_GR 		"Feuchte Garage [%.1f %%]"				<water>	 				(Feuchtigkeit, Garage, RS485_IN, humis_a)
+Number HI_G2	 	"Feuchte Aussen [%.1f %%]"				<water>			 		(Feuchtigkeit, Aussen, RS485_IN, humis_a)
 
 
 /* Heating Setpoints */
@@ -107,16 +112,4 @@ Number UD_UG_WK  	"Default-Stellwert Waschküche [%.1f]"			<heating>				(heizung
 
 Number UD_EG_KU  	"Default-Stellwert Küche [%.1f]"			<heating>				(heizung_stellwert_default, EG_KU)
 Number UD_EG_E1  	"Default-Stellwert Essen 1 [%.1f]"			<heating>				(heizung_stellwert_default, EG_EZ)
-Number UD_EG_E2  	"Default-Stellwert Essen 2 [%.1f]"			<heating>				(heizung_stellwert_default, EG_EZ)
-Number UD_EG_GA  	"Default-Stellwert Gang EG [%.1f]"			<heating>				(heizung_stellwert_default, EG_GA)
-Number UD_EG_WZ  	"Default-Stellwert Wohnzimmer [%.1f]"			<heating>				(heizung_stellwert_default, EG_WZ)
-Number UD_EG_GR  	"Default-Stellwert Gardarobe [%.1f]"			<heating>				(heizung_stellwert_default, EG_GR)
-Number UD_EG_WC  	"Default-Stellwert WC [%.1f]"				<heating>				(heizung_stellwert_default, EG_WC)
-
-Number UD_OG_KS  	"Default-Stellwert Kind Süd [%.1f]"			<heating>				(heizung_stellwert_default, OG_KS)
-Number UD_OG_KN  	"Default-Stellwert Kind Nord [%.1f]"			<heating>				(heizung_stellwert_default, OG_KN)
-Number UD_OG_GA  	"Default-Stellwert Gang OG [%.1f]"			<heating>				(heizung_stellwert_default, OG_GA)
-Number UD_OG_BA  	"Default-Stellwert Badezimmer [%.1f]"			<heating>				(heizung_stellwert_default, OG_BA)
-Number UD_OG_SZ  	"Default-Stellwert Schlafzimmer [%.1f]"			<heating>				(heizung_stellwert_default, OG_SZ)
-
-
+Number UD_EG_E2  	"
