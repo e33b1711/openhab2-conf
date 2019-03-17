@@ -1,17 +1,28 @@
-sitemap charts label="Charts"
-{
-	Frame label="Ist Tempemperaturen UG" {
-			Chart item=temps_ug period=d refresh=60
-              }
-       Frame label="Ist Tempemperaturen EG" {
-			Chart item=temps_eg period=d refresh=60
-              }
-	Frame label="Ist Tempemperaturen OG" {
-			Chart item=temps_og period=d refresh=60
-              }
-	Frame label="Ist Tempemperaturen Aussen" {
-			Chart item=temps_a period=d refresh=60
-              }
-			
+sitemap charts label="Climate Charts" {
+	Text label="Keller" icon="cellar" {
+		Chart item=temps_ug period=D refresh=10000
+		Chart item=humis_ug period=D refresh=10000
+	}
+
+	Text label="Erdgeschoss" icon="groundfloor" {
+		Chart item=temps_eg period=D refresh=10000
+		Chart item=humis_eg period=D refresh=10000
+	}
+	
+	
+	Text label="Obergeschoss" icon="firstfloor" {
+		Chart item=temps_og period=D refresh=10000
+		Chart item=humis_og period=D refresh=10000
+        }
+
+	Text label="Garage / Aussen" icon="garage_detached_selected" {
+		Chart item=temps_a period=D refresh=10000
+		Chart item=humis_a period=D refresh=10000	 
+        }
+	Group item=humis_ug
+	Group item=humis_eg
+	Group item=humis_og
+        Group item=humis_a
+		
 }
 
