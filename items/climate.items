@@ -9,7 +9,7 @@ Group temps_ug 			(All)
 Group temps_a 			(All)
 
 Group humis_eg 			(All)
-Group humis_og 			(All)
+Group humis_og 		   	(All)
 Group humis_ug 			(All)
 Group humis_a 			(All)
 
@@ -135,4 +135,16 @@ Number UD_UG_WK  	"Default-Stellwert Waschküche [%.1f]"			<heating>				(heizung
 
 Number UD_EG_KU  	"Default-Stellwert Küche [%.1f]"			<heating>				(heizung_stellwert_default, EG_KU)
 Number UD_EG_E1  	"Default-Stellwert Essen 1 [%.1f]"			<heating>				(heizung_stellwert_default, EG_EZ)
-Number UD_EG_E2  	"
+Number UD_EG_E2  	"Default-Stellwert Essen 2 [%.1f]"			<heating>				(heizung_stellwert_default, EG_EZ)
+Number UD_EG_GA  	"Default-Stellwert Gang EG [%.1f]"			<heating>				(heizung_stellwert_default, EG_GA)
+Number UD_EG_WZ  	"Default-Stellwert Wohnzimmer [%.1f]"			<heating>				(heizung_stellwert_default, EG_WZ)
+Number UD_EG_GR  	"Default-Stellwert Gardarobe [%.1f]"			<heating>				(heizung_stellwert_default, EG_GR)
+Number UD_EG_WC  	"Default-Stellwert WC [%.1f]"				<heating>				(heizung_stellwert_default, EG_WC)
+
+Number UD_OG_KS  	"Default-Stellwert Kind Süd [%.1f]"			<heating>				(heizung_stellwert_default, OG_KS)
+Number UD_OG_KN  	"Default-Stellwert Kind Nord [%.1f]"			<heating>				(heizung_stellwert_default, OG_KN)
+Number UD_OG_GA  	"Default-Stellwert Gang OG [%.1f]"			<heating>				(heizung_stellwert_default, OG_GA)
+Number UD_OG_BA  	"Default-Stellwert Badezimmer [%.1f]"			<heating>				(heizung_stellwert_default, OG_BA)
+Number UD_OG_SZ  	"Default-Stellwert Schlafzimmer [%.1f]"			<heating>				(heizung_stellwert_default, OG_SZ)
+
+
