@@ -1,0 +1,19 @@
+var counter = 5
+
+
+rule QUERY_TEMP_0
+	when
+		System started
+		
+	then
+		Temperatur.members.forEach[s | s.sendCommand(-1)]
+		Feuchtigkeit.members.forEach[s | s.sendCommand(-10)]
+		sensor_error.members.forEach[s | s.sendCommand(0)]
+end
+
+
+			
+
+
+
+

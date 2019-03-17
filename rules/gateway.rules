@@ -81,17 +81,14 @@ rule "Listen"
 				
 				//Temperaturen
 				if(address.contains("TI")){
-					//println("TI")
 					postUpdate(this_item, value*0.1 )
 				}
 				if (address.contains("HI")){
-					//println("TI")
 					postUpdate(this_item, value )
 				}
-				//if (address.contains("U_")){
-					//println("U_")
-				//	postUpdate(this_item, value )
-				//}
+				if (address.contains("ETI_")){
+					postUpdate(this_item, value )
+				}
 				
 				//Verdunkelungen, Dachfenster, Rollos
 				if(address.contains("RO") || address.contains("VD") || address.contains("DO") || address.contains("DF")){
