@@ -10,6 +10,7 @@ Strategies {
 
 Items {
         Temperatur*   : strategy = every10Min, restoreOnStartup
-		Feuchtigkeit* : strategy = every10Min, restoreOnStartup   
+	Feuchtigkeit* : strategy = every10Min, restoreOnStartup  
+	sensor_error* : strategy = every10Min, restoreOnStartup  
 }
 
