@@ -286,11 +286,27 @@ rule LI_GR
     sendCommand(RS485_Gateway_out, message)
 end
 
-rule ZE_GR
+rule ZE_GR_0
 	when
-		Item ZE_GR received command
+		Item ZE_GR_0 received command
 	then
-    var String message="!w!ZE_GR!3$\n"
+    var String message="!w!ZE_GR_0!3$\n"
+    sendCommand(RS485_Gateway_out, message)
+end
+
+rule ZE_GR_1
+	when
+		Item ZE_GR_1 received command
+	then
+    var String message="!w!ZE_GR_1!3$\n"
+    sendCommand(RS485_Gateway_out, message)
+end
+
+rule ZE_GR_2
+	when
+		Item ZE_GR_2 received command
+	then
+    var String message="!w!ZE_GR_2!3$\n"
     sendCommand(RS485_Gateway_out, message)
 end
 
@@ -302,13 +318,7 @@ rule LI_GR_L1
     sendCommand(RS485_Gateway_out, message)
 end
 
-rule LI_GR_L2
-	when
-		Item LI_GR_L2 received command
-	then
-    var String message="!w!LI_GR_L2!3$\n"
-    sendCommand(RS485_Gateway_out, message)
-end
+
 
 
 

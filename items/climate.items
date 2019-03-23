@@ -33,7 +33,7 @@ Number ETI_UG_GA 	"Gang UG Sensorfehler [%.0f]"			<error>	 		(sensor_error, UG_G
 Number ETI_UG_LA 	"Lager Sensorfehler [%.0f]"			<error>	 		(sensor_error, UG_LA, RS485_IN)
 
 Number ETI_GR	 	"Garage Sensorfehler [%.0f]"			<error>	 		(sensor_error, Garage, RS485_IN)
-Number ETI_G2	 	"Aussen Sensorfehler [%.0f]"			<error>	 		(sensor_error, Aussen, RS485_IN)
+Number ETI_GR_A	 	"Aussen Sensorfehler [%.0f]"			<error>	 		(sensor_error, Aussen, RS485_IN)
 
 
 /* Indoor Temperatures */
@@ -56,7 +56,7 @@ Number TI_UG_GA 	"Temperatur Gang UG [%.1f °C]"			<temperature>	 	(Temperatur, 
 Number TI_UG_LA 	"Temperatur Lager [%.1f °C]"			<temperature>	 	(Temperatur, UG_LA, RS485_IN, temps_ug)
 
 Number TI_GR	 	"Temperatur Garage [%.1f °C]"			<temperature>	 	(Temperatur, Garage, RS485_IN, temps_a)
-Number TI_G2	 	"Temperatur Aussen [%.1f °C]"			<temperature>	 	(Temperatur, Aussen, RS485_IN, temps_a)
+Number TI_GR_A	 	"Temperatur Aussen [%.1f °C]"			<temperature>	 	(Temperatur, Aussen, RS485_IN, temps_a)
 
 /* Indoor Temperatures (soll) */
 Number TS_EG_WZ 	"Soll-Temp. Wohnzimmer [%.1f °C]"		<temperature> 		(Temperatur_Soll, EG_WZ)
@@ -96,7 +96,7 @@ Number HI_UG_GA 	"Feuchte Gang UG [%.1f %%]"				<water> 				(Feuchtigkeit, UG_GA
 Number HI_UG_LA		"Feuchte Lager [%.1f %%]"				<water> 				(Feuchtigkeit, UG_LA, RS485_IN, humis_ug)
 
 Number HI_GR 		"Feuchte Garage [%.1f %%]"				<water>	 				(Feuchtigkeit, Garage, RS485_IN, humis_a)
-Number HI_G2	 	"Feuchte Aussen [%.1f %%]"				<water>			 		(Feuchtigkeit, Aussen, RS485_IN, humis_a)
+Number HI_GR_A	 	"Feuchte Aussen [%.1f %%]"				<water>			 		(Feuchtigkeit, Aussen, RS485_IN, humis_a)
 
 
 /* Heating Setpoints */

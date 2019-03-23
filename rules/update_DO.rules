@@ -1,4 +1,4 @@
-rule DO_GA
+rule DO_GR
 	when
 		Item DO_GR received command
 	then

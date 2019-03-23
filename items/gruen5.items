@@ -81,15 +81,17 @@ Switch LI_UG_HK 	"Licht Heizkeller" 			(Licht, UG_HK, RS485_IN, RS485_OUT) ["Swi
 Switch LI_UG_GA 	"Licht Kellergang" 			(Licht, UG_GA, RS485_IN, RS485_OUT) ["Switchable"] {autoupdate="false"}
 Switch LI_UG_LA 	"Licht Lagerraum" 			(Licht, UG_LA, RS485_IN, RS485_OUT) ["Switchable"] {autoupdate="false"}
 
-Switch LI_EG_VH 	"Vordach" 										(Licht, Aussen, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch LI_EG_AS 	"Terrasse Süden" 								(Licht, Aussen, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch LI_EG_AW 	"Terrasse Westen" 								(Licht, Aussen, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch LI_EG_AO 	"Wand Osten" 									(Licht, Aussen, RS485_IN, RS485_OUT) {autoupdate="false"}
+Switch LI_EG_VH 	"Vordach" 				(Licht, Aussen, RS485_IN, RS485_OUT) {autoupdate="false"}
+Switch LI_EG_AS 	"Terrasse Süden" 			(Licht, Aussen, RS485_IN, RS485_OUT) {autoupdate="false"}
+Switch LI_EG_AW 	"Terrasse Westen" 			(Licht, Aussen, RS485_IN, RS485_OUT) {autoupdate="false"}
+Switch LI_EG_AO 	"Wand Osten" 				(Licht, Aussen, RS485_IN, RS485_OUT) {autoupdate="false"}
 
-Switch LI_GR 		"Grundbeleuchtung" 								(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch LI_GR_L1 	"Einfahrtsbeleuchtung" 							(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch LI_GR_L2 	"Aussen" 										(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch ZE_GR	 	"Timer" 										(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
+Switch LI_GR 		"Grundbeleuchtung" 			(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
+Switch LI_GR_L1 	"Aussen" 				(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
+Switch ZE_GR_0	 	"Timer Innen 10 min" 			(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
+Switch ZE_GR_1	 	"Timer Innen 2 min" 			(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
+Switch ZE_GR_2	 	"Timer Außen" 				(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
+
 
 /* Klingel */
 Switch BELL 		"Klingel" 										(EG_GA, RS485_IN, RS485_OUT) {autoupdate="false"}
@@ -125,7 +127,7 @@ Rollershutter RO_OG_SZ 		"Rollo" 						(Rollo, OG_SZ, RS485_IN, RS485_OUT)
 Rollershutter VD_OG_SZ		"Verdunkelung Dachfenster" 		(Verdunkelung, OG_SZ, RS485_IN, RS485_OUT)
 Rollershutter DF_OG_SZ	 	"Dachfenster" 					(Dachfenster, OG_SZ, RS485_IN, RS485_OUT)
 
-Rollershutter DO_GR	 		"Garagentor" 					(Garage, GR_gateway) {autoupdate="false"} 
+Rollershutter DO_GR	 		"Garagentor" 					(Garage, RS485_IN, RS485_OUT) {autoupdate="false"} 
 
 
 
