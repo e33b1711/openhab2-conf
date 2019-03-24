@@ -61,8 +61,8 @@ rule "Listen"
 				//ON/OFF Typen
 				if( (address.contains("LI")) || (address.contains("BELL"))) {
 					var int on_off=0
-					if (this_item.state==ON) {on_off=0}
-					else {on_off=1}
+					//if (this_item.state==ON) {on_off=0}
+					//else {on_off=1}
 					if (value==1) {on_off=1}
 					if (value==0) {on_off=0}
 					
@@ -70,8 +70,8 @@ rule "Listen"
 				}
 				if((address.contains("ZE"))) {
 					var int on_off=0
-					if (this_item.state==ON) {on_off=0}
-					else {on_off=1}
+					//if (this_item.state==ON) {on_off=0}
+					//else {on_off=1}
 					if (value==1) {on_off=1}
 					if (value==0) {on_off=0}
 					
