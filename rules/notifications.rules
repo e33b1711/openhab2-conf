@@ -1,0 +1,33 @@
+rule NOTE_HK
+	when
+		Item BELL received update ON
+	then
+                logInfo("notifications", "Sending notification via app.")
+		sendNotification("e33b1711@gmail.com", "Klingel")
+end
+
+
+
+rule NOTE_HK
+	when
+		Time cron "0 0 21 ? * *"
+	then
+		if ((DO_GR.state as Number) != -1){
+                	logInfo("notifications", "Sending notification via app.")
+			sendNotification("e33b1711@gmail.com", "Garage nach 2100 Uhr offen.")
+		}
+end
+
+rule NOTE_HK_TEST
+	when
+		Time cron "0 0 14 ? * *"
+	then
+		if ((DO_GR.state as Number) != -1){
+                	logInfo("notifications", "Sending notification via app.")
+			sendNotification("e33b1711@gmail.com", "Garage nach 1400 Uhr offen.")
+		}
+end
+
+
+
+

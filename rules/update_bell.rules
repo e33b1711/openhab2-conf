@@ -29,12 +29,4 @@ rule PUMP
 end
 
 
-rule NOTE_HK
-	when
-		Item BELL received update ON
-	then
-                logInfo("notifications", "Sending notification via app.")
-		sendNotification("e33b1711@gmail.com", "Klingel")
-end
-
 
