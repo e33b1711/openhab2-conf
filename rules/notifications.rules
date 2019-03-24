@@ -18,16 +18,5 @@ rule NOTE_HK
 		}
 end
 
-rule NOTE_HK_TEST
-	when
-		Time cron "0 0 14 ? * *"
-	then
-		if ((DO_GR.state as Number) != -1){
-                	logInfo("notifications", "Sending notification via app.")
-			sendNotification("e33b1711@gmail.com", "Garage nach 1400 Uhr offen.")
-		}
-end
-
-
 
 
