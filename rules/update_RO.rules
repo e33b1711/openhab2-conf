@@ -1,72 +1,21 @@
-rule RO_EG_SU
-	when
-		Item RO_EG_SU received command
-	then
-    var String message="!w!RO_EG_SU!0$\n!w!RO_EG_SU_ON!0$\n!w!RO_EG_SU_UD!0$\n"
-	if (receivedCommand==STOP) {postUpdate(RO_EG_SU, 50) }
-	if (receivedCommand==UP) {message="!w!RO_EG_SU!1$\n"}
-	if (receivedCommand==DOWN) {message="!w!RO_EG_SU!-1$\n"}
-    sendCommand(RS485_Gateway_out, message)
-    println("rs485 out " + message)
-end
+rule RuleUpdateRollerShuter
+when
+    Member of Rollo received command
+then
+    logInfo("RuleUpdateRollerShuter", "The item " + triggeringItem.name + " received command " + receivedCommand)
+    var String message=""
+	if (receivedCommand==STOP){
+        postUpdate(RO_EG_SU, 50) 
+        message="!w!" + triggeringItem.name + "!0$\n!w!" + triggeringItem.name + "_ON!0$\n!w!" + triggeringItem.name + "_UD!0$\n"
+    }
+	
+    if (receivedCommand==UP){
+        message="!w!" + triggeringItem.name + "!1$\n"
+    }
 
-rule RO_EG_WE
-	when
-		Item RO_EG_WE received command
-	then
-    var String message="!w!RO_EG_WE!0$\n!w!RO_EG_WE_ON!0$\n!w!RO_EG_WE_UD!0$\n"
-	if (receivedCommand==STOP) {postUpdate(RO_EG_WE, 50) }
-	if (receivedCommand==UP) {message="!w!RO_EG_WE!1$\n"}
-	if (receivedCommand==DOWN) {message="!w!RO_EG_WE!-1$\n"}
+	if (receivedCommand==DOWN){
+        message="!w!" + triggeringItem.name + "!-1$\n"
+    }
     sendCommand(RS485_Gateway_out, message)
-    println("rs485 out " + message)
+    logInfo("RuleUpdateRollerShuter", message)
 end
-
-rule RO_OG_BA
-	when
-		Item RO_OG_BA received command
-	then
-    var String message="!w!RO_OG_BA!0$\n!w!RO_OG_BA_ON!0$\n!w!RO_OG_BA_UD!0$\n"
-	if (receivedCommand==STOP) {postUpdate(RO_OG_BA, 50) }
-	if (receivedCommand==UP) {message="!w!RO_OG_BA!1$\n"}
-	if (receivedCommand==DOWN) {message="!w!RO_OG_BA!-1$\n"}
-    sendCommand(RS485_Gateway_out, message)
-    println("rs485 out " + message)
-end
-
-rule RO_OG_KN
-	when
-		Item RO_OG_KN received command
-	then
-    var String message="!w!RO_OG_KN!0$\n!w!RO_OG_KN_ON!0$\n!w!RO_OG_KN_UD!0$\n"
-	if (receivedCommand==STOP) {postUpdate(RO_OG_KN, 50) }
-	if (receivedCommand==UP) {message="!w!RO_OG_KN!1$\n"}
-	if (receivedCommand==DOWN) {message="!w!RO_OG_KN!-1$\n"}
-    sendCommand(RS485_Gateway_out, message)
-    println("rs485 out " + message)
-end
-
-rule RO_OG_KS
-	when
-		Item RO_OG_KS received command
-	then
-    var String message="!w!RO_OG_KS!0$\n!w!RO_OG_KS_ON!0$\n!w!RO_OG_KS_UD!0$\n"
-	if (receivedCommand==STOP) {postUpdate(RO_OG_KS, 50) }
-	if (receivedCommand==UP) {message="!w!RO_OG_KS!1$\n"}
-	if (receivedCommand==DOWN) {message="!w!RO_OG_KS!-1$\n"}
-    sendCommand(RS485_Gateway_out, message)
-    println("rs485 out " + message)
-end
-
-rule RO_OG_SZ
-	when
-		Item RO_OG_SZ received command
-	then
-    var String message="!w!RO_OG_SZ!0$\n!w!RO_OG_SZ_ON!0$\n!w!RO_OG_SZ_UD!0$\n"
-	if (receivedCommand==STOP) {postUpdate(RO_OG_SZ, 50) }
-	if (receivedCommand==UP) {message="!w!RO_OG_SZ!1$\n"}
-	if (receivedCommand==DOWN) {message="!w!RO_OG_SZ!-1$\n"}
-    sendCommand(RS485_Gateway_out, message)
-    println("rs485 out " + message)
-end
-
