@@ -94,10 +94,10 @@ Switch ZE_GR_2	 	"Timer Außen" 				(Licht, Garage, RS485_IN, RS485_OUT) {autoup
 
 
 /* Klingel */
-Switch BELL 		"Klingel" 										(EG_GA, RS485_IN, RS485_OUT) {autoupdate="false"}
+Switch BELL 		"Klingel" 				(EG_GA, RS485_IN, RS485_OUT) {autoupdate="false"}
 
 /* Klingel */
-Switch PUMP 		"Zisternenpumpe" 								(Aussen, RS485_OUT) {autoupdate="false"}
+Switch PUMP 		"Zisternenpumpe" 			(Aussen, RS485_IN, RS485_OUT) {autoupdate="false"}
 
 
 /* Timer */

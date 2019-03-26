@@ -37,12 +37,12 @@ then
 			//auf "w" messages reagieren
 			if ((messageType=="w") || (messageType=="i")) {
 				var this_item = RS485_IN.members.findFirst([name==address])
-				if (this_item == null){
+				if (this_item === null){
 					logDebug("ListenRule", "Item with name: " + address + " does not exist.")
 				}else{
 					
 					//ON/OFF Typen
-					if( (address.contains("LI_")) || (address.contains("BELL")) || (address.contains("ZE_")) ){
+					if( (address.contains("LI_")) || (address.contains("BELL")) || (address.contains("ZE_")) || (address.contains("PUMP_")) ){
 						logDebug("ListenRulen", "handler: w / LI " + this_item.name + " " + value.toString())
 						postUpdate(this_item, if(value==0) OFF else ON)
 					}				
