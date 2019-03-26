@@ -1,114 +1,79 @@
-var String in_buffer = ""
-var String parser_in_string = ""
-var String address = ""
-var String messageType=""
-var float value=0
+rule ListenRule
+when 
+	Item telnet_in received update
+then
+	//variables	
+	var String in_buffer = ""
+	var String parser_in_string = ""
+	var String address = ""
+	var String messageType=""
+	var float value=0
 
-
-
- //Gateway initialisieren
-//rule "init gateway"
-//	when 
-//		System started
-//	then
-//end
-
-
-// message parser and handler for incoming RS485 messages
-rule "Listen"
-	when 
-		Item telnet_in received update
-	then
-
-	    in_buffer = in_buffer + telnet_in.state.toString.trim
-	    println("in buffer: " + in_buffer)
+	in_buffer = telnet_in.state.toString.trim
 	    
-	    
-	    while (in_buffer.contains("$")) {
-	    	//println("entering message parser")
-	    	parser_in_string=in_buffer.substring(0,in_buffer.indexOf("$")+1)
-	    	in_buffer=in_buffer.substring(in_buffer.indexOf("$")+1)
+	while (in_buffer.contains("$")) {
+	
+		parser_in_string=in_buffer.substring(0,in_buffer.indexOf("$")+1)
+	    	in_buffer=in_buffer.substring(in_buffer.indexOf("$")+1).trim
 	    	
-	    	logInfo("Input String for Parser: ", parser_in_string)
-	    	//println("reststring:" + in_buffer + ":" )
-	    	//die indicies der trennzeichen suchen
+	    	logDebug("ListenRule", "Input String for Parser: >>" + parser_in_string + "<<")
+	    	
 	    	var int index4 = parser_in_string.indexOf("$")						
-			var int index1 = parser_in_string.indexOf("!")
-			var int index2 = parser_in_string.substring(index1+1).indexOf("!") + index1+1
-			var int index3 = parser_in_string.substring(index2+1).indexOf("!") + index2+1
-			//println(index1 + " " + index2 + " " + index3 + " " + index4)
+		var int index1 = parser_in_string.indexOf("!")
+		var int index2 = parser_in_string.substring(index1+1).indexOf("!") + index1+1
+		var int index3 = parser_in_string.substring(index2+1).indexOf("!") + index2+1
 			
-			//die parameter extrahieren
-			if (index1>-1 && index2>index1 && index3>index2 && index4>index3){
+		if (index1>-1 && index2>index1 && index3>index2 && index4>index3){
 			messageType=parser_in_string.substring(index1+1,index2)
-			//println("messageType: " + messageType)
 			address=parser_in_string.substring(index2+1,index3)
-			//println("Address: " + address)
-			value = 0
 			if( parser_in_string.substring(index3+1,index4)==""){
 				value=0
 			}
 			else{
-			value=Float::parseFloat(parser_in_string.substring(index3+1,index4))
+				value=Float::parseFloat(parser_in_string.substring(index3+1,index4))
 			}			
-			
-			logInfo("ListenRule", "messageType: " + messageType + " address: " + address + " value: " + value.toString())
+			logDebug("ListenRule", "messageType: " + messageType + " address: " + address + " value: " + value.toString())
 			
 			//auf "w" messages reagieren
-			var this_item = RS485_IN.members.findFirst([name==address])
-			//println(this_item.name)
 			if ((messageType=="w") || (messageType=="i")) {
-				//println("I message parsing")
-				//ON/OFF Typen
-				if( (address.contains("LI")) || (address.contains("BELL"))) {
-					var int on_off=0
-					//if (this_item.state==ON) {on_off=0}
-					//else {on_off=1}
-					if (value==1) {on_off=1}
-					if (value==0) {on_off=0}
+				var this_item = RS485_IN.members.findFirst([name==address])
+				if (this_item == null){
+					logDebug("ListenRule", "Item with name: " + address + " does not exist.")
+				}else{
 					
-					postUpdate(this_item, if(on_off==0) OFF else ON)
-				}
-				if((address.contains("ZE"))) {
-					var int on_off=0
-					//if (this_item.state==ON) {on_off=0}
-					//else {on_off=1}
-					if (value==1) {on_off=1}
-					if (value==0) {on_off=0}
-					
-					postUpdate(this_item, if(on_off==0) OFF else ON)
-				}
+					//ON/OFF Typen
+					if( (address.contains("LI_")) || (address.contains("BELL")) || (address.contains("ZE_")) ){
+						logDebug("ListenRulen", "handler: w / LI " + this_item.name + " " + value.toString())
+						postUpdate(this_item, if(value==0) OFF else ON)
+					}				
 				
+					//Temperaturen
+					if (address.contains("HI_")){
+						logDebug("ListenRulen", "handler: w / HI " + this_item.name + " " + value.toString())	
+						postUpdate(this_item, value )
+					}
+					if (address.contains("ETI_")){
+						logDebug("ListenRulen", "handler: w / ETI " + this_item.name + " " + value.toString())	
+						postUpdate(this_item, value )
+					}else{
+						if(address.contains("TI_")){
+						logDebug("ListenRulen", "handler: w / TI " + this_item.name + " " + value.toString())	
+						postUpdate(this_item, value*0.1 )
+						}
+					}
 				
-				//Temperaturen
-				if(address.contains("TI")){
-					postUpdate(this_item, value*0.1 )
-				}
-				if (address.contains("HI")){
-					postUpdate(this_item, value )
-				}
-				if (address.contains("ETI_")){
-					postUpdate(this_item, value )
-				}
-				
-				//Verdunkelungen, Dachfenster, Rollos
-				if(address.contains("RO") || address.contains("VD") || address.contains("DO") || address.contains("DF")){
-					if (value==1) {postUpdate(this_item, 0)}
-					else if (value==-1) {postUpdate(this_item, 100)}
-					else {postUpdate(this_item, 50)}
-					
+					//Verdunkelungen, Dachfenster, Rollos
+					if(address.contains("RO_") || address.contains("VD_") || address.contains("DO_") || address.contains("DF_")){
+						logDebug("ListenRulen", "handler: w / RO " + this_item.name + " " + value.toString())	
+						if (value==1) {postUpdate(this_item, 0)}
+						else if (value==-1) {postUpdate(this_item, 100)}
+						else {postUpdate(this_item, 50)}
+					}
 				}
 				
 			}
 			
-			
-	    }
-	 }
+		}
+	}
 	    
 end
-
-
-
-
-
-

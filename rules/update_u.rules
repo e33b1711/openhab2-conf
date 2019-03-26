@@ -1,37 +1,90 @@
 import org.eclipse.smarthome.core.library.types.DecimalType
+import org.eclipse.smarthome.model.script.ScriptServiceUtil
 
 
 rule HeatingControlerRule
 when
-    Time cron "0 0/10 * * * ?"
+    Time cron "0 0/1 * * * ?"
 then
     heizung_stellwert.members.forEach [ item |
         //get base name
         logInfo("HeatingControllerRule: item.name:", item.name)
-        val String item_base_name = sp.name.substring(1,6)
-        logInfo("HeatingControllerRule: item_base_name:", item_base_name)
+        val String item_base_name = item.name.substring(1,7)
+        logInfo("HeatingControllerRule", "item_base_name: >>" + item_base_name + "<<")
         
         //get input values
-        val temp_ist    = Temperatur.allMembers.filter(m | All.name.equals("TI" + item_base_name)).last.state as DecimalType
-        val temp_soll   = Temperatur.allMembers.filter(m | All.name.equals("TS" + item_base_name)).last.state as DecimalType
-        val u_default   = Temperatur.allMembers.filter(m | All.name.equals("UD" + item_base_name)).last.state as DecimalType
-        val s_error     = Temperatur.allMembers.filter(m | All.name.equals("ETI" + item_base_name)).last.state as DecimalType         
-        
+	var temp_ist = ScriptServiceUtil.getItemRegistry.getItem("TI" + item_base_name).state as DecimalType
+	logInfo("HeatingControllerRule", "temp_ist: " + temp_ist.toString())
+
+        var temp_soll = ScriptServiceUtil.getItemRegistry.getItem("TS" + item_base_name).state as DecimalType
+	logInfo("HeatingControllerRule", "temp_soll: " + temp_soll.toString())
+
+        var u_default = ScriptServiceUtil.getItemRegistry.getItem("UD" + item_base_name).state as DecimalType
+	logInfo("HeatingControllerRule", "u_default: " + u_default.toString())  
+      
+	var s_error = ScriptServiceUtil.getItemRegistry.getItem("ETI" + item_base_name).state as DecimalType
+        logInfo("HeatingControllerRule", "s_error: " + s_error.toString())
+
         //control algorithm
         var u_nxt=0;
-	val temp_diff = temp_ist - temp_soll
+	u_nxt=u_default;
+	var temp_diff = temp_ist - temp_soll
+	logInfo("HeatingControllerRule", "temp_diff: " + temp_diff.toString())
         if((temp_ist<1) || (temp_ist>35) || (s_error != 0)){
-            ar u_nxt=u_default
+        	u_nxt=u_default
         }else{
-		    if (temp_diff>1)    {u_nxt=0}
-		    if (temp_diff<-1)   {u_nxt=15}
+		if (temp_diff>1){u_nxt=0.0}
+		if (temp_diff<-1){u_nxt=15.0}
 	    }
         if(Sommerbetrieb.state==ON){u_nxt=0}
-
+	//logInfo("HeatingControllerRule", "u_nxt: " + u_nxt.toString())
+	
         //postUpdate
         item.postUpdate(u_nxt)
     ]
 end
+
+/*
+rule HeatingControlerRule2
+when
+    Time cron "0 0/1 * * * ?"
+then
+    	val item = ScriptServiceUtil.getItemRegistry.getItem("U_OG_BA")
+        //get base name
+        logInfo("HeatingControllerRule: item.name:", item.name)
+        val String item_base_name = item.name.substring(1,7)
+        logInfo("HeatingControllerRule", "item_base_name: >>" + item_base_name + "<<")
+        
+        //get input values
+	val temp_ist = ScriptServiceUtil.getItemRegistry.getItem("TI" + item_base_name).state as DecimalType
+	logInfo("HeatingControllerRule", "temp_ist: " + temp_ist.toString())
+
+        val temp_soll = ScriptServiceUtil.getItemRegistry.getItem("TS" + item_base_name).state as DecimalType
+	logInfo("HeatingControllerRule", "temp_soll: "+ temp_soll.toString())
+
+        val u_default = ScriptServiceUtil.getItemRegistry.getItem("UD" + item_base_name).state as DecimalType
+	logInfo("HeatingControllerRule", "u_default: "+ u_default.toString())
+      
+	val s_error = ScriptServiceUtil.getItemRegistry.getItem("ETI" + item_base_name).state as DecimalType
+       	logInfo("HeatingControllerRule", "s_error: "+ s_error.toString())
+
+        //control algorithm
+        val u_nxt=u_default;
+	val temp_diff = temp_ist - temp_soll
+	logInfo("HeatingControllerRule", "temp_diff: "+ temp_diff.toString())
+        if((temp_ist<1) || (temp_ist>35) || (s_error != 0)){
+        	u_nxt=u_default
+        }else{
+		if (temp_diff>1){u_nxt=0}
+		if (temp_diff<-1){u_nxt=15}
+	    }
+        if(Sommerbetrieb.state==ON){u_nxt=0}
+	logInfo("HeatingControllerRule", "u_nxt: " + u_nxt.toString())
+
+        //postUpdate
+        item.postUpdate(u_nxt)
+end
+*/
 
 
 rule CalcTempUgRule
@@ -56,7 +109,7 @@ then
 	TI_EG_GR.postUpdate(temp)
 	TI_EG_WC.postUpdate(temp)
 	logInfo("CalcTempEgRule: temp ga:", temp.toString())
-	var temp=TI_EG_EZ.state as Number
+	temp=TI_EG_EZ.state as Number
 	TI_EG_E1.postUpdate(temp)
 	TI_EG_E2.postUpdate(temp)
 	logInfo("CalcTempEgRule: temp ez:", temp.toString())
@@ -71,6 +124,66 @@ then
 	val message = "!w!" + triggeringItem.name + String::format("!%1$01d$\n",(triggeringItem.state as DecimalType).intValue)
 	sendCommand(RS485_Gateway_out, message)  
 	logInfo("RuleUpdateSetpoints", message)
+end
+
+
+rule InitHeating
+when
+    	System started
+then
+ 	Sommerbetrieb.postUpdate(OFF)
+
+ 	UD_UG_H1.postUpdate(2)
+ 	UD_UG_H2.postUpdate(2)
+ 	UD_UG_H3.postUpdate(2)
+ 	UD_UG_LA.postUpdate(0)
+ 	UD_UG_GA.postUpdate(0) 
+ 	UD_UG_WK.postUpdate(15)
+ 
+ 	UD_EG_KU.postUpdate(4)
+ 	UD_EG_E1.postUpdate(4)
+ 	UD_EG_E2.postUpdate(4)
+ 	UD_EG_GA.postUpdate(0)
+ 	UD_EG_WZ.postUpdate(4)
+ 	UD_EG_GR.postUpdate(2)
+ 	UD_EG_WC.postUpdate(2)
+ 
+ 	UD_OG_KS.postUpdate(4)
+ 	UD_OG_KN.postUpdate(6)
+ 	UD_OG_GA.postUpdate(0)
+ 	UD_OG_BA.postUpdate(15)
+ 	UD_OG_SZ.postUpdate(0)
+ 
+	TS_EG_WZ.postUpdate(22)
+	TS_EG_KU.postUpdate(22) 	
+ 	TS_EG_E1.postUpdate(22)
+	TS_EG_E2.postUpdate(22)
+ 	TS_EG_GA.postUpdate(20)
+	TS_EG_GR.postUpdate(20)
+ 	TS_EG_WC.postUpdate(20)	
+
+	TS_OG_BA.postUpdate(24) 	
+	TS_OG_KN.postUpdate(20) 	
+	TS_OG_KS.postUpdate(20) 	
+	TS_OG_SZ.postUpdate(15) 	
+	TS_OG_GA.postUpdate(20) 	
+
+	TS_UG_H1.postUpdate(20)
+	TS_UG_H2.postUpdate(20) 
+	TS_UG_H3.postUpdate(20) 		
+	TS_UG_WK.postUpdate(24) 	
+	TS_UG_GA.postUpdate(20) 	
+	TS_UG_LA.postUpdate(20)
+
+	//this needs to go
+	ETI_UG_H1.postUpdate(0)
+	ETI_UG_H2.postUpdate(0)
+	ETI_UG_H3.postUpdate(0)
+	ETI_EG_E1.postUpdate(0)
+	ETI_EG_E2.postUpdate(0)
+	ETI_EG_GR.postUpdate(0)
+	ETI_EG_WC.postUpdate(0)
+  	
 end
 
 

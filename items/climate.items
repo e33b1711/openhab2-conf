@@ -1,8 +1,9 @@
-Group Temperatur 		        (All)
-Group Temperatur_Calc 		    (All)
-Group Feuchtigkeit		        (All)
+Group Temperatur 		(All)
+Group Temperatur_Soll		(All)
+Group Feuchtigkeit		(All)
 Group heizung_stellwert	        (All)
-Group sensor_error	            (All)
+Group heizung_stellwert_default (All)
+Group sensor_error 		(All)
 
 Group temps_eg 			(All)
 Group temps_og 			(All)
@@ -13,6 +14,8 @@ Group humis_eg 			(All)
 Group humis_og 		   	(All)
 Group humis_ug 			(All)
 Group humis_a 			(All)
+
+Number NULL_ITEM										(All, RS485_IN)
 
 /* Temp Sensor Errors */
 Number ETI_EG_WZ 	"Wohnzimmer Sensorfehler [%.0f]"		<error> 		(sensor_error, EG_WZ, RS485_IN)
@@ -45,7 +48,7 @@ Number TI_EG_GA 	"Temperatur Gang EG [%.1f °C]"			<temperature> 		(Temperatur, 
 
 Number TI_OG_BA 	"Temperatur Badezimmer [%.1f °C]"		<temperature> 		(Temperatur, OG_BA, RS485_IN, temps_og)
 Number TI_OG_KN 	"Temperatur Leos Zimmer [%.1f °C]"		<temperature>	 	(Temperatur, OG_KN, RS485_IN, temps_og)
-Number TI_OG_KS 	"Temperatur Kurbis Zimmer [%.1f °C]"	<temperature>		(Temperatur, OG_KS, RS485_IN, temps_og)
+Number TI_OG_KS 	"Temperatur Kurbis Zimmer [%.1f °C]"		<temperature>		(Temperatur, OG_KS, RS485_IN, temps_og)
 Number TI_OG_SZ 	"Temperatur Schlafzimmer [%.1f °C]"		<temperature> 		(Temperatur, OG_SZ, RS485_IN, temps_og)
 Number TI_OG_GA 	"Temperatur Gang OG [%.1f °C]"			<temperature> 		(Temperatur, OG_GA, RS485_IN, temps_og)
 
@@ -60,13 +63,21 @@ Number TI_GR	 	"Temperatur Garage [%.1f °C]"			<temperature>	 	(Temperatur, Gar
 Number TI_GR_A	 	"Temperatur Aussen [%.1f °C]"			<temperature>	 	(Temperatur, Aussen, RS485_IN, temps_a)
 
 /* Calculated Temperatures for Heating Controllers */
-Number TI_UG_H1 	"Mittlere Temperatur Hobby [%.1f °C]"		<temperature> 	(Temperatur_Calc, UG_HO)
-Number TI_UG_H2 	"Mittlere Temperatur Hobby [%.1f °C]"		<temperature>	(Temperatur_Calc, UG_HO)
-Number TI_UG_H3 	"Mittlere Temperatur Hobby [%.1f °C]"		<temperature>	(Temperatur_Calc, UG_HO)
-Number TI_EG_E1  	"Temperatur Esszimmer [%.1f °C]"			<temperature>	(Temperatur_Calc, EG_EZ)
-Number TI_EG_E2  	"Temperatur Esszimmer [%.1f °C]"			<temperature>	(Temperatur_Calc, EG_EZ)
-Number TI_EG_GR  	"Temperatur Gardarobe [%.1f °C]"		    <temperature>	(Temperatur_Calc, EG_GR)
-Number TI_EG_WC  	"Temperatur WC [%.1f °C]"				    <temperature>	(Temperatur_Calc, EG_WC)
+Number TI_UG_H1 	"Mittlere Temperatur Hobby [%.1f °C]"		<temperature> 	(Temperatur, UG_HO)
+Number TI_UG_H2 	"Mittlere Temperatur Hobby [%.1f °C]"		<temperature>	(Temperatur, UG_HO)
+Number TI_UG_H3 	"Mittlere Temperatur Hobby [%.1f °C]"		<temperature>	(Temperatur, UG_HO)
+Number TI_EG_E1  	"Temperatur Esszimmer [%.1f °C]"		<temperature>	(Temperatur, EG_EZ)
+Number TI_EG_E2  	"Temperatur Esszimmer [%.1f °C]"		<temperature>	(Temperatur, EG_EZ)
+Number TI_EG_GR  	"Temperatur Gardarobe [%.1f °C]"		<temperature>	(Temperatur, EG_GR)
+Number TI_EG_WC  	"Temperatur WC [%.1f °C]"			<temperature>	(Temperatur, EG_WC)
+
+Number ETI_UG_H1 	"Sensorfehler [%.0f]"			<error>	 		(sensor_error, UG_HO)
+Number ETI_UG_H2 	"Sensorfehler [%.0f]"			<error>	 		(sensor_error, UG_HO)
+Number ETI_UG_H3 	"Sensorfehler [%.0f]"			<error>	 		(sensor_error, UG_HO)
+Number ETI_EG_E1  	"Sensorfehler [%.0f]"			<error>	 		(sensor_error, EG_EZ)
+Number ETI_EG_E2  	"Sensorfehler [%.0f]"			<error>	 		(sensor_error, EG_EZ)
+Number ETI_EG_GR  	"Sensorfehler [%.0f]"			<error>	 		(sensor_error, EG_GR)
+Number ETI_EG_WC  	"Sensorfehler [%.0f]"			<error>	 		(sensor_error, EG_WC)
 
 
 /* Indoor Temperatures (soll) */
@@ -76,17 +87,17 @@ Number TS_EG_E1 	"Soll-Temp. Esszimmer 1 [%.1f °C]"		<temperature> 		(Temperatu
 Number TS_EG_E2 	"Soll-Temp. Esszimmer 2 [%.1f °C]"		<temperature> 		(Temperatur_Soll, EG_EZ)
 Number TS_EG_GA 	"Soll-Temp. Gang EG [%.1f °C]"			<temperature> 		(Temperatur_Soll, EG_GA)
 Number TS_EG_GR 	"Soll-Temp. Gardarobe [%.1f °C]"		<temperature> 		(Temperatur_Soll, EG_GR)
-Number TS_EG_WC 	"Soll-Temp. WC [%.1f °C]"			    <temperature> 		(Temperatur_Soll, EG_WC)
+Number TS_EG_WC 	"Soll-Temp. WC [%.1f °C]"			<temperature> 		(Temperatur_Soll, EG_WC)
 
 Number TS_OG_BA 	"Soll-Temp. Badezimmer [%.1f °C]"		<temperature> 		(Temperatur_Soll, OG_BA)
 Number TS_OG_KN 	"Soll-Temp. Leos Zimmer [%.1f °C]"		<temperature>	 	(Temperatur_Soll, OG_KN)
-Number TS_OG_KS 	"Soll-Temp. Kurbis Zimmer [%.1f °C]"	<temperature>		(Temperatur_Soll, OG_KS)
+Number TS_OG_KS 	"Soll-Temp. Kurbis Zimmer [%.1f °C]"		<temperature>		(Temperatur_Soll, OG_KS)
 Number TS_OG_SZ 	"Soll-Temp. Schlafzimmer [%.1f °C]"		<temperature> 		(Temperatur_Soll, OG_SZ)
 Number TS_OG_GA 	"Soll-Temp. Gang OG [%.1f °C]"			<temperature> 		(Temperatur_Soll, OG_GA)
 
-Number TS_UG_H1 	"Soll-Temp. Hobby 1 [%.1f °C]"	        <temperature> 	 	(Temperatur_Soll, UG_HO)
-Number TS_UG_H2 	"Soll-Temp. Hobby 2 [%.1f °C]"	        <temperature> 	 	(Temperatur_Soll, UG_HO)
-Number TS_UG_H3 	"Soll-Temp. Hobby 3 [%.1f °C]"	        <temperature> 	 	(Temperatur_Soll, UG_HO)
+Number TS_UG_H1 	"Soll-Temp. Hobby 1 [%.1f °C]"	        	<temperature> 	 	(Temperatur_Soll, UG_HO)
+Number TS_UG_H2 	"Soll-Temp. Hobby 2 [%.1f °C]"	        	<temperature> 	 	(Temperatur_Soll, UG_HO)
+Number TS_UG_H3 	"Soll-Temp. Hobby 3 [%.1f °C]"	        	<temperature> 	 	(Temperatur_Soll, UG_HO)
 Number TS_UG_WK 	"Soll-Temp. Waschküche [%.1f °C]"		<temperature>		(Temperatur_Soll, UG_WK)
 Number TS_UG_GA 	"Soll-Temp. Gang UG [%.1f °C]"			<temperature>	 	(Temperatur_Soll, UG_GA)
 Number TS_UG_LA 	"Soll-Temp. Lager [%.1f °C]"			<temperature>	 	(Temperatur_Soll, UG_LA)
