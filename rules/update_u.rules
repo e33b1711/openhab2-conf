@@ -7,9 +7,9 @@ when
 then
     heizung_stellwert.members.forEach [ item |
         //get base name
-        logDebug("HeatingControllerRule: item.name:", item.name)
+        logInfo("HeatingControllerRule: item.name:", item.name)
         val String item_base_name = sp.name.substring(1,6)
-        logDebug("HeatingControllerRule: item_base_name:", item_base_name)
+        logInfo("HeatingControllerRule: item_base_name:", item_base_name)
         
         //get input values
         val temp_ist    = Temperatur.allMembers.filter(m | All.name.equals("TI" + item_base_name)).last.state as DecimalType
@@ -19,6 +19,7 @@ then
         
         //control algorithm
         var u_nxt=0;
+	val temp_diff = temp_ist - temp_soll
         if((temp_ist<1) || (temp_ist>35) || (s_error != 0)){
             ar u_nxt=u_default
         }else{
@@ -35,38 +36,41 @@ end
 
 rule CalcTempUgRule
 when
-    Item TI_UG_HS received update or
-    Item TI_UG_HN received update
+	Item TI_UG_HS received update or
+	Item TI_UG_HN received update
 then
-    var mean_temp=((TI_UG_HN.state as Number)+(TI_UG_HS.state as Number))/2
-    TI_UG_H1.postUpdate(mean_temp)
-    TI_UG_H2.postUpdate(mean_temp)
-    TI_UG_H3.postUpdate(mean_temp)
+	var mean_temp=((TI_UG_HN.state as Number)+(TI_UG_HS.state as Number))/2
+	TI_UG_H1.postUpdate(mean_temp)
+	TI_UG_H2.postUpdate(mean_temp)
+	TI_UG_H3.postUpdate(mean_temp)
+	logInfo("CalcTempUgRule: mean temp hobby:", mean_temp.toString())
 end
 
 
 rule CalcTempEgRule
 when
-    Item TI_UG_GA received update or
-    Item TI_EG_EZ received update
+	Item TI_UG_GA received update or
+	Item TI_EG_EZ received update
 then
-    var temp=TI_EG_GA.state as Number
-    TI_EG_GR.postUpdate(temp)
-    TI_EG_WC.postUpdate(temp)
-    var temp=TI_EG_EZ.state as Number
-    TI_EG_E1.postUpdate(temp)
-    TI_EG_E2.postUpdate(temp)
+	var temp=TI_EG_GA.state as Number
+	TI_EG_GR.postUpdate(temp)
+	TI_EG_WC.postUpdate(temp)
+	logInfo("CalcTempEgRule: temp ga:", temp.toString())
+	var temp=TI_EG_EZ.state as Number
+	TI_EG_E1.postUpdate(temp)
+	TI_EG_E2.postUpdate(temp)
+	logInfo("CalcTempEgRule: temp ez:", temp.toString())
 end
 
 
 rule RuleUpdateSetpoints
 when
-    Member of heizung_stellwert received update
+	Member of heizung_stellwert received update
 then
-    logInfo("RuleUpdateSetpoints", "The item " + triggeringItem.name + " received update " + triggeringItem.state)
-    val message = "!w!" + triggeringItem.name + String::format("!%1$01d$\n",(triggeringItem.state as DecimalType).intValue)
-    sendCommand(RS485_Gateway_out, message)  
-    logInfo("RuleUpdateSetpoints", message)
+	logInfo("RuleUpdateSetpoints", "The item " + triggeringItem.name + " received update " + triggeringItem.state)
+	val message = "!w!" + triggeringItem.name + String::format("!%1$01d$\n",(triggeringItem.state as DecimalType).intValue)
+	sendCommand(RS485_Gateway_out, message)  
+	logInfo("RuleUpdateSetpoints", message)
 end
 
 

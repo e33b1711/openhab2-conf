@@ -51,7 +51,8 @@ rule "Listen"
 			else{
 			value=Float::parseFloat(parser_in_string.substring(index3+1,index4))
 			}			
-			//println("Value: " + value)
+			
+			logInfo("ListenRule", "messageType: " + messageType + " address: " + address + " value: " + value.toString())
 			
 			//auf "w" messages reagieren
 			var this_item = RS485_IN.members.findFirst([name==address])
@@ -102,23 +103,9 @@ rule "Listen"
 			
 			
 	    }
-	    }
+	 }
 	    
 end
-
-
-
-//rule GATEWAY_OUTER
-//	when
-//		Item RS485_Gateway_out received command
-//	then
-//	while (Sending==ON){Thread::sleep(5)}
-//	postUpdate(Sending, ON)
-//    sendCommand(RS485_Gateway_outter, receivedCommand)
-//    Thread::sleep(10)
-//    postUpdate(Sending, OFF)
-//end
-
 
 
 

@@ -3,7 +3,7 @@ when
     Member of Licht received command
 then
     logInfo("RuleUpdateLights", "The item " + triggeringItem.name + " received command " + receivedCommand)
-    var String message="!w!" + triggeringItem.name "!3$\n"
+    var String message="!w!" + triggeringItem.name + "!3$\n"
     sendCommand(RS485_Gateway_out, message)
     logInfo("RuleUpdateLights", message)
 end

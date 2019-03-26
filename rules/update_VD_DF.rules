@@ -1,11 +1,11 @@
 rule RuleUpdateDF
 when
-    Member of Dachfenster received command
+	Member of Dachfenster received command
 then
-    logInfo("RuleUpdateDF", "The item " + triggeringItem.name + " received command " + receivedCommand)
-    var String message=""    
-    if (receivedCommand==UP)    {message="!w!" + triggeringItem.name + "!1$\n"}
+	logInfo("RuleUpdateDF", "The item " + triggeringItem.name + " received command " + receivedCommand)
+	var String message=""    
+	if (receivedCommand==UP)    {message="!w!" + triggeringItem.name + "!1$\n"}
 	if (receivedCommand==DOWN)  {message="!w!" + triggeringItem.name + "!-1$\n"}
-    sendCommand(RS485_Gateway_out, message)
-    logInfo("RuleUpdateDF", message)
+	sendCommand(RS485_Gateway_out, message)
+	logInfo("RuleUpdateDF", message)
 end
