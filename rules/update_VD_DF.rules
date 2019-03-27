@@ -1,6 +1,7 @@
 rule RuleUpdateDF
 when
-	Member of Dachfenster received command
+    Member of Dachfenster received command or
+    Member of Verdunkelung received command 
 then
 	logInfo("RuleUpdateDF", "The item " + triggeringItem.name + " received command " + receivedCommand)
 	var String message=""    
