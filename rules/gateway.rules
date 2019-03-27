@@ -1,3 +1,5 @@
+import org.eclipse.smarthome.model.script.ScriptServiceUtil
+
 rule ListenRule
 when 
 	Item telnet_in received update
@@ -16,7 +18,7 @@ then
 		parser_in_string=in_buffer.substring(0,in_buffer.indexOf("$")+1)
 	    	in_buffer=in_buffer.substring(in_buffer.indexOf("$")+1).trim
 	    	
-	    	logDebug("ListenRule", "Input String for Parser: >>" + parser_in_string + "<<")
+	    	logInfo("ListenRule", "Input String for Parser: >>" + parser_in_string + "<<")
 	    	
 	    	var int index4 = parser_in_string.indexOf("$")						
 		var int index1 = parser_in_string.indexOf("!")
@@ -32,39 +34,40 @@ then
 			else{
 				value=Float::parseFloat(parser_in_string.substring(index3+1,index4))
 			}			
-			logDebug("ListenRule", "messageType: " + messageType + " address: " + address + " value: " + value.toString())
+			logInfo("ListenRule", "messageType: " + messageType + " address: " + address + " value: " + value.toString())
 			
 			//auf "w" messages reagieren
 			if ((messageType=="w") || (messageType=="i")) {
-				var this_item = RS485_IN.members.findFirst([name==address])
+				//var this_item = RS485_IN.members.findFirst([name==address])
+				var this_item = ScriptServiceUtil.getItemRegistry.getItem(address)
 				if (this_item === null){
-					logDebug("ListenRule", "Item with name: " + address + " does not exist.")
+					logInfo("ListenRule", "Item with name: " + address + " does not exist.")
 				}else{
 					
 					//ON/OFF Typen
 					if( (address.contains("LI_")) || (address.contains("BELL")) || (address.contains("ZE_")) || (address.contains("PUMP_")) ){
-						logDebug("ListenRulen", "handler: w / LI " + this_item.name + " " + value.toString())
+						logInfo("ListenRulen", "handler: w / LI " + this_item.name + " " + value.toString())
 						postUpdate(this_item, if(value==0) OFF else ON)
 					}				
 				
 					//Temperaturen
 					if (address.contains("HI_")){
-						logDebug("ListenRulen", "handler: w / HI " + this_item.name + " " + value.toString())	
+						logInfo("ListenRulen", "handler: w / HI " + this_item.name + " " + value.toString())	
 						postUpdate(this_item, value )
 					}
 					if (address.contains("ETI_")){
-						logDebug("ListenRulen", "handler: w / ETI " + this_item.name + " " + value.toString())	
+						logInfo("ListenRulen", "handler: w / ETI " + this_item.name + " " + value.toString())	
 						postUpdate(this_item, value )
 					}else{
 						if(address.contains("TI_")){
-						logDebug("ListenRulen", "handler: w / TI " + this_item.name + " " + value.toString())	
+						logInfo("ListenRulen", "handler: w / TI " + this_item.name + " " + value.toString())	
 						postUpdate(this_item, value*0.1 )
 						}
 					}
 				
 					//Verdunkelungen, Dachfenster, Rollos
 					if(address.contains("RO_") || address.contains("VD_") || address.contains("DO_") || address.contains("DF_")){
-						logDebug("ListenRulen", "handler: w / RO " + this_item.name + " " + value.toString())	
+						logInfo("ListenRulen", "handler: w / RO " + this_item.name + " " + value.toString())	
 						if (value==1) {postUpdate(this_item, 0)}
 						else if (value==-1) {postUpdate(this_item, 100)}
 						else {postUpdate(this_item, 50)}
