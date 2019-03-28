@@ -6,9 +6,4 @@ DateTime Sunset_Time            "[%1$tH:%1$tM]"          <sunset>    { channel =
 DateTime time  "Uhrzeit [%1$tH:%1$tM]"  		<time>   	{ channel="ntp:ntp:demo:dateTime" } 
 DateTime date  "Datum [%1$tA, %1$td.%1$tm.%1$tY]"  	<calendar>	{ channel="ntp:ntp:demo:dateTime" }
 
-
-
-Switch Sunset_Event   {astro="planet=sun, type=rise, property=start, offset=0"}
-Switch Sunset_Event_p120   {astro="planet=sun, type=rise, property=start, offset=120"}
-
 Switch ItsDark

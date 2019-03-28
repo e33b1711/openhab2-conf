@@ -5,10 +5,7 @@ sitemap debug label="debug" {
 		Group item=heizung_stellwert
 		Group item=heizung_stellwert_default
 		Group item=sensor_error
-		Switch item=Sunset_Event
-		Switch item=Sunset_Event_p12
 		Switch item=ItsDark
-
 	}		
 }
 

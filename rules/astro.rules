@@ -2,5 +2,19 @@ rule ItsDarkRule
 when
 	Time cron "0 0/1 * * * ?"
 then
-    	postUpdate(this_item, if( ((Sunrise_Time < time) & (Sunset_Time > time)) OFF else ON)
+	if( (Sunrise_Time < time) && (Sunset_Time > time) ){
+    		postUpdate(ItsDark,  OFF)
+	}else{
+		postUpdate(ItsDark,  ON)
+	}
+		
+end
+
+rule min240afterSetRule
+when
+	Time cron "0 0/1 * * * ?"
+then
+    	if( time == Sunset_Time + 240){
+		sendNotification("e33b1711@gmail.com", "240 after dark.")
+	}	
 end
