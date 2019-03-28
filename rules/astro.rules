@@ -1,20 +1,27 @@
-rule ItsDarkRule
+import org.openhab.model.script.actions.Timer
+
+var Timer timer = null 
+
+rule "Sunset"
 when
-	Time cron "0 0/1 * * * ?"
+	Channel 'astro:sun:home:set#event' triggered START
 then
-	if( (Sunrise_Time < time) && (Sunset_Time > time) ){
-    		postUpdate(ItsDark,  OFF)
-	}else{
-		postUpdate(ItsDark,  ON)
-	}
-		
+    	ItsDark.postUpdate(ON)
+	sendNotification("e33b1711@gmail.com", "Its dark.")
+	sendCommand(LI_EG_AO, ON)
+    	timer = Timer.createTimer(now.plusMinutes(240) [|
+        	sendCommand(LI_EG_AO, OFF)
+        	timer = null   // reset the timer
+    	])
 end
 
-rule min240afterSetRule
+rule "Sunrise"
 when
-	Time cron "0 0/1 * * * ?"
+	Channel 'astro:sun:home:rise#event' triggered START
 then
-    	if( time == Sunset_Time + 240){
-		sendNotification("e33b1711@gmail.com", "240 after dark.")
-	}	
+	ItsDark.postUpdate(OFF)
+	sendNotification("e33b1711@gmail.com", "Its not dark.")
 end
+
+
+
