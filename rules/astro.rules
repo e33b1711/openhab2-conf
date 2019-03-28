@@ -1,0 +1,6 @@
+rule ItsDarkRule
+when
+	Time cron "0 0/1 * * * ?"
+then
+    	postUpdate(this_item, if( ((Sunrise_Time < time) & (Sunset_Time > time)) OFF else ON)
+end

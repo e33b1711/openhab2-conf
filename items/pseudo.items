@@ -1,0 +1,109 @@
+Switch RO_EG_SU_DO	(Licht, EG_EZ, RS485_IN, RS485_OUT) 
+Switch RO_EG_WE_DO	(Licht, EG_EZ, RS485_IN, RS485_OUT)
+Switch RO_OG_BA_DO 	(Licht, OG_BA, RS485_IN, RS485_OUT) 
+Switch RO_OG_KN_DO 	(Licht, OG_KN, RS485_IN, RS485_OUT) 
+Switch RO_OG_KS_DO 	(Licht, OG_KS, RS485_IN, RS485_OUT) 
+Switch RO_OG_SZ_DO 	(Licht, OG_SZ, RS485_IN, RS485_OUT) 
+
+Switch RO_EG_SU_ON 	(Licht, EG_EZ, RS485_IN, RS485_OUT) 
+Switch RO_EG_WE_ON 	(Licht, EG_EZ, RS485_IN, RS485_OUT)
+Switch RO_OG_BA_ON 	(Licht, OG_BA, RS485_IN, RS485_OUT) 
+Switch RO_OG_KN_ON 	(Licht, OG_KN, RS485_IN, RS485_OUT) 
+Switch RO_OG_KS_ON 	(Licht, OG_KS, RS485_IN, RS485_OUT) 
+Switch RO_OG_SZ_ON 	(Licht, OG_SZ, RS485_IN, RS485_OUT) 
+
+Switch DF_OG_GA_DO	 	(Licht, OG_SZ, RS485_IN, RS485_OUT) 
+Switch VD_OG_KN_DO	 	(Licht, OG_SZ, RS485_IN, RS485_OUT) 
+Switch VD_OG_KS_DO		(Licht, OG_SZ, RS485_IN, RS485_OUT) 
+Switch DF_OG_KS_DO 		(Licht, OG_SZ, RS485_IN, RS485_OUT) 
+Switch DF_OG_KN_DO 		(Licht, OG_SZ, RS485_IN, RS485_OUT) 
+Switch VD_OG_SZ_DO		(Licht, OG_SZ, RS485_IN, RS485_OUT) 
+Switch DF_OG_SZ_DO	 	(Licht, OG_SZ, RS485_IN, RS485_OUT) 
+
+Switch DF_OG_GA_UP	 	(Licht, OG_SZ, RS485_IN, RS485_OUT) 
+Switch VD_OG_KN_UP	 	(Licht, OG_SZ, RS485_IN, RS485_OUT) 
+Switch VD_OG_KS_UP		(Licht, OG_SZ, RS485_IN, RS485_OUT) 
+Switch DF_OG_KS_UP	 	(Licht, OG_SZ, RS485_IN, RS485_OUT) 
+Switch DF_OG_KN_UP	 	(Licht, OG_SZ, RS485_IN, RS485_OUT) 
+Switch VD_OG_SZ_UP		(Licht, OG_SZ, RS485_IN, RS485_OUT) 
+Switch DF_OG_SZ_UP	 	(Licht, OG_SZ, RS485_IN, RS485_OUT) 
+
+
+
+Switch L01 		(All, RS485_IN, RS485_OUT)
+Switch L02 		(All, RS485_IN, RS485_OUT)
+Switch L03 		(All, RS485_IN, RS485_OUT)
+Switch L04 		(All, RS485_IN, RS485_OUT)
+Switch L05 		(All, RS485_IN, RS485_OUT)
+Switch L06 		(All, RS485_IN, RS485_OUT)
+Switch L07 		(All, RS485_IN, RS485_OUT)
+Switch L08 		(All, RS485_IN, RS485_OUT)
+Switch L09 		(All, RS485_IN, RS485_OUT)
+Switch L10 		(All, RS485_IN, RS485_OUT)
+Switch L11 		(All, RS485_IN, RS485_OUT)
+Switch L12 		(All, RS485_IN, RS485_OUT)
+Switch L13 		(All, RS485_IN, RS485_OUT)
+Switch L14 		(All, RS485_IN, RS485_OUT)
+Switch L15 		(All, RS485_IN, RS485_OUT)
+Switch L16 		(All, RS485_IN, RS485_OUT)
+Switch L17 		(All, RS485_IN, RS485_OUT)
+Switch L18 		(All, RS485_IN, RS485_OUT)
+Switch L19 		(All, RS485_IN, RS485_OUT)
+Switch L20 		(All, RS485_IN, RS485_OUT)
+Switch L21 		(All, RS485_IN, RS485_OUT)
+Switch L22 		(All, RS485_IN, RS485_OUT)
+Switch L23 		(All, RS485_IN, RS485_OUT)
+Switch L24 		(All, RS485_IN, RS485_OUT)
+Switch L25 		(All, RS485_IN, RS485_OUT)
+Switch L26 		(All, RS485_IN, RS485_OUT)
+Switch L27 		(All, RS485_IN, RS485_OUT)
+Switch L28 		(All, RS485_IN, RS485_OUT)
+Switch L29 		(All, RS485_IN, RS485_OUT)
+Switch L30 		(All, RS485_IN, RS485_OUT)
+Switch L31 		(All, RS485_IN, RS485_OUT)
+Switch L32 		(All, RS485_IN, RS485_OUT)
+Switch L33 		(All, RS485_IN, RS485_OUT)
+Switch L34 		(All, RS485_IN, RS485_OUT)
+Switch L35 		(All, RS485_IN, RS485_OUT)
+Switch L36 		(All, RS485_IN, RS485_OUT)
+Switch L37 		(All, RS485_IN, RS485_OUT)
+Switch L38 		(All, RS485_IN, RS485_OUT)
+Switch L39 		(All, RS485_IN, RS485_OUT)
+Switch L40 		(All, RS485_IN, RS485_OUT)
+Switch L41 		(All, RS485_IN, RS485_OUT)
+Switch L42 		(All, RS485_IN, RS485_OUT)
+Switch L43 		(All, RS485_IN, RS485_OUT)
+Switch L44 		(All, RS485_IN, RS485_OUT)
+Switch L45 		(All, RS485_IN, RS485_OUT)
+Switch L46 		(All, RS485_IN, RS485_OUT)
+Switch L47 		(All, RS485_IN, RS485_OUT)
+Switch L48 		(All, RS485_IN, RS485_OUT)
+Switch L49 		(All, RS485_IN, RS485_OUT)
+Switch L50 		(All, RS485_IN, RS485_OUT)
+
+Number U_UG_01		(All, RS485_IN, RS485_OUT)
+Number U_UG_02		(All, RS485_IN, RS485_OUT) 
+Number U_UG_03		(All, RS485_IN, RS485_OUT) 
+Number U_UG_04		(All, RS485_IN, RS485_OUT) 
+Number U_UG_05		(All, RS485_IN, RS485_OUT) 
+Number U_UG_06		(All, RS485_IN, RS485_OUT) 
+Number U_UG_07		(All, RS485_IN, RS485_OUT) 
+Switch DO_GR_DO		(All, RS485_IN, RS485_OUT) 
+Switch DO_GR_UP		(All, RS485_IN, RS485_OUT) 
+
+Switch ST_OG_BA  	(All, RS485_IN, RS485_OUT) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

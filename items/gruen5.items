@@ -88,6 +88,7 @@ Switch LI_EG_AO 	"Wand Osten" 				(Licht, Aussen, RS485_IN, RS485_OUT) {autoupda
 
 Switch LI_GR 		"Grundbeleuchtung" 			(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
 Switch LI_GR_L1 	"Aussen" 				(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
+Switch LI_GR_L2 	"Aussen Zustatz" 			(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
 Switch ZE_GR_0	 	"Timer Innen 10 min" 			(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
 Switch ZE_GR_1	 	"Timer Innen 2 min" 			(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
 Switch ZE_GR_2	 	"Timer Außen" 				(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
@@ -101,7 +102,7 @@ Switch PUMP 		"Zisternenpumpe" 			(Aussen, RS485_IN, RS485_OUT) {autoupdate="fal
 
 
 /* Timer */
-Switch ZE_EG_VH 	"Vordach Timmer"				(Licht, Aussen, RS485_IN, RS485_OUT) {autoupdate="false"} 
+Switch ZE_EG_VH 	"Vordach Timer"				(Licht, Aussen, RS485_IN, RS485_OUT) {autoupdate="false"} 
 
 /*Makros */
 Rollershutter VD_OG		"Verdunkelung OG"   		<settings>		(OG, RS485_IN, RS485_OUT)
@@ -127,7 +128,7 @@ Rollershutter RO_OG_SZ 		"Rollo" 				(Rollo, OG_SZ, RS485_IN, RS485_OUT)
 Rollershutter VD_OG_SZ		"Verdunkelung Dachfenster" 		(Verdunkelung, OG_SZ, RS485_IN, RS485_OUT)
 Rollershutter DF_OG_SZ	 	"Dachfenster" 				(Dachfenster, OG_SZ, RS485_IN, RS485_OUT)
 
-Rollershutter DO_GR	 	"Garagentor" 				(Garage, RS485_IN, RS485_OUT) {autoupdate="false"} 
+Rollershutter DO_GR	 	"Garagentor" 				(Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
 
 
 

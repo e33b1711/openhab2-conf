@@ -10,3 +10,5 @@ DateTime date  "Datum [%1$tA, %1$td.%1$tm.%1$tY]"  	<calendar>	{ channel="ntp:nt
 
 Switch Sunset_Event   {astro="planet=sun, type=rise, property=start, offset=0"}
 Switch Sunset_Event_p120   {astro="planet=sun, type=rise, property=start, offset=120"}
+
+Switch ItsDark
