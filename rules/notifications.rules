@@ -1,4 +1,4 @@
-rule NOTE_HK
+rule NotificationBellRule
 	when
 		Item BELL received update ON
 	then
@@ -8,7 +8,7 @@ end
 
 
 
-rule NOTE_HK
+rule NotificationGarageRule
 	when
 		Time cron "0 0 21 ? * *"
 	then
@@ -16,6 +16,20 @@ rule NOTE_HK
                 	logInfo("notifications", "Sending notification via app.")
 			sendNotification("e33b1711@gmail.com", "Garage nach 2100 Uhr offen.")
 		}
+end
+
+rule SunriseNotRule
+when
+    Channel 'astro:sun:home:rise#event' triggered START
+then
+    sendNotification("e33b1711@gmail.com", "Sunrise.")
+end
+
+rule SunsetNotRule
+when
+    Channel 'astro:sun:home:set#event' triggered START
+then
+    sendNotification("e33b1711@gmail.com", "Sunset.")
 end
 
 

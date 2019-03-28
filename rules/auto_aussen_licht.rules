@@ -13,17 +13,19 @@
 //    end
 
 
-rule "An"
+rule SunsetLightOn
 when
-    Item Sunset_Event received update ON
+	Item Sunset_Event received update ON
 then
-    sendCommand(LI_EG_AO, ON)
+	sendCommand(LI_EG_AO, ON)
+	sendNotification("e33b1711@gmail.com", "Sunset item update on.")
 end
 
-rule "An"
+rule SunsetLightOff
 when
-    Item Sunset_Event_p120 received update ON
+	item Sunset_Event_p120 received update ON
 then
-    sendCommand(LI_EG_AO, OFF)
+	sendCommand(LI_EG_AO, OFF)
+	sendNotification("e33b1711@gmail.com", "Sunset p120 item update on.")
 end
 
