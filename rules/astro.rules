@@ -15,12 +15,45 @@ then
     	])
 end
 
+
 rule "Sunrise"
 when
 	Channel 'astro:sun:home:rise#event' triggered START
 then
 	ItsDark.postUpdate(OFF)
 	sendNotification("e33b1711@gmail.com", "Its not dark.")
+end
+
+
+rule ItsDarkInitRule
+when
+	System started
+then
+	val sunrise = new DateTime((Sunrise_Time.state as DateTimeType).calendar.timeInMillis)
+	val sunset = new DateTime((Sunset_Time.state as DateTimeType).calendar.timeInMillis)
+	
+	var int value  = 1
+	if (now.isAfter(sunrise)){
+		value = 0
+	}
+	if (now.isAfter(sunset)){
+		value = 1
+	}
+	ItsDark.postUpdate(if(value==0) OFF else ON)
+	
+end
+
+
+rule GarageOuterLight
+when
+	Item ZE_GR_1 received update
+then
+	if ( (ItsDark.state == ON) && (ZE_GR_1.state == 1)){
+		postUpdate(ZE_GR_2, ON)
+		postUpdate(ZE_EG_VH, ON)
+		sendCommand(ZE_GR_2, ON)
+		sendCommand(ZE_EG_VH, ON)
+	}
 end
 
 

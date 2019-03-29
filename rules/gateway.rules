@@ -45,7 +45,7 @@ then
 				}else{
 					
 					//ON/OFF Typen
-					if( (address.contains("LI_")) || (address.contains("BELL")) || (address.contains("ZE_")) || (address.contains("PUMP_")) ){
+					if( (address.contains("LI_")) || (address.contains("BELL")) || (address.contains("ZE_")) || (address.contains("PUMP")) ){
 						logInfo("ListenRulen", "handler: w / LI " + this_item.name + " " + value.toString())
 						postUpdate(this_item, if(value==0) OFF else ON)
 					}				
