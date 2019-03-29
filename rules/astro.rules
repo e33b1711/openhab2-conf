@@ -46,9 +46,11 @@ end
 
 rule GarageOuterLight
 when
-	Item ZE_GR_1 received update
+	Item ZE_GR_1 received update ON
 then
-	if ( (ItsDark.state == ON) && (ZE_GR_1.state == 1)){
+	logInfo("GarageOuterLight", "triggered")
+	if (ItsDark.state == ON){
+		logInfo("GarageOuterLight", "switched")
 		postUpdate(ZE_GR_2, ON)
 		postUpdate(ZE_EG_VH, ON)
 		sendCommand(ZE_GR_2, ON)
