@@ -1,6 +1,20 @@
-String telnet_in "telnet_in" { serial="/dev/ttyNET0" }
+// group of all arduino nodes
+Group ArduinoNodes             (All)
 
+
+//store last contact to node
+Switch    gr          "ArduinoNode gr, on/offline"                            	{expire="3m, state=OFF"}		(ArduinoNodes)
+Switch    ug          "ArduinoNode ug, on/offline"                            	{expire="3m, state=OFF"}		(ArduinoNodes)
+Switch    eg_ost      "ArduinoNode eg_ost, on/offline"                        	{expire="3m, state=OFF"}		(ArduinoNodes)
+Switch    eg_west     "ArduinoNode eg_west, on/offline"    						{expire="3m, state=OFF"}		(ArduinoNodes)
+Switch    og_ost      "ArduinoNode og_ost, on/offline"                       	{expire="3m, state=OFF"}		(ArduinoNodes)
+Switch    og_west     "ArduinoNode og_west, on/offline"                         {expire="3m, state=OFF"}		(ArduinoNodes)
+
+
+// tcp over serial (tcp binding is broken)
+String telnet_in "telnet_in" { serial="/dev/ttyNET0" }
 String RS485_Gateway_out "telnet_out"  { serial="/dev/ttyNET0" }
+
 
 
 

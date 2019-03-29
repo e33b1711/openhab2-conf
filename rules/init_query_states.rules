@@ -1,7 +1,8 @@
 //querys all states of the arduino nodes on startup
 rule QUERY_STATES_ON_START
 when
-    System started
+    System started or
+	cron Time cron "0 0/1 * * * ?"
 then
     logInfo("QUERY_STATES_ON_START", "Querying all arduino nodes.")
     arduino_nodes.members.forEach [ item |
@@ -14,10 +15,11 @@ end
 
 
 // handle the online / offline state (also on arduino nodes)
-// track last contact by incoming messages
-// periodically let arduinos post all (to ensure traffic)
-// set on/off states to off if there were no contact
-// in arduino: just keep online state alive by incomming from openhab
+// keep arduino_node members alive by info posting_all messages
+// arduino nodes will expire by expire binding after 3 mininutes
+// periodically let arduinos post all (this is done above)
+// in arduino: just keep online state (this is silent state) alive by incoming from openhab (post all)
+
 
 			
 
