@@ -1,28 +1,23 @@
 //querys all states of the arduino nodes on startup
-
 rule QUERY_STATES_ON_START
-
-
-	when
-		 System started
-		
-	then
-		logInfo("QUERY_STATES_ON_START", "Querying all arduino nodes.")
-                 Thread::sleep(30000)
-	    	 sendCommand(RS485_Gateway_out, "!post_all!eg_west!0$\n")
-                 Thread::sleep(5000)
-                 sendCommand(RS485_Gateway_out, "!post_all!eg_ost!0$\n")
-                 Thread::sleep(5000)
-                 sendCommand(RS485_Gateway_out, "!post_all!og_west!0$\n")
-                 Thread::sleep(5000)
-                 sendCommand(RS485_Gateway_out, "!post_all!og_ost!0$\n")
-                 Thread::sleep(5000)
-                 sendCommand(RS485_Gateway_out, "!post_all!ug!0$\n")
-                 Thread::sleep(5000)
-                 sendCommand(RS485_Gateway_out, "!post_all!gr!0$\n")
-                 Thread::sleep(5000)	
+when
+    System started
+then
+    logInfo("QUERY_STATES_ON_START", "Querying all arduino nodes.")
+    arduino_nodes.members.forEach [ item |
+        logInfo("QUERY_STATES_ON_START", "Querying node " + item.name + "...")
+        sendCommand(RS485_Gateway_out, "!post_all!" + item.name +"!0$\n")
+        Thread::sleep(5000)
+    ]
 end
 
+
+
+// handle the online / offline state (also on arduino nodes)
+// track last contact by incoming messages
+// periodically let arduinos post all (to ensure traffic)
+// set on/off states to off if there were no contact
+// in arduino: just keep online state alive by incomming from openhab
 
 			
 
