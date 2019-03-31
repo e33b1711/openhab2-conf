@@ -1,0 +1,6 @@
+Contact AkOnline      "Presence (WiFi) [%s]"      {fritzboxtr064="maconline:CC-C0-79-55-40-E2"}
+
+Number  fboxDslUpstreamCurrRate "DSL Upstream Current [%s mbit/s]" {fritzboxtr064="dslUpstreamCurrRate"}
+Number  fboxDslDownstreamCurrRate "DSL Downstream Current [%s mbit/s]" {fritzboxtr064="dslDownstreamCurrRate"}
+Number  fboxDslUpstreamMaxRate "DSL Upstream Max [%s mbit/s]" {fritzboxtr064="dslUpstreamMaxRate"}
+Number  fboxDslDownstreamMaxRate "DSL Downstream Max [%s mbit/s]" {fritzboxtr064="dslDownstreamMaxRate"}
