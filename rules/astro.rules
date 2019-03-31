@@ -9,7 +9,7 @@ then
     	ItsDark.postUpdate(ON)
 	sendNotification("e33b1711@gmail.com", "Its dark.")
 	sendCommand(LI_EG_AO, ON)
-    	timer = Timer.createTimer(now.plusMinutes(240) [|
+    	timer = createTimer(now.plusMinutes(180), [|
         	sendCommand(LI_EG_AO, OFF)
         	timer = null   // reset the timer
     	])
