@@ -1,0 +1,75 @@
+import java.util.Map
+
+val Map<String, Timer> lightTimers = newHashMap
+
+rule RuleLightTimer
+when
+   Member of Licht received command ON
+then
+    if (now.getHourOfDay()>22 || now.getHourOfDay < 5){ 
+        if (lightTimers.containsKey(triggeringItem.name)){
+            lightTimers.get(triggeringItem.name)?.cancel()
+            logInfo("RuleLightTimers", "Canceled old timer for " + triggeringItem.name)
+        }
+        lightTimers.put( triggeringItem.name, createTimer(now.plusSeconds(60), [|
+            triggeringItem.sendCommand(OFF)
+            lightTimers.put(triggeringItem.name, null) // remove the timer from the Hashmap
+            logInfo("RuleLightTimers", "Destroyed timer for " + triggeringItem.name)
+        ]))
+        logInfo("RuleLightTimers", "Created timer for " + triggeringItem.name)
+    }else{
+        logInfo("RuleLightTimers", "to early")
+    }
+end
+
+
+rule SunsetOuterLight
+when
+	Channel 'astro:sun:home:set#event' triggered START
+	//Item LI_EG_GR received update ON
+then
+	sendCommand(LI_EG_AO, ON)
+     if (lightTimers.containsKey(LI_EG_AO.name)){
+            lightTimers.get(LI_EG_AO.name)?.cancel()
+            logInfo("SunsetOuterLight", "Canceled old timer for " + LI_EG_AO.name)
+        }
+    lightTimers.put( LI_EG_GR.name, createTimer(now.plusMinutes(180), [|
+        LI_EG_GR.sendCommand(OFF)
+        lightTimers.put(LI_EG_GR.name, null) // remove the timer from the Hashmap
+        logInfo("SunsetOuterLight", "Destroyed timer for " + LI_EG_GR.name)
+    ]))
+    logInfo("SunsetOuterLight", "Created timer for " + LI_EG_GR.name)
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

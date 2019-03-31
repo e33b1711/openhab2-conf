@@ -4,7 +4,9 @@ when
 then
     logInfo("RuleUpdateLights", "The item " + triggeringItem.name + " received command " + receivedCommand)
     var String message="!w!" + triggeringItem.name + "!3$\n"
-    sendCommand(RS485_Gateway_out, message)
+    if (receivedCommand==ON)   {message="!w!" + triggeringItem.name + "!1$\n"}
+	if (receivedCommand==OFF)  {message="!w!" + triggeringItem.name + "!0s$\n"}
+	sendCommand(RS485_Gateway_out, message)
     logInfo("RuleUpdateLights", message)
 end
 

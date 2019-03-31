@@ -9,11 +9,6 @@ when
 then
     ItsDark.postUpdate(ON)
 	sendNotification("e33b1711@gmail.com", "Its dark.")
-	sendCommand(LI_EG_AO, ON)
-    timer = createTimer(now.plusMinutes(180), [|
-       	sendCommand(LI_EG_AO, OFF)
-       	timer = null   // reset the timer
-    ])
 end
 
 
