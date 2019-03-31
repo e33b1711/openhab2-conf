@@ -1,6 +1,6 @@
-String telnet_in "telnet_in" { serial="/dev/ttyNET0" }
+String telnet_in            "telnet_in"     { serial="/dev/ttyNET0" }
 
-String RS485_Gateway_out "telnet_out"  { serial="/dev/ttyNET0" }
+String RS485_Gateway_out    "telnet_out"    { serial="/dev/ttyNET0" }
 
 
 

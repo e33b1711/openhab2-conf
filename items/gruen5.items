@@ -1,152 +1,130 @@
 Group All
-Group EG 				(All)
-Group OG 				(All)
-Group UG 				(All)
-Group Aussen			(All)
-Group Garage			(All)
+Group EG 				                                            (All)
+Group OG 				                                            (All)
+Group UG 				                                            (All)
+Group Aussen		                            	                (All)
+Group Garage		                            	                (All)
 
-Group Licht 			(All)
-Group Rollo 			(All)
-Group Verdunkelung		(All)
-Group Dachfenster		(All)
+Group Licht 		                                            	(All)
+Group Rollo 		                                             	(All)
+Group Verdunkelung	                                            	(All)
+Group Dachfenster	                                            	(All)
 
-Group RS485_IN				"schreibbar vom RS485"
-Group RS485_OUT 			"schreibbar auf RS485"
+Group RS485_IN			"schreibbar vom RS485"
+Group RS485_OUT 		"schreibbar auf RS485"
 
 
 
-Group EG_WZ 		"Wohnzimmer" 	<video> 		(EG)
-Group EG_KU 		"Küche" 		<kitchen> 		(EG)
-Group EG_EZ 		"Esszimmer" 	<kitchen> 		(EG)
-Group EG_GA 		"Gang" 			<corridor> 		(EG)
-Group EG_GR 		"Gardarobe" 	<video> 		(EG)
-Group EG_WC 		"WC" 			<bath> 			(EG)
+Group EG_WZ 		    "Wohnzimmer" 	            <video> 		(EG)
+Group EG_KU 		    "Küche" 		            <kitchen> 		(EG)
+Group EG_EZ 		    "Esszimmer" 	            <kitchen> 		(EG)
+Group EG_GA 		    "Gang" 			            <corridor> 		(EG)
+Group EG_GR 		    "Gardarobe" 	            <video> 		(EG)
+Group EG_WC 		    "WC" 			            <bath> 			(EG)
 
-Group OG_BA 		"Badezimmer" 	<bath> 		(OG)
-Group OG_KN 		"Leos Zimmer" 	<boy2>  	(OG)
-Group OG_KS 		"Kurbis Zimmer" <boy1> 		(OG)
-Group OG_SZ 		"Schlafzimmer" 	<bedroom> 	(OG)
-Group OG_GA 		"Gang" 	  	<corridor> 	(OG)
+Group OG_BA 	    	"Badezimmer" 	            <bath> 	    	(OG)
+Group OG_KN 		    "Leos Zimmer" 	            <boy2>  	    (OG)
+Group OG_KS 	    	"Kurbis Zimmer"             <boy1> 		    (OG)
+Group OG_SZ 	    	"Schlafzimmer" 	            <bedroom>   	(OG)
+Group OG_GA 	    	"Gang" 	  	                <corridor> 	    (OG)
 
-Group UG_HO 		"Hobbyraum" 	<office> 	(UG)
-Group UG_WK 		"Waschküche" 	<bath>  	(UG)
-Group UG_HK 		"Heizkeller" 	<bath> 		(UG)
-Group UG_GA 		"Gang" 			<corridor> 	(UG)
-Group UG_LA 		"Lager" 		<corridor> 	(UG)
+Group UG_HO 	    	"Hobbyraum" 	            <office> 	    (UG)
+Group UG_WK 		    "Waschküche" 	            <bath>  	    (UG)
+Group UG_HK 		    "Heizkeller" 	            <bath> 		    (UG)
+Group UG_GA 		    "Gang" 			            <corridor> 	    (UG)
+Group UG_LA 	    	"Lager" 		            <corridor> 	    (UG)
 
 
 
 
 /* Lichter */
-Switch LI_EG_WZ 	"Decke Mitte"	 	 		(Licht, EG_WZ, RS485_IN, RS485_OUT) 		{autoupdate="false"}
-Switch LI_EG_WZ_L1 	"Decke vorn" 		 		(Licht, EG_WZ, RS485_IN, RS485_OUT) 		{autoupdate="false"}
-Switch LI_EG_WZ_L2 	"Decke hinten" 	 			(Licht, EG_WZ, RS485_IN, RS485_OUT)		{autoupdate="false"}
+Switch LI_EG_WZ 	    "Decke Mitte"	 	 		                (Licht, EG_WZ, RS485_IN, RS485_OUT) 		{autoupdate="false"}
+Switch LI_EG_WZ_L1 	    "Decke vorn" 		 		                (Licht, EG_WZ, RS485_IN, RS485_OUT) 		{autoupdate="false"}
+Switch LI_EG_WZ_L2 	    "Decke hinten" 	 			                (Licht, EG_WZ, RS485_IN, RS485_OUT)		    {autoupdate="false"}
 
-Switch LI_EG_KU_L1 	"Arbeitsbeleuchtung" 			(Licht, EG_KU, RS485_IN, RS485_OUT) 		{autoupdate="false"}
+Switch LI_EG_KU_L1 	    "Arbeitsbeleuchtung" 		                (Licht, EG_KU, RS485_IN, RS485_OUT) 		{autoupdate="false"}
 
-Switch LI_EG_EZ 	"Esstisch" 	 			(Licht, EG_EZ, RS485_IN, RS485_OUT) 		{autoupdate="false"}
-Switch LI_EG_EZ_L1 	"Wandleuchten" 				(Licht, EG_EZ, RS485_IN, RS485_OUT) 		{autoupdate="false"}
-Switch LI_EG_EZ_L3 	"Leselampe" 				(Licht, EG_EZ, RS485_IN, RS485_OUT) 		{autoupdate="false"}
-Switch LI_EG_EZ_KU 	"Grundbeleuchtung"			(Licht, EG_EZ, EG_KU, RS485_IN, RS485_OUT)	{autoupdate="false"}
-
-
-Switch LI_EG_GA 	"Decke" 				(Licht, EG_GA, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch LI_GA_L1 	"Wandleuchten" 				(Licht, EG_GA, RS485_IN, RS485_OUT) {autoupdate="false"}
-
-Switch LI_EG_GR 	"Decke" 				(Licht, EG_GR, RS485_IN, RS485_OUT) {autoupdate="false"}
-
-Switch LI_EG_WC 	"Decke" 				(Licht, EG_WC, RS485_IN, RS485_OUT) {autoupdate="false"}
-
-Switch LI_EG_SP 	"Speis" 				(Licht, EG_KU, RS485_IN, RS485_OUT) {autoupdate="false"}
+Switch LI_EG_EZ 	    "Esstisch" 	 			                    (Licht, EG_EZ, RS485_IN, RS485_OUT) 		{autoupdate="false"}
+Switch LI_EG_EZ_L1  	"Wandleuchten" 				                (Licht, EG_EZ, RS485_IN, RS485_OUT) 		{autoupdate="false"}
+Switch LI_EG_EZ_L3  	"Leselampe" 				                (Licht, EG_EZ, RS485_IN, RS485_OUT) 		{autoupdate="false"}
+Switch LI_EG_EZ_KU 	    "Grundbeleuchtung"			                (Licht, EG_EZ, EG_KU, RS485_IN, RS485_OUT)	{autoupdate="false"}
 
 
-Switch LI_OG_BA 	"Decke" 				(Licht, OG_BA, RS485_IN, RS485_OUT) {autoupdate="false"}
+Switch LI_EG_GA     	"Decke" 				                    (Licht, EG_GA, RS485_IN, RS485_OUT)         {autoupdate="false"}
+Switch LI_GA_L1 	    "Wandleuchten" 				                (Licht, EG_GA, RS485_IN, RS485_OUT)         {autoupdate="false"}
 
-Switch LI_OG_KN 	"Decke" 				(Licht, OG_KN, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch LI_OG_KN_L1 	"Spots" 				(Licht, OG_KN, RS485_IN, RS485_OUT) {autoupdate="false"}
+Switch LI_EG_GR     	"Decke" 				                    (Licht, EG_GR, RS485_IN, RS485_OUT)         {autoupdate="false"}
 
-Switch LI_OG_KS 	"Decke" 				(Licht, OG_KS, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch LI_OG_KS_L1 	"Spots" 				(Licht, OG_KS, RS485_IN, RS485_OUT) {autoupdate="false"}
+Switch LI_EG_WC 	    "Decke" 				                    (Licht, EG_WC, RS485_IN, RS485_OUT)         {autoupdate="false"}
 
-Switch LI_OG_SZ 	"Decke" 				(Licht, OG_SZ, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch LI_OG_SZ_L1 	"Leselampe Melli" 			(Licht, OG_SZ, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch LI_OG_SZ_L2 	"Leselampe Anselm" 			(Licht, OG_SZ, RS485_IN, RS485_OUT) {autoupdate="false"}
-
-Switch LI_OG_GA 	"Decke" 	  			(Licht, OG_GA, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch LI_OG_GA_L1 	"Spots" 	  			(Licht, OG_GA, RS485_IN, RS485_OUT) {autoupdate="false"}
-
-Switch LI_UG_HO 	"Licht Hobbyraum" 			(Licht, UG_HO, RS485_IN, RS485_OUT) ["Switchable"] {autoupdate="false"} 
-Switch LI_UG_WK 	"Licht Waschküche" 			(Licht, UG_WK, RS485_IN, RS485_OUT) ["Switchable"] {autoupdate="false"}
-Switch LI_UG_HK 	"Licht Heizkeller" 			(Licht, UG_HK, RS485_IN, RS485_OUT) ["Switchable"] {autoupdate="false"}
-Switch LI_UG_GA 	"Licht Kellergang" 			(Licht, UG_GA, RS485_IN, RS485_OUT) ["Switchable"] {autoupdate="false"}
-Switch LI_UG_LA 	"Licht Lagerraum" 			(Licht, UG_LA, RS485_IN, RS485_OUT) ["Switchable"] {autoupdate="false"}
-
-Switch LI_EG_VH 	"Vordach" 				(Licht, Aussen, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch LI_EG_AS 	"Terrasse Süden" 			(Licht, Aussen, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch LI_EG_AW 	"Terrasse Westen" 			(Licht, Aussen, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch LI_EG_AO 	"Wand Osten" 				(Licht, Aussen, RS485_IN, RS485_OUT) {autoupdate="false"}
-
-Switch LI_GR 		"Grundbeleuchtung" 			(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch LI_GR_L1 	"Aussen" 				(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch LI_GR_L2 	"Aussen Zustatz" 			(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch ZE_GR_0	 	"Timer Innen 10 min" 			(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch ZE_GR_1	 	"Timer Innen 2 min" 			(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
-Switch ZE_GR_2	 	"Timer Außen" 				(Licht, Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
+Switch LI_EG_SP 	    "Speis" 				                    (Licht, EG_KU, RS485_IN, RS485_OUT)         {autoupdate="false"}
 
 
-/* Klingel */
-Switch BELL 		"Klingel" 				(EG_GA, RS485_IN, RS485_OUT) {autoupdate="false"}
+Switch LI_OG_BA     	"Decke" 		    		                (Licht, OG_BA, RS485_IN, RS485_OUT)         {autoupdate="false"}
+
+Switch LI_OG_KN 	    "Decke" 		    		                (Licht, OG_KN, RS485_IN, RS485_OUT)         {autoupdate="false"}
+Switch LI_OG_KN_L1 	    "Spots" 		    		                (Licht, OG_KN, RS485_IN, RS485_OUT)         {autoupdate="false"}
+
+Switch LI_OG_KS 	    "Decke" 		    	                	(Licht, OG_KS, RS485_IN, RS485_OUT)         {autoupdate="false"}
+Switch LI_OG_KS_L1 	    "Spots" 		    	                	(Licht, OG_KS, RS485_IN, RS485_OUT)         {autoupdate="false"}
+
+Switch LI_OG_SZ 	    "Decke" 			                    	(Licht, OG_SZ, RS485_IN, RS485_OUT)         {autoupdate="false"}
+Switch LI_OG_SZ_L1 	    "Leselampe Melli" 		                	(Licht, OG_SZ, RS485_IN, RS485_OUT)         {autoupdate="false"}
+Switch LI_OG_SZ_L2  	"Leselampe Anselm" 		                	(Licht, OG_SZ, RS485_IN, RS485_OUT)         {autoupdate="false"}
+
+Switch LI_OG_GA 	    "Decke" 	  		    	                (Licht, OG_GA, RS485_IN, RS485_OUT)         {autoupdate="false"}
+Switch LI_OG_GA_L1  	"Spots" 	  		    	                (Licht, OG_GA, RS485_IN, RS485_OUT)         {autoupdate="false"}
+
+Switch LI_UG_HO 	    "Licht Hobbyraum" 			                (Licht, UG_HO, RS485_IN, RS485_OUT)         {autoupdate="false"} 
+Switch LI_UG_WK     	"Licht Waschküche" 			                (Licht, UG_WK, RS485_IN, RS485_OUT)         {autoupdate="false"}
+Switch LI_UG_HK     	"Licht Heizkeller" 			                (Licht, UG_HK, RS485_IN, RS485_OUT)         {autoupdate="false"}
+Switch LI_UG_GA     	"Licht Kellergang" 			                (Licht, UG_GA, RS485_IN, RS485_OUT)         {autoupdate="false"}
+Switch LI_UG_LA     	"Licht Lagerraum" 			                (Licht, UG_LA, RS485_IN, RS485_OUT)         {autoupdate="false"}
+
+Switch LI_EG_VH     	"Vordach" 			    	                (Licht, Aussen, RS485_IN, RS485_OUT)        {autoupdate="false"}
+Switch LI_EG_AS     	"Terrasse Süden" 			                (Licht, Aussen, RS485_IN, RS485_OUT)        {autoupdate="false"}
+Switch LI_EG_AW     	"Terrasse Westen" 			                (Licht, Aussen, RS485_IN, RS485_OUT)        {autoupdate="false"}
+Switch LI_EG_AO     	"Wand Osten" 				                (Licht, Aussen, RS485_IN, RS485_OUT)        {autoupdate="false"}
+
+Switch LI_GR 	    	"Grundbeleuchtung" 			                (Licht, Garage, RS485_IN, RS485_OUT)        {autoupdate="false"}
+Switch LI_GR_L1     	"Aussen" 			    	                (Licht, Garage, RS485_IN, RS485_OUT)        {autoupdate="false"}
+Switch LI_GR_L2     	"Aussen Zustatz" 			                (Licht, Garage, RS485_IN, RS485_OUT)        {autoupdate="false"}
+Switch ZE_GR_0	     	"Timer Innen 10 min" 		                (Licht, Garage, RS485_IN, RS485_OUT)        {autoupdate="false"}
+Switch ZE_GR_1	     	"Timer Innen 2 min" 		                (Licht, Garage, RS485_IN, RS485_OUT)        {autoupdate="false"}
+Switch ZE_GR_2	     	"Timer Außen" 				                (Licht, Garage, RS485_IN, RS485_OUT)        {autoupdate="false"}
+
 
 /* Klingel */
-Switch PUMP 		"Zisternenpumpe" 			(Aussen, RS485_IN, RS485_OUT) {autoupdate="false"}
+Switch BELL 	    	"Klingel" 				                    (EG_GA, RS485_IN, RS485_OUT)                {autoupdate="false"}
 
+/* Klingel */
+Switch PUMP 		    "Zisternenpumpe" 			                (Aussen, RS485_IN, RS485_OUT)               {autoupdate="false"}
 
 /* Timer */
-Switch ZE_EG_VH 	"Vordach Timer"				(Licht, Aussen, RS485_IN, RS485_OUT) {autoupdate="false"} 
+Switch ZE_EG_VH 	    "Vordach Timer"				                (Licht, Aussen, RS485_IN, RS485_OUT)        {autoupdate="false"} 
 
 /*Makros */
 Rollershutter VD_OG		"Verdunkelung OG"   		<settings>		(OG, RS485_IN, RS485_OUT)
 
 
 /* Rollos, Verdunkelungen, Dachfenster */
-Rollershutter RO_EG_SU 	"Rollo Süd" 					(Rollo, EG_EZ, RS485_IN, RS485_OUT) 
-Rollershutter RO_EG_WE 	"Rollo West" 					(Rollo, EG_EZ, RS485_IN, RS485_OUT)
+Rollershutter RO_EG_SU 	"Rollo Süd" 				                (Rollo, EG_EZ, RS485_IN, RS485_OUT) 
+Rollershutter RO_EG_WE 	"Rollo West" 			                	(Rollo, EG_EZ, RS485_IN, RS485_OUT)
 
-Rollershutter RO_OG_BA 		"Rollo" 				(Rollo, OG_BA, RS485_IN, RS485_OUT) 
+Rollershutter RO_OG_BA 	"Rollo" 				                    (Rollo, OG_BA, RS485_IN, RS485_OUT) 
 
-Rollershutter DF_OG_GA	 	"Dachfenster" 				(Dachfenster, OG_GA, RS485_IN, RS485_OUT)
+Rollershutter DF_OG_GA	 "Dachfenster" 				                (Dachfenster, OG_GA, RS485_IN, RS485_OUT)
 
-Rollershutter RO_OG_KN 		"Rollo" 				(Rollo, OG_KN, RS485_IN, RS485_OUT) 
-Rollershutter VD_OG_KN	 	"Verdunkelung Dachfenster" 		(Verdunkelung, OG_KN, RS485_IN, RS485_OUT) 
-Rollershutter DF_OG_KN	 	"Dachfenster" 				(Dachfenster, OG_KN, RS485_IN, RS485_OUT)
+Rollershutter RO_OG_KN 	"Rollo" 				                    (Rollo, OG_KN, RS485_IN, RS485_OUT) 
+Rollershutter VD_OG_KN	"Verdunkelung Dachfenster" 	                (Verdunkelung, OG_KN, RS485_IN, RS485_OUT) 
+Rollershutter DF_OG_KN	"Dachfenster" 				                (Dachfenster, OG_KN, RS485_IN, RS485_OUT)
 
-Rollershutter RO_OG_KS 		"Rollo"  				(Rollo, OG_KS, RS485_IN, RS485_OUT) 
-Rollershutter VD_OG_KS		"Verdunkelung Dachfenster"		(Verdunkelung,OG_KS, RS485_IN, RS485_OUT)
-Rollershutter DF_OG_KS	 	"Dachfenster" 				(Dachfenster, OG_KS, RS485_IN, RS485_OUT) 
+Rollershutter RO_OG_KS 	"Rollo"  				                    (Rollo, OG_KS, RS485_IN, RS485_OUT) 
+Rollershutter VD_OG_KS	"Verdunkelung Dachfenster"	                (Verdunkelung,OG_KS, RS485_IN, RS485_OUT)
+Rollershutter DF_OG_KS	"Dachfenster" 				                (Dachfenster, OG_KS, RS485_IN, RS485_OUT) 
 
-Rollershutter RO_OG_SZ 		"Rollo" 				(Rollo, OG_SZ, RS485_IN, RS485_OUT) 
-Rollershutter VD_OG_SZ		"Verdunkelung Dachfenster" 		(Verdunkelung, OG_SZ, RS485_IN, RS485_OUT)
-Rollershutter DF_OG_SZ	 	"Dachfenster" 				(Dachfenster, OG_SZ, RS485_IN, RS485_OUT)
+Rollershutter RO_OG_SZ 	"Rollo" 				                    (Rollo, OG_SZ, RS485_IN, RS485_OUT) 
+Rollershutter VD_OG_SZ	"Verdunkelung Dachfenster" 	                (Verdunkelung, OG_SZ, RS485_IN, RS485_OUT)
+Rollershutter DF_OG_SZ	"Dachfenster" 				                (Dachfenster, OG_SZ, RS485_IN, RS485_OUT)
 
-Rollershutter DO_GR	 	"Garagentor" 				(Garage, RS485_IN, RS485_OUT) {autoupdate="false"}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Rollershutter DO_GR	 	"Garagentor" 				                (Garage, RS485_IN, RS485_OUT)               {autoupdate="false"}

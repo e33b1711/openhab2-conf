@@ -12,32 +12,32 @@ then
         val String item_base_name = item.name.substring(1,7)
         logInfo("HeatingControllerRule", "item_base_name: >>" + item_base_name + "<<")
         
-        //get input values
-	var temp_ist = ScriptServiceUtil.getItemRegistry.getItem("TI" + item_base_name).state as DecimalType
-	logInfo("HeatingControllerRule", "temp_ist: " + temp_ist.toString())
+    	//get input values
+		var Number temp_ist = ScriptServiceUtil.getItemRegistry.getItem("TI" + item_base_name).state as DecimalType
+		logInfo("HeatingControllerRule", "temp_ist: " + temp_ist.toString())
 
-        var temp_soll = ScriptServiceUtil.getItemRegistry.getItem("TS" + item_base_name).state as DecimalType
-	logInfo("HeatingControllerRule", "temp_soll: " + temp_soll.toString())
+		var Number temp_soll = ScriptServiceUtil.getItemRegistry.getItem("TS" + item_base_name).state as DecimalType
+		logInfo("HeatingControllerRule", "temp_soll: " + temp_soll.toString())
 
-        var u_default = ScriptServiceUtil.getItemRegistry.getItem("UD" + item_base_name).state as DecimalType
-	logInfo("HeatingControllerRule", "u_default: " + u_default.toString())  
-      
-	var s_error = ScriptServiceUtil.getItemRegistry.getItem("ETI" + item_base_name).state as DecimalType
-        logInfo("HeatingControllerRule", "s_error: " + s_error.toString())
+		var Number u_default = ScriptServiceUtil.getItemRegistry.getItem("UD" + item_base_name).state as DecimalType
+		logInfo("HeatingControllerRule", "u_default: " + u_default.toString())  
+		
+		var Number s_error = ScriptServiceUtil.getItemRegistry.getItem("ETI" + item_base_name).state as DecimalType
+		logInfo("HeatingControllerRule", "s_error: " + s_error.toString())
 
-        //control algorithm
-        var u_nxt=0;
-	u_nxt=u_default;
-	var temp_diff = temp_ist - temp_soll
-	logInfo("HeatingControllerRule", "temp_diff: " + temp_diff.toString())
+		//control algorithm
+		var Number u_nxt=0;
+		u_nxt=u_default;
+		var temp_diff = temp_ist - temp_soll
+		logInfo("HeatingControllerRule", "temp_diff: " + temp_diff.toString())
         if((temp_ist<1) || (temp_ist>35) || (s_error != 0)){
         	u_nxt=u_default
         }else{
-		if (temp_diff>1){u_nxt=0.0}
-		if (temp_diff<-1){u_nxt=15.0}
+			if (temp_diff>1){u_nxt=0.0}
+			if (temp_diff<-1){u_nxt=15.0}
 	    }
         if(Sommerbetrieb.state==ON){u_nxt=0}
-	//logInfo("HeatingControllerRule", "u_nxt: " + u_nxt.toString())
+		//logInfo("HeatingControllerRule", "u_nxt: " + u_nxt.toString())
 	
         //postUpdate
         item.postUpdate(u_nxt)
@@ -129,7 +129,7 @@ end
 
 rule InitHeating
 when
-    	System started
+    System started
 then
  	Sommerbetrieb.postUpdate(OFF)
 

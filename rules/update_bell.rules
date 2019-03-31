@@ -1,23 +1,23 @@
 rule BELL
-	when
-		Item BELL received command
-	then
-		sendCommand(RS485_Gateway_out, "!w!BELL!1$\n");
-		postUpdate(BELL, ON);
+when
+	Item BELL received command
+then
+	sendCommand(RS485_Gateway_out, "!w!BELL!1$\n");
+	postUpdate(BELL, ON);
 end
 
 rule SPEAKER_BELL
-	when
-		Item BELL received update ON
-	then
-                 playSound("doorbell.mp3")
+when
+	Item BELL received update ON
+then
+    playSound("doorbell.mp3")
 end
 
 
 rule PUMP
-	when
-		Item PUMP received command
-	then
+when
+	Item PUMP received command
+then
 	if (receivedCommand==OFF) {
 		sendCommand(RS485_Gateway_out, "!w!PUMP!0$\n");
 		postUpdate(PUMP, OFF);
