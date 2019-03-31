@@ -12,7 +12,7 @@ rule NotificationGarageRule
 	when
 		Time cron "0 0 21 ? * *"
 	then
-		if ((DO_GR.state as Number) != -1){
+		if ((DO_GR.state as Number) != 100){
                 	logInfo("notifications", "Sending notification via app.")
 			sendNotification("e33b1711@gmail.com", "Garage nach 2100 Uhr offen.")
 		}
