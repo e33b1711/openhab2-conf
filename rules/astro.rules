@@ -4,12 +4,13 @@ var Timer timer = null
 
 rule "Sunset"
 when
-	Channel 'astro:sun:home:set#event' triggered START
+	//Channel 'astro:sun:home:set#event' triggered START
+	Item LI_EG_GR received update ON
 then
-    	ItsDark.postUpdate(ON)
+    //ItsDark.postUpdate(ON)
 	sendNotification("e33b1711@gmail.com", "Its dark.")
 	sendCommand(LI_EG_AO, ON)
-    	timer = Timer.createTimer(now.plusMinutes(240) [|
+    	timer = Timer.createTimer(now.plusMinutes(1), [|
         	sendCommand(LI_EG_AO, OFF)
         	timer = null   // reset the timer
     	])
