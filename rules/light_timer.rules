@@ -18,7 +18,7 @@ then
         ]))
         logInfo("RuleLightTimers", "Created timer for " + triggeringItem.name)
     }else{
-        logInfo("RuleLightTimers", "to early")
+        logInfo("RuleLightTimers", "to early or late")
     }
 end
 

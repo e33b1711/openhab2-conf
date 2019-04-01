@@ -1,9 +1,16 @@
+var boolean NBRlocked = false
+
 rule NotificationBellRule
-	when
-		Item BELL received update ON
-	then
-                logInfo("notifications", "Sending notification via app.")
+when
+	Item BELL received update ON
+then
+	if (!NBRlocked){
+       	NBRlocked=true;
+		logInfo("notifications", "Sending notification via app.")
 		sendNotification("e33b1711@gmail.com", "Klingel")
+		Thread::sleep(30000)
+		NBRlocked=false;
+	}
 end
 
 
