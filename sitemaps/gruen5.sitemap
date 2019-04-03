@@ -1,8 +1,5 @@
-sitemap gruen5 label="Grünbichlstrasse 5"
+sitemap gruen5 label="Lichter / Verdunkelung"
 {
-	
-	
-	Frame label="Lichter / Verdunkelung" {
 	
 Text label="Keller" icon="cellar" {
 		Switch item=LI_UG_HO
@@ -106,17 +103,4 @@ Text label="Garage / Aussen" icon="garage_detached_selected" {
 		
 }
 
-
-
-Frame label="Astronomische Daten" {
-	 		Text item=time
-            Text item=date
-            Text item=Sunrise_Time label="Sonnenaufgang [%1$tH:%1$tM]" 
-            Text item=Sunset_Time label="Sonnenuntergang [%1$tH:%1$tM]" 
-            Text item=Sun_Elevation label="Elevation der Sonne"
-            Text item=Sun_Azimuth label="Azimut der Sonne" 
-
-        }
-
-}
 

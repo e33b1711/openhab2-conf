@@ -1,12 +1,23 @@
 sitemap debug label="debug" {
-	Frame label="Heizung" {
+	Frame label="Temp" {
 		Group item=Temperatur
 		Group item=Temperatur_Soll
 		Group item=heizung_stellwert
 		Group item=heizung_stellwert_default
 		Group item=sensor_error
-		Default item=ItsDark
+	}
+	Frame label="Astro" {
+	 		Text item=time
+            Text item=date
+            Text item=Sunrise_Time label="Sonnenaufgang [%1$tH:%1$tM]" 
+            Text item=Sunset_Time label="Sonnenuntergang [%1$tH:%1$tM]" 
+            Text item=Sun_Elevation label="Elevation der Sonne"
+            Text item=Sun_Azimuth label="Azimut der Sonne" 
+			Default item=ItsDark
+        }
+	Frame label="Presence" {
 		Default item=AkOnline 
-	}		
+	}
+
 }
 
