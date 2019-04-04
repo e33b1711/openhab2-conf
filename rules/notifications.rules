@@ -25,19 +25,7 @@ rule NotificationGarageRule
 		}
 end
 
-rule SunriseNotRule
-when
-    	Channel 'astro:sun:home:rise#event' triggered START
-then
-    	sendNotification("e33b1711@gmail.com", "Sunrise.")
-end
 
-rule SunsetNotRule
-when
-	Channel 'astro:sun:home:set#event' triggered START
-then
-	sendNotification("e33b1711@gmail.com", "Sunset.")
-end
 
 
 
