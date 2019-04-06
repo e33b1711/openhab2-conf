@@ -137,8 +137,8 @@ sitemap climate label="Climate Charts" {
 		Text label="Garage / Aussen" icon="garage_detached_selected" {
 			Text item=TI_GR 		label="Ist-Temperatur [%.1f °C]" icon="temperature"
 		 	Text item=HI_GR 		label="Feuchtigkeit [%s %%]" icon="water"
-		 	Text item=TI_G2 		label="Ist-Temperatur [%.1f °C]" icon="temperature"
-		 	Text item=HI_G2 		label="Feuchtigkeit [%s %%]" icon="water"
+		 	Text item=TI_GR_A 		label="Ist-Temperatur [%.1f °C]" icon="temperature"
+		 	Text item=HI_GR_A 		label="Feuchtigkeit [%s %%]" icon="water"
 		}
 		
 		Switch item=Sommerbetrieb

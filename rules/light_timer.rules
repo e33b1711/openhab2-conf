@@ -4,14 +4,14 @@ val Map<String, Timer> lightTimers = newHashMap
 
 rule RuleLightTimer
 when
-   Member of Licht received update ON
+   Member of Licht changed from OFF to ON
 then
     if (now.getHourOfDay()>22 || now.getHourOfDay < 5){ 
         if (lightTimers.containsKey(triggeringItem.name)){
             lightTimers.get(triggeringItem.name)?.cancel()
             logInfo("RuleLightTimers", "Canceled old timer for " + triggeringItem.name)
         }
-        lightTimers.put( triggeringItem.name, createTimer(now.plusSeconds(60), [|
+        lightTimers.put( triggeringItem.name, createTimer(now.plusSeconds(600), [|
             triggeringItem.sendCommand(OFF)
             lightTimers.put(triggeringItem.name, null) // remove the timer from the Hashmap
             logInfo("RuleLightTimers", "Destroyed timer for " + triggeringItem.name)
@@ -20,6 +20,24 @@ then
     }else{
         logInfo("RuleLightTimers", "to early or late")
     }
+end
+
+rule RuleLightTimerOn
+when
+   Time cron "0 0 23 * * ?"
+then
+    logInfo("RuleLightTimersOn", "Setting all Timers...")
+	Licht.members.forEach [ item |
+		if (lightTimers.containsKey(item.name)){
+		    lightTimers.get(item.name)?.cancel()
+		    logInfo("RuleLightTimersOn", "Canceled old timer for " + item.name)
+		}
+		lightTimers.put( item.name, createTimer(now.plusSeconds(600), [|
+		    item.sendCommand(OFF)
+		    lightTimers.put(item.name, null) // remove the timer from the Hashmap
+		    logInfo("RuleLightTimersOn", "Destroyed timer for " + item.name)
+		]))
+	]    	
 end
 
 
