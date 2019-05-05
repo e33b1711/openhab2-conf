@@ -1,0 +1,38 @@
+Bridge mqtt:broker:mosquitto "Mosquitto" [ host="localhost", port=1883, secure=false, clientID="openHAB2", quos=1]
+{
+    // Sonoffs
+    Thing topic sonoff_basic_01 "Sonoff Basic 01" @ "debug" {
+    Channels:
+        Type string : reachable "Reachable"            [ stateTopic="tele/sonoff_basic_01/LWT" ]
+        Type switch : power     "Power"                [ stateTopic="stat/sonoff_basic_01/POWER", commandTopic="cmnd/sonoff_basic_01/POWER", retained=true]
+        Type number : rssi      "WiFi Signal Strength" [ stateTopic="tele/sonoff_basic_01/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+    }
+
+    Thing topic sonoff_basic_02 "Sonoff Basic 02" @ "debug" {
+    Channels:
+        Type string : reachable "Reachable"            [ stateTopic="tele/sonoff_basic_02/LWT" ]
+        Type switch : power     "Power"                [ stateTopic="stat/sonoff_basic_02/POWER", commandTopic="cmnd/sonoff_basic_02/POWER", retained=true]
+        Type number : rssi      "WiFi Signal Strength" [ stateTopic="tele/sonoff_basic_02/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+    }
+
+    Thing topic sonoff_basic_03 "Sonoff Basic 03" @ "debug" {
+    Channels:
+        Type string : reachable "Reachable"            [ stateTopic="tele/sonoff_basic_03/LWT" ]
+        Type switch : power     "Power"                [ stateTopic="stat/sonoff_basic_03/POWER", commandTopic="cmnd/sonoff_basic_03/POWER", retained=true]
+        Type number : rssi      "WiFi Signal Strength" [ stateTopic="tele/sonoff_basic_03/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+    }
+
+    Thing topic sonoff_basic_04 "Sonoff Basic 04" @ "debug" {
+    Channels:
+        Type string : reachable "Reachable"            [ stateTopic="tele/sonoff_basic_04/LWT" ]
+        Type switch : power     "Power"                [ stateTopic="stat/sonoff_basic_04/POWER", commandTopic="cmnd/sonoff_basic_04/POWER", retained=true]
+        Type number : rssi      "WiFi Signal Strength" [ stateTopic="tele/sonoff_basic_04/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+    }
+
+    Thing topic sonoff_basic_05 "Sonoff Basic 05" @ "debug" {
+    Channels:
+        Type string : reachable "Reachable"            [ stateTopic="tele/sonoff_basic_05/LWT" ]
+        Type switch : power     "Power"                [ stateTopic="stat/sonoff_basic_05/POWER", commandTopic="cmnd/sonoff_basic_05/POWER", retained=true]
+        Type number : rssi      "WiFi Signal Strength" [ stateTopic="tele/sonoff_basic_05/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+    }
+}

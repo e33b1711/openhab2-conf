@@ -1,0 +1,10 @@
+sitemap sonoff label="All Sonoff Devives (Tamota Fw over MQTT)" {
+    Frame label="Sonoff Basic Devices" {
+        Group item=sonoff_basic_01
+	Group item=sonoff_basic_02
+	Group item=sonoff_basic_03
+	Group item=sonoff_basic_04
+	Group item=sonoff_basic_05
+    }
+}
+
