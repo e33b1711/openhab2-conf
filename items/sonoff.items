@@ -19,7 +19,7 @@ Number sonoff_basic_03_rssi          "WiFi Signal Strength [%d %%]"      (sonoff
 
 Group  sonoff_basic_04               "Sonoff Basic 04"                   (Sonoff)
 String sonoff_basic_04_reachable     "Reachable: [%s]"                   (sonoff_basic_04)  { channel="mqtt:topic:mosquitto:sonoff_basic_04:reachable" }
-Switch sonoff_basic_04_power         "Power"                             (sonoff_basic_04)  { channel="mqtt:topic:mosquitto:sonoff_basic_04:power" }       
+Switch sonoff_basic_04_power         "Leselampe"                         (sonoff_basic_04)  { channel="mqtt:topic:mosquitto:sonoff_basic_04:power" }       
 Number sonoff_basic_04_rssi          "WiFi Signal Strength [%d %%]"      (sonoff_basic_04)  { channel="mqtt:topic:mosquitto:sonoff_basic_04:rssi" }
 
 

@@ -60,6 +60,7 @@ Text label="Erdgeschoss" icon="groundfloor" {
 			Switch item=RO_OG_KN
 			Switch item=VD_OG_KN
 			Switch item=DF_OG_KN
+			Switch item=sonoff_basic_04_power
             }
          Frame label="Bad"  {
          	Switch item=LI_OG_BA 

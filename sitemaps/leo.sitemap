@@ -1,0 +1,12 @@
+sitemap leo label="Leos Zimmer"{
+    Frame label="Leos Zimmer" {
+      	Switch item=LI_OG_KN 
+		Switch item=LI_OG_KN_L1 
+		Switch item=RO_OG_KN
+		Switch item=VD_OG_KN
+		Switch item=DF_OG_KN
+		Switch item=sonoff_basic_04_power
+    }	
+}
+
+
