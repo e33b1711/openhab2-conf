@@ -72,13 +72,13 @@ Number TI_EG_E2  	"Temperatur Esszimmer [%.1f °C]"		<temperature>	    (Temperat
 Number TI_EG_GR  	"Temperatur Gardarobe [%.1f °C]"		<temperature>	    (Temperatur, EG_GR)
 Number TI_EG_WC  	"Temperatur WC [%.1f °C]"			    <temperature>	    (Temperatur, EG_WC)
 
-Number ETI_UG_H1 	"Sensorfehler [%.0f]"			        <error>	 		    (sensor_error, UG_HO)
-Number ETI_UG_H2 	"Sensorfehler [%.0f]"			        <error>	 		    (sensor_error, UG_HO)
-Number ETI_UG_H3 	"Sensorfehler [%.0f]"			        <error>	 		    (sensor_error, UG_HO)
-Number ETI_EG_E1  	"Sensorfehler [%.0f]"			        <error>	 		    (sensor_error, EG_EZ)
-Number ETI_EG_E2  	"Sensorfehler [%.0f]"			        <error>	 		    (sensor_error, EG_EZ)
-Number ETI_EG_GR  	"Sensorfehler [%.0f]"			        <error>	 		    (sensor_error, EG_GR)
-Number ETI_EG_WC  	"Sensorfehler [%.0f]"			        <error>	 		    (sensor_error, EG_WC)
+Number ETI_UG_H1 	"Sensorfehler H1 [%.0f]"			        <error>	 		    (sensor_error, UG_HO)
+Number ETI_UG_H2 	"Sensorfehler H2 [%.0f]"			        <error>	 		    (sensor_error, UG_HO)
+Number ETI_UG_H3 	"Sensorfehler H3 [%.0f]"			        <error>	 		    (sensor_error, UG_HO)
+Number ETI_EG_E1  	"Sensorfehler E1 [%.0f]"			        <error>	 		    (sensor_error, EG_EZ)
+Number ETI_EG_E2  	"Sensorfehler E2 [%.0f]"			        <error>	 		    (sensor_error, EG_EZ)
+Number ETI_EG_GR  	"Sensorfehler GR [%.0f]"			        <error>	 		    (sensor_error, EG_GR)
+Number ETI_EG_WC  	"Sensorfehler WC [%.0f]"			        <error>	 		    (sensor_error, EG_WC)
 
 
 /* Indoor Temperatures (soll) */

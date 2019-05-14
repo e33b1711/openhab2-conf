@@ -8,9 +8,18 @@ sitemap climate label="Climate Charts" {
 				Text item=U_UG_H2 		label="Ist-Stellwert [%.1f]" icon="heating"
 				Setpoint item=UD_UG_H3  step=1 minValue=0 maxValue=15
 				Text item=U_UG_H3 		label="Ist-Stellwert [%.1f]" icon="heating"
-				Setpoint item=TS_UG_HO  step=1 minValue=15 maxValue=25
+
+				
+				Setpoint item=TS_UG_H1  step=1 minValue=15 maxValue=25
+				Setpoint item=TS_UG_H2  step=1 minValue=15 maxValue=25
+				Setpoint item=TS_UG_H3  step=1 minValue=15 maxValue=25
+
+				Text item=TI_UG_H1 label="Ist-Temperatur 1 [%.1f °C]" icon="temperature"
+				Text item=TI_UG_H2 label="Ist-Temperatur 2 [%.1f °C]" icon="temperature"
+				Text item=TI_UG_H3 label="Ist-Temperatur 3 [%.1f °C]" icon="temperature"
+
+
 				Text item=TI_UG_HS label="Ist-Temperatur Nord [%.1f °C]" icon="temperature"
-				Setpoint item=TS_UG_HO  step=1 minValue=15 maxValue=25
 				Text item=TI_UG_HN label="Ist-Temperatur Süd [%.1f °C]" icon="temperature"
 				Text item=HI_UG_HS label="Feuchtigkeit [%s %%]" icon="water"
 				Text item=HI_UG_HN label="Feuchtigkeit [%s %%]" icon="water"

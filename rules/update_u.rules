@@ -93,6 +93,22 @@ when
 	Item TI_UG_HN received update
 then
 	var mean_temp=((TI_UG_HN.state as Number)+(TI_UG_HS.state as Number))/2
+	if (!(ETI_UG_HN.state==0)){
+		 mean_temp=((TI_UG_HS.state as Number))+0
+	}
+	if (!(ETI_UG_HS.state==0)){
+		mean_temp=((TI_UG_HN.state as Number))+0
+	}
+	if ((ETI_UG_HN.state==0) && !(ETI_UG_HN.state==0)) {
+		ETI_UG_H1.postUpdate(1)
+		ETI_UG_H2.postUpdate(1)
+		ETI_UG_H3.postUpdate(1)
+	}else{
+		ETI_UG_H1.postUpdate(0)
+		ETI_UG_H2.postUpdate(0)
+		ETI_UG_H3.postUpdate(0)
+
+	}
 	TI_UG_H1.postUpdate(mean_temp)
 	TI_UG_H2.postUpdate(mean_temp)
 	TI_UG_H3.postUpdate(mean_temp)
