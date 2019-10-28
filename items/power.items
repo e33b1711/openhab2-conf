@@ -3,18 +3,18 @@ Group all
 
 Group s0_meter
 
-Number powerUtility "Power from Utility: [%.0f W]"    	(all, s0_meter) { serial="/dev/ttyACM0,REGEX(powerUtility:([0-9.]*))"}
-Number powerPV      "Power from PV [%.0f W]"            (all, s0_meter) { serial="/dev/ttyACM0,REGEX(powerPV:([0-9.]*))"} 
-Number powerHeating "Power to Heating [%.0f W]"    	(all, s0_meter) { serial="/dev/ttyACM0,REGEX(powerHeating:([0-9.]*))"}
+Number powerUtility "Power from Utility: [%.0f W]"    	(all, s0_meter) { serial="/dev/ttyARDUINO,REGEX(powerUtility:([0-9.]*))"}
+Number powerPV      "Power from PV [%.0f W]"            (all, s0_meter) { serial="/dev/ttyARDUINO,REGEX(powerPV:([0-9.]*))"} 
+Number powerHeating "Power to Heating [%.0f W]"    	(all, s0_meter) { serial="/dev/ttyARDUINO,REGEX(powerHeating:([0-9.]*))"}
 
 
 
 Group control
 
-Number setPWM 		"Set PWM Heating[%.0f]"       	(all, control) { serial="/dev/ttyACM0,REGEX(setPWM:([0-9.]*))"}
+Number setPWM 		"Set PWM Heating[%.0f]"       	(all, control) { serial="/dev/ttyARDUINO,REGEX(setPWM:([0-9.]*))"}
 Number balanced_power 	"Balanced Power [%.0f W]" 	(all, control)
 Number heating_pwm 	"PWM Heating [%.0f]" 		(all, control)
-String pwm_out 		"String out: [%s]" 		(all, control) { serial="/dev/ttyACM0" }
+String pwm_out 		"String out: [%s]" 		(all, control) { serial="/dev/ttyARDUINO" }
 
 
 
