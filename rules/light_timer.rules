@@ -4,7 +4,7 @@ val Map<String, Timer> lightTimers = newHashMap
 
 rule RuleLightTimer
 when
-   Member of Licht changed from OFF to ON
+     Member of Licht changed from OFF to ON
 then
     if (now.getHourOfDay()>22 || now.getHourOfDay < 5){ 
         if (lightTimers.containsKey(triggeringItem.name)){
