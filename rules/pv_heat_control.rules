@@ -1,4 +1,4 @@
-rule HeatingControlerRule
+rule HeatingControler
 when
 	Item balanced_power received update
 then
@@ -36,10 +36,26 @@ then
 			nxt_pwm = 0;
 		}
 	}
-
+	
+	if (heating_enable.state == OFF){
+		nxt_pwm = 0;
+	}	
+	
 	heating_pwm.postUpdate(nxt_pwm);
 	pwm_out.sendCommand("pwm:" + nxt_pwm.toString() + "\n");
 end
+
+
+
+rule HeatingControlerInit
+when
+	System started
+then
+	heating_pwm.postUpdate(0);
+	heating_enable.postUpdate(ON);
+end
+	
+	
 
 rule balancedPowerRule
 when 

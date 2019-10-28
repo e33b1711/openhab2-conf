@@ -15,20 +15,21 @@ Number setPWM 		"Set PWM Heating[%.0f]"       	(all, control) { serial="/dev/tty
 Number balanced_power 	"Balanced Power [%.0f W]" 	(all, control)
 Number heating_pwm 	"PWM Heating [%.0f]" 		(all, control)
 String pwm_out 		"String out: [%s]" 		(all, control) { serial="/dev/ttyARDUINO" }
-
+Switch heating_enable 	"Heating Enable"		(all, control) 
 
 
 Group eastron
 
 DateTime last_update "Last Update: [%1$tI:%1$tM %1$Tp]" (all, eastron) {channel = "modbus:data:p_l1:lastReadSuccess"}
 
-Number power_l1 "Active Power L1 [%.0f W]" (all, eastron) { channel = "modbus:data:p_l1:number"}
-Number power_l2 "Active Power L2 [%.0f W]" (all, eastron) { channel = "modbus:data:p_l2:number"}
-Number power_l3 "Active Power L3 [%.0f W]" (all, eastron) { channel = "modbus:data:p_l3:number"}
+Number power_l1 "Active Power L1 [%.0f W]" 	(all, eastron) { channel = "modbus:data:p_l1:number"}
+Number power_l2 "Active Power L2 [%.0f W]" 	(all, eastron) { channel = "modbus:data:p_l2:number"}
+Number power_l3 "Active Power L3 [%.0f W]" 	(all, eastron) { channel = "modbus:data:p_l3:number"}
 
-Number voltage_l1 "Voltage L1 [%.1f V]" (all, eastron) { channel = "modbus:data:v_l1:number"}
-Number voltage_l2 "Voltage L2 [%.1f V]" (all, eastron) { channel = "modbus:data:v_l2:number"}
-Number voltage_l3 "Voltage L3 [%.1f V]" (all, eastron) { channel = "modbus:data:v_l3:number"}
+Number voltage_l1 "Voltage L1 [%.1f V]" 	(all, eastron) { channel = "modbus:data:v_l1:number"}
+Number voltage_l2 "Voltage L2 [%.1f V]" 	(all, eastron) { channel = "modbus:data:v_l2:number"}
+Number voltage_l3 "Voltage L3 [%.1f V]" 	(all, eastron) { channel = "modbus:data:v_l3:number"}
 
+Number frequency "Frequency [%.2f Hz]" 		(all, eastron) { channel = "modbus:data:f:number"}
 
 
