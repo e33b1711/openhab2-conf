@@ -1,0 +1,6 @@
+sitemap power label="power" {
+	Group item=all 
+	Group item=eastron
+	Group item=control
+	Group itm=s0_meter 
+}

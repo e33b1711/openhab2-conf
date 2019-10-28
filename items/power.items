@@ -1,0 +1,34 @@
+Group all
+
+
+Group s0_meter
+
+Number powerUtility "Power from Utility: [%.0f W]"    	(all, s0_meter) { serial="/dev/ttyACM0,REGEX(powerUtility:([0-9.]*))"}
+Number powerPV      "Power from PV [%.0f W]"            (all, s0_meter) { serial="/dev/ttyACM0,REGEX(powerPV:([0-9.]*))"} 
+Number powerHeating "Power to Heating [%.0f W]"    	(all, s0_meter) { serial="/dev/ttyACM0,REGEX(powerHeating:([0-9.]*))"}
+
+
+
+Group control
+
+Number setPWM 		"Set PWM Heating[%.0f]"       	(all, control) { serial="/dev/ttyACM0,REGEX(setPWM:([0-9.]*))"}
+Number balanced_power 	"Balanced Power [%.0f W]" 	(all, control)
+Number heating_pwm 	"PWM Heating [%.0f]" 		(all, control)
+String pwm_out 		"String out: [%s]" 		(all, control) { serial="/dev/ttyACM0" }
+
+
+
+Group eastron
+
+DateTime last_update "Last Update: [%1$tI:%1$tM %1$Tp]" (all, eastron) {channel = "modbus:data:p_l1:lastReadSuccess"}
+
+Number power_l1 "Active Power L1 [%.0f W]" (all, eastron) { channel = "modbus:data:p_l1:number"}
+Number power_l2 "Active Power L2 [%.0f W]" (all, eastron) { channel = "modbus:data:p_l2:number"}
+Number power_l3 "Active Power L3 [%.0f W]" (all, eastron) { channel = "modbus:data:p_l3:number"}
+
+Number voltage_l1 "Voltage L1 [%.1f V]" (all, eastron) { channel = "modbus:data:v_l1:number"}
+Number voltage_l2 "Voltage L2 [%.1f V]" (all, eastron) { channel = "modbus:data:v_l2:number"}
+Number voltage_l3 "Voltage L3 [%.1f V]" (all, eastron) { channel = "modbus:data:v_l3:number"}
+
+
+
