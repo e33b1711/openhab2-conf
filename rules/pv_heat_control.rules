@@ -8,8 +8,8 @@ then
 	}
 
 
-	var nxt_pwm = heating_pwm.state as Number;
-	var bal_pow = balanced_power.state as Number;
+	var Number nxt_pwm = heating_pwm.state as Number;
+	var Number bal_pow = balanced_power.state as Number;
 
 	if (bal_pow < -160 && (nxt_pwm < 253)){
 		nxt_pwm = nxt_pwm - (bal_pow/15);
