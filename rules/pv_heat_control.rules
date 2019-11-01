@@ -11,32 +11,37 @@ then
 	var Number nxt_pwm = heating_pwm.state as Number;
 	var Number bal_pow = balanced_power.state as Number;
 
-	if (bal_pow < -160 && (nxt_pwm < 253)){
+
+
+	if (bal_pow < -160){
 		nxt_pwm = nxt_pwm - (bal_pow/15);
-		if (nxt_pwm > 253){
-			nxt_pow = 253;
-		}
 	}
 
 
-	if((bal_pow < -60) && (-160 <= bal_pow) && (nxt_pwm < 253)){
+	if((bal_pow < -60) && (-160 <= bal_pow)){
 		nxt_pwm = nxt_pwm+1;
 	}
 
-
-	if ((bal_pow > -10) && (-60 <= bal_pow) && (nxt_pwm > 0)){
+	if ((bal_pow > -10) && (-60 <= bal_pow)){
 		nxt_pwm = nxt_pwm -1
 	}
 
-
-
 	if (bal_pow > 140 && (nxt_pwm > 0)){
 		nxt_pwm = nxt_pwm - (bal_pow/15);
-		if (nxt_pwm < 0){
-			nxt_pwm = 0;
-		}
+	}
+
+
+
+	if (nxt_pwm > 253){
+		nxt_pwm = 253;
+	}
+
+	if (nxt_pwm < 0){
+		nxt_pwm = 0;
 	}
 	
+
+
 	if (heating_enable.state == OFF){
 		nxt_pwm = 0;
 	}	
