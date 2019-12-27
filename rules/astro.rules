@@ -1,14 +1,19 @@
-//import org.openhab.model.script.actions.Timer
+import org.openhab.model.script.actions.Timer
 
 var Timer timer = null 
 
 rule "Sunset"
 when
-	Channel 'astro:sun:home:set#event' triggered START
-	//Item LI_EG_GR received update ON
+	//Channel 'astro:sun:home:set#event' triggered START
+	Item LI_EG_GR received update ON
 then
-    ItsDark.postUpdate(ON)
-	//sendNotification("e33b1711@gmail.com", "Its dark.")
+    //ItsDark.postUpdate(ON)
+	sendNotification("e33b1711@gmail.com", "Its dark.")
+	sendCommand(LI_EG_AO, ON)
+    	timer = createTimer(now.plusMinutes(1), [|
+        	sendCommand(LI_EG_AO, OFF)
+        	timer = null   // reset the timer
+    	])
 end
 
 
@@ -17,7 +22,7 @@ when
 	Channel 'astro:sun:home:rise#event' triggered START
 then
 	ItsDark.postUpdate(OFF)
-	//sendNotification("e33b1711@gmail.com", "Its not dark.")
+	sendNotification("e33b1711@gmail.com", "Its not dark.")
 end
 
 
