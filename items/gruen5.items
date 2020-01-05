@@ -14,6 +14,8 @@ Group Dachfenster	                                            	(All)
 Group RS485_IN			"schreibbar vom RS485"
 Group RS485_OUT 		"schreibbar auf RS485"
 
+Group SunsetLights
+
 
 
 Group EG_WZ 		    "Wohnzimmer" 	            <video> 		(EG)
@@ -82,10 +84,10 @@ Switch LI_UG_HK     	"Licht Heizkeller" 			                (Licht, UG_HK, RS485_
 Switch LI_UG_GA     	"Licht Kellergang" 			                (Licht, UG_GA, RS485_IN, RS485_OUT)         //{autoupdate="false"}
 Switch LI_UG_LA     	"Licht Lagerraum" 			                (Licht, UG_LA, RS485_IN, RS485_OUT)         //{autoupdate="false"}
 
-Switch LI_EG_VH     	"Vordach" 			    	                (Licht, Aussen, RS485_IN, RS485_OUT)        //{autoupdate="false"}
-Switch LI_EG_AS     	"Terrasse Süden" 			                (Licht, Aussen, RS485_IN, RS485_OUT)        //{autoupdate="false"}
-Switch LI_EG_AW     	"Terrasse Westen" 			                (Licht, Aussen, RS485_IN, RS485_OUT)        //{autoupdate="false"}
-Switch LI_EG_AO     	"Wand Osten" 				                (Licht, Aussen, RS485_IN, RS485_OUT)        //{autoupdate="false"}
+Switch LI_EG_VH     	"Vordach" 			    	                (Licht, Aussen, RS485_IN, RS485_OUT, SunsetLights)        
+Switch LI_EG_AS     	"Terrasse Süden" 			                (Licht, Aussen, RS485_IN, RS485_OUT, SunsetLights)        
+Switch LI_EG_AW     	"Terrasse Westen" 			                (Licht, Aussen, RS485_IN, RS485_OUT)
+Switch LI_EG_AO     	"Wand Osten" 				                (Licht, Aussen, RS485_IN, RS485_OUT, SunsetLights) 
 
 Switch LI_GR 	    	"Grundbeleuchtung" 			                (Licht, Garage, RS485_IN, RS485_OUT)        //{autoupdate="false"}
 Switch LI_GR_L1     	"Aussen" 			    	                (Licht, Garage, RS485_IN, RS485_OUT)        //{autoupdate="false"}
