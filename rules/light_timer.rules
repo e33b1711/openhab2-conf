@@ -51,12 +51,12 @@ then
             lightTimers.get(LI_EG_AO.name)?.cancel()
             logInfo("SunsetOuterLight", "Canceled old timer for " + LI_EG_AO.name)
         }
-    lightTimers.put( LI_EG_GR.name, createTimer(now.plusMinutes(180), [|
-        LI_EG_GR.sendCommand(OFF)
-        lightTimers.put(LI_EG_GR.name, null) // remove the timer from the Hashmap
-        logInfo("SunsetOuterLight", "Destroyed timer for " + LI_EG_GR.name)
+    lightTimers.put( LI_EG_AO.name, createTimer(now.plusMinutes(180), [|
+        LI_EG_AO.sendCommand(OFF)
+        lightTimers.put(LI_EG_AO.name, null) // remove the timer from the Hashmap
+        logInfo("SunsetOuterLight", "Destroyed timer for " + LI_EG_AO.name)
     ]))
-    logInfo("SunsetOuterLight", "Created timer for " + LI_EG_GR.name)
+    logInfo("SunsetOuterLight", "Created timer for " + LI_EG_AO.name)
 end
 
 
