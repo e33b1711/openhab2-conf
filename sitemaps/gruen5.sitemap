@@ -3,10 +3,10 @@ sitemap gruen5 label="Lichter / Verdunkelung"
 	
 Text label="Keller" icon="cellar" {
 		Switch item=LI_UG_HO
+		Switch item=LI_UG_HN
 		Switch item=LI_UG_GA
 		Switch item=LI_UG_WK 
 		Switch item=LI_UG_LA
-		Switch item=LI_UG_HK
 }
 
 Text label="Erdgeschoss" icon="groundfloor" {
