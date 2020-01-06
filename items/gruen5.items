@@ -78,11 +78,11 @@ Switch LI_OG_SZ_L2  	"Leselampe Anselm" 		                	(Licht, OG_SZ, RS485_
 Switch LI_OG_GA 	    "Decke" 	  		    	                (Licht, OG_GA, RS485_IN, RS485_OUT)         //{autoupdate="false"}
 Switch LI_OG_GA_L1  	"Spots" 	  		    	                (Licht, OG_GA, RS485_IN, RS485_OUT)         //{autoupdate="false"}
 
-Switch LI_UG_HO 	    "Licht Hobbyraum" 			                (Licht, UG_HO, RS485_IN, RS485_OUT)         //{autoupdate="false"} 
+Switch LI_UG_HO 	"Licht Hobbyraum Büro" 			                (Licht, UG_HO, RS485_IN, RS485_OUT)         //{autoupdate="false"} 
 Switch LI_UG_WK     	"Licht Waschküche" 			                (Licht, UG_WK, RS485_IN, RS485_OUT)         //{autoupdate="false"}
 Switch LI_UG_HK     	"Licht Heizkeller" 			                (Licht, UG_HK, RS485_IN, RS485_OUT)         //{autoupdate="false"}
 Switch LI_UG_GA     	"Licht Kellergang" 			                (Licht, UG_GA, RS485_IN, RS485_OUT)         //{autoupdate="false"}
-Switch LI_UG_LA     	"Licht Lagerraum" 			                (Licht, UG_LA, RS485_IN, RS485_OUT)         //{autoupdate="false"}
+Switch LI_UG_HN     	"Licht Hobbyraum Nord" 			                (Licht, UG_HO, RS485_IN, RS485_OUT)         //{autoupdate="false"}
 
 Switch LI_EG_VH     	"Vordach" 			    	                (Licht, Aussen, RS485_IN, RS485_OUT, SunsetLights)        
 Switch LI_EG_AS     	"Terrasse Süden" 			                (Licht, Aussen, RS485_IN, RS485_OUT, SunsetLights)        
