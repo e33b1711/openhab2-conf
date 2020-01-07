@@ -2,6 +2,22 @@ import java.util.Map
 
 val Map<String, Timer> lightTimers = newHashMap
 
+rule RuleLightTimerAlways
+when
+     Member of AlwaysTimer changed from OFF to ON
+then
+    if (lightTimers.containsKey(triggeringItem.name)){
+        lightTimers.get(triggeringItem.name)?.cancel()
+        logInfo("RuleLightTimers", "Canceled old timer for " + triggeringItem.name)
+    }
+    lightTimers.put( triggeringItem.name, createTimer(now.plusSeconds(600), [|
+        triggeringItem.sendCommand(OFF)
+        lightTimers.put(triggeringItem.name, null) // remove the timer from the Hashmap
+        logInfo("RuleLightTimers", "Destroyed timer for " + triggeringItem.name)
+    ]))
+    logInfo("RuleLightTimersAlways", "Created timer for " + triggeringItem.name)
+end
+
 rule RuleLightTimer
 when
      Member of Licht changed from OFF to ON
