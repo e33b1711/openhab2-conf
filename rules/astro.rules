@@ -6,8 +6,8 @@ rule "Sunset"
 when
 	Channel 'astro:sun:home:set#event' triggered START
 then
-    	ItsDark.postUpdate(ON)
-	sendNotification("e33b1711@gmail.com", "Its dark.")
+	ItsDark.postUpdate(ON)
+	//sendNotification("e33b1711@gmail.com", "Its dark.")
 end
 
 
@@ -16,7 +16,7 @@ when
 	Channel 'astro:sun:home:rise#event' triggered START
 then
 	ItsDark.postUpdate(OFF)
-	sendNotification("e33b1711@gmail.com", "Its not dark.")
+	//sendNotification("e33b1711@gmail.com", "Its not dark.")
 end
 
 
