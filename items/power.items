@@ -18,7 +18,7 @@ Switch heating_enable 	"Heating Enable"			(all, control)
 
 Group eastron
 
-DateTime last_update 	"Last Update: [%1$ta %1$tR]" 		(all, eastron) {channel = "modbus:data:p_l1:lastReadSuccess"}
+DateTime last_update 	"Last Update: [%1$tH:%1$tM:%1$tS]" 		(all, eastron) {channel = "modbus:data:p_l1:lastReadSuccess"}
 
 Number power_l1 	"Active Power L1 [%.0f W]" 		(all, eastron) { channel = "modbus:data:p_l1:number"}
 Number power_l2 	"Active Power L2 [%.0f W]" 		(all, eastron) { channel = "modbus:data:p_l2:number"}
