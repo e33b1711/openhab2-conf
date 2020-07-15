@@ -45,7 +45,7 @@ then
 	if (heating_enable.state == OFF){
 		nxt_pwm = 0;
 	}	
-	
+        logInfo("pv heating rule", "heating_pwm update: " + nxt_pwm.toString());	
 	heating_pwm.postUpdate(nxt_pwm);
 	pwm_out.sendCommand("pwm:" + nxt_pwm.toString() + "\n");
 end

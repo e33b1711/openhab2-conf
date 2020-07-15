@@ -2,7 +2,7 @@ Group  sonoff                                                            (All)
 
 Group  sonoff_basic_01               "Sonoff Basic 01"                   (Sonoff)
 String sonoff_basic_01_reachable     "Reachable: [%s]"                   (sonoff_basic_01)  { channel="mqtt:topic:mosquitto:sonoff_basic_01:reachable" }
-Switch sonoff_basic_01_power         "Leselampe"                             (sonoff_basic_01)  { channel="mqtt:topic:mosquitto:sonoff_basic_01:power" }       
+Switch sonoff_basic_01_power         "Leselampe"                         (sonoff_basic_01)  { channel="mqtt:topic:mosquitto:sonoff_basic_01:power" }       
 Number sonoff_basic_01_rssi          "WiFi Signal Strength [%d %%]"      (sonoff_basic_01)  { channel="mqtt:topic:mosquitto:sonoff_basic_01:rssi" }
 
 Group  sonoff_basic_02               "Sonoff Basic 02"                   (Sonoff)
@@ -28,4 +28,10 @@ String sonoff_basic_05_reachable     "Reachable: [%s]"                   (sonoff
 Switch sonoff_basic_05_power         "Power"                             (sonoff_basic_05)  { channel="mqtt:topic:mosquitto:sonoff_basic_05:power" }       
 Number sonoff_basic_05_rssi          "WiFi Signal Strength [%d %%]"      (sonoff_basic_05)  { channel="mqtt:topic:mosquitto:sonoff_basic_05:rssi" }
 
-
+Group  sonoff_pro_01                 "Sonoff Pro 01"                     (Sonoff)
+String sonoff_pro_01_reachable       "Reachable: [%s]"                   (sonoff_pro_01)  { channel="mqtt:topic:mosquitto:sonoff_pro_01:reachable" }
+Switch sonoff_pro_01_power1          "Power1"                            (sonoff_pro_01)  { channel="mqtt:topic:mosquitto:sonoff_pro_01:power1" }
+Switch sonoff_pro_02_power2          "Power2"                            (sonoff_pro_01)  { channel="mqtt:topic:mosquitto:sonoff_pro_01:power2" }
+Switch sonoff_pro_03_power3          "Power3"                            (sonoff_pro_01)  { channel="mqtt:topic:mosquitto:sonoff_pro_01:power3" }
+Switch sonoff_pro_04_power4          "Power4"                            (sonoff_pro_01)  { channel="mqtt:topic:mosquitto:sonoff_pro_01:power4" }
+Number sonoff_pro_01_rssi            "WiFi Signal Strength [%d %%]"      (sonoff_pro_01)  { channel="mqtt:topic:mosquitto:sonoff_pro_01:rssi" }

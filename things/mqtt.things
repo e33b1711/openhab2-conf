@@ -34,5 +34,17 @@ Bridge mqtt:broker:mosquitto "Mosquitto" [ host="localhost", port=1883, secure=f
         Type string : reachable "Reachable"            [ stateTopic="tele/sonoff_basic_05/LWT" ]
         Type switch : power     "Power"                [ stateTopic="stat/sonoff_basic_05/POWER", commandTopic="cmnd/sonoff_basic_05/POWER", retained=true]
         Type number : rssi      "WiFi Signal Strength" [ stateTopic="tele/sonoff_basic_05/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+    }    
+
+    Thing topic sonoff_pro_01 "Sonoff Pro 01" @ "debug" {
+    Channels:
+        Type string : reachable "Reachable"            [ stateTopic="tele/sonoff_pro_01/LWT" ]
+        Type switch : power1    "Power1"               [ stateTopic="stat/sonoff_pro_01/POWER1", commandTopic="cmnd/sonoff_pro_01/POWER1", retained=true]
+        Type switch : power2    "Power2"               [ stateTopic="stat/sonoff_pro_01/POWER2", commandTopic="cmnd/sonoff_pro_01/POWER2", retained=true]
+        Type switch : power3    "Power3"               [ stateTopic="stat/sonoff_pro_01/POWER3", commandTopic="cmnd/sonoff_pro_01/POWER3", retained=true]
+        Type switch : power4    "Power4"               [ stateTopic="stat/sonoff_pro_01/POWER4", commandTopic="cmnd/sonoff_pro_01/POWER4", retained=true]
+	Type number : rssi      "WiFi Signal Strength" [ stateTopic="tele/sonoff_pro_01/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
     }
+
+	
 }
