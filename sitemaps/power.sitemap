@@ -1,6 +1,6 @@
 sitemap power label="power" {
 	Group item=all 
-	Group item=eastron
-	Group item=control
+	Group item=sdm
+	Group item=pv_heating
 	Group item=s0_meter 
 }
