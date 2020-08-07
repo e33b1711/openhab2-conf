@@ -32,8 +32,8 @@ then
 
 
 
-	if (nxt_pwm > 253){
-		nxt_pwm = 253;
+	if (nxt_pwm > 180){
+		nxt_pwm = 180;
 	}
 
 	if (nxt_pwm < 0){
@@ -64,9 +64,10 @@ end
 
 rule balancedPowerRule
 when 
-	Item power_l1 changed
+	Item power_l1 changed or Item power_l2 changed or Item power_l3 changed
 then
 	postUpdate(balanced_power, power_l1.state as DecimalType + power_l2.state as DecimalType + power_l3.state as DecimalType)
+	//logInfo("balanced power rule:", "balanced_power update: " + balanced_power.state.toString());     
 end
 
 
