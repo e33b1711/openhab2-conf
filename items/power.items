@@ -3,13 +3,13 @@ Group s0_meter
 Number powerUtility     "Power from Utility: [%.0f W]"      (all, s0_meter) { tcp=">[192.168.178.213:8889:REGEX(powerUtility:([0-9.]*))]"}
 Number powerPV          "Power from PV [%.0f W]"            (all, s0_meter) { tcp=">[192.168.178.213:8889:REGEX(powerHeating:([0-9.]*))]"}
 Number powerHeating     "Power to Heating [%.0f W]"         (all, s0_meter) { tcp=">[192.168.178.213:8889:REGEX(powerPV:([0-9.]*))]"}
-String powerGateway     "Power to Heating [%s]"         	(all, s0_meter) { tcp=">[192.168.178.213:8889]"}
+String powerGateway     "powerGateway [%s]"         	    (all, s0_meter) { tcp=">[*:192.168.178.213:8889:]"}
 
 
 Group pv_heating
-Number setPWM               "Set PWM Heating[%.0f]"          (all, control) 
-Number balanced_power       "Balanced Power [%.0f W]"        (all, control)
-Number watchdog_counter     "Watchdog COunter [%.0f]"        (all, control)
+Number setPWM               "Set PWM Heating[%.0f]"          (all, pv_heating) 
+Number balanced_power       "Balanced Power [%.0f W]"        (all, pv_heating)
+Number watchdog_counter     "Watchdog COunter [%.0f]"        (all, pv_heating)
 
 Group sdm
 Number power_l1             "Active Power L1 [%.0f W]"       (all, sdm) 
