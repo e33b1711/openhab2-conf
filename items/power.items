@@ -3,6 +3,7 @@ Group s0_meter
 Number powerUtility     "Power from Utility: [%.0f W]"      (all, s0_meter) { tcp=">[192.168.178.213:8889:REGEX(powerUtility:([0-9.]*))]"}
 Number powerPV          "Power from PV [%.0f W]"            (all, s0_meter) { tcp=">[192.168.178.213:8889:REGEX(powerHeating:([0-9.]*))]"}
 Number powerHeating     "Power to Heating [%.0f W]"         (all, s0_meter) { tcp=">[192.168.178.213:8889:REGEX(powerPV:([0-9.]*))]"}
+String powerGateway     "Power to Heating [%s]"         	(all, s0_meter) { tcp=">[192.168.178.213:8889]"}
 
 
 Group pv_heating
