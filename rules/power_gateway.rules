@@ -1,4 +1,4 @@
-import org.eclipse.smarthome.model.script.ScriptServiceUtil
+//import org.eclipse.smarthome.model.script.ScriptServiceUtil
 
 rule PowerGatewayInRule
 when 
@@ -7,47 +7,58 @@ then
 	//variables	
 	var String name_string = ""
 	var String value_string = ""
-	var float value=0
+	//var float value=0
 
-	name_string  = transform("REGEX", "[ ]*([A-Za-z]*):[ ]*[0-9]*[ ]*", powerGateway.state.toString)
-	value_string = transform("REGEX", "[ ]*[A-Za-z]*:[ ]*([0-9]*)[ ]*", powerGateway.state.toString)
-	logInfo("PowerGatewayInRule", "name / value strings:" + name_string + " " + value_string)
-	if (name_String!=null and value_String!== null){
+
+	name_string  = transform("REGEX", "[ ]*([A-Za-z_]*):[ ]*[0-9]*[ ]*", powerGateway.state.toString)
+	value_string = transform("REGEX", "[ ]*[A-Za-z_]*:[ ]*([0-9]*)[ ]*", powerGateway.state.toString)
+	logInfo("PowerGatewayInRule", "in string:>>" + powerGateway.state.toString + "<<")
+        logInfo("PowerGatewayInRule", "name / value strings:>>" + name_string + "<<>>"  + value_string+"<<")
 	
-		value=Float::parseFloat(value_string)
-		if (name_String="powerHeating"){
-			powerHeating.postUpdate(value);
-		}
-		value=Float::parseFloat(value_string)
-		if (name_String="powerPV"){
-			powerPV.postUpdate(value);
-		}
-		value=Float::parseFloat(value_string)
-		if (name_String="powerUtility"){
-			powerUtility.postUpdate(value);
+	if (name_string!==null && value_string!==null){
+	
+		val value=Float::parseFloat(value_string)
+		
+		if (name_string=="powerHeating"){
+			powerHeating.postUpdate(value)
 		}
 		
-		if (name_String="bal_power"){
+		if (name_string=="powerPV"){
+			powerPV.postUpdate(value);
+		}	
+		if (name_string=="powerUtility"){
+			powerUtility.postUpdate(value);
+		}
+		if (name_string=="pwm_setpoint"){
+                        pwm_setpoint.postUpdate(value);
+                }
+
+		if (name_string=="bal_power"){
 			bal_power.postUpdate(value);
 		}
-		if (name_String="watchtdog_counter"){
-			watchtdog_counter.postUpdate(value);
+		if (name_string=="watchdog_counter"){
+			watchdog_counter.postUpdate(value);
 		}
-		if (name_String="energyUtility"){
-			energyUtility.postUpdate(value);
+		if (name_string=="energyUtility"){
+			energyUtility.postUpdate(value*0.001);
 		}
-		if (name_String="energyHeat"){
-			energyHeat.postUpdate(value);
+		if (name_string=="energyHeat"){
+			energyHeat.postUpdate(value*0.001);
 		}
-		if (name_String="energyExport"){
-			energyExport.postUpdate(value);
+                if (name_string=="energyPV"){
+                        energyPV.postUpdate(value*0.001);
+                }
+
+		if (name_string=="energyExport"){
+			energyExport.postUpdate(value*0.001);
 		}
-		if (name_String="unsalEnergyExport"){
-			unsalEnergyExport.postUpdate(value);
+		if (name_string=="unsalEnergyExport"){
+			unsalEnergyExport.postUpdate(value*0.001);
 		}
-		if (name_String="unsalEnergyImport"){
-			unsalEnergyImport.postUpdate(value);
+		if (name_string=="unsalEnergyImport"){
+			unsalEnergyImport.postUpdate(value*0.001);
 		}
+		
 		
    	}
 end

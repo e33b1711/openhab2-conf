@@ -7,8 +7,8 @@ String powerGateway     "powerGateway [%s]"         	    (all, s0_meter) { udp="
 
 
 Group pv_heating
-Number setPWM               "Set PWM Heating[%.0f]"          (all, pv_heating) 
-Number balanced_power       "Balanced Power [%.0f W]"        (all, pv_heating) 
+Number pwm_setpoint         "Set PWM Heating[%.0f]"          (all, pv_heating) 
+Number bal_power            "Balanced Power [%.0f W]"        (all, pv_heating) 
 Number watchdog_counter     "Watchdog Counter [%.0f]"        (all, pv_heating) 
 
 Group sdm
