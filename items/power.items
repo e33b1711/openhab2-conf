@@ -2,7 +2,7 @@ Group all
 Group s0_meter
 //Number powerUtility     "Power from Utility: [%.0f W]"      (all, s0_meter) { udp="<[*:*:*:REGEX(*powerUtility:[ ]*([0-9.]*))]"}
 //Number powerPV          "Power from PV [%.0f W]"            (all, s0_meter) { udp="<[*:*:*:REGEX(*powerPV:[ ]*([0-9.]*))]"}
-//Number powerHeating     "Power to Heating [%.0f W]"         (all, s0_meter) { udp="<[*:*:*:REGEX(*powerHeating:[ ]*([0-9.]*))]"} 
+Number powerHeating     "Power to Heating [%.0f W]"         (all, s0_meter) 
 String powerGateway     "powerGateway [%s]"         	    (all, s0_meter) { udp="<[*:*:'REGEX((.*))']"}
 
 

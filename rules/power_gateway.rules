@@ -2,17 +2,20 @@ import org.eclipse.smarthome.model.script.ScriptServiceUtil
 
 rule PowerGatewayInRule
 when 
-	Item power_gateway received update
+	Item powerGateway changed 
 then
 	//variables	
 	var String name_string = ""
 	var String value_string = ""
 	var float value=0
 
-	in_buffer = telnet_in.state.toString.trim
-	var String name_string  = transform("REGEX", "[ ]*([\S]*):[ ]*[0-9]*[ ]*", power_gateway.state.toString)
-	var String value_string = transform("REGEX", "[ ]*[\S]*:[ ]*([0-9]*)[ ]*", power_gateway.state.toString)
+	name_string  = transform("REGEX", "[ ]*([A-Za-z]*):[ ]*[0-9]*[ ]*", powerGateway.state.toString)
+	value_string = transform("REGEX", "[ ]*[A-Za-z]*:[ ]*([0-9]*)[ ]*", powerGateway.state.toString)
 	logInfo("PowerGatewayInRule", "name / value strings:" + name_string + " " + value_string)
-	//value=Float::parseFloat(parser_in_string.substring(index3+1,index4))
-   
+	if (name_String!=null and value_String!== null){
+		value=Float::parseFloat(value_string)
+		if (name_String="powerHeating"){
+			powerHeating.postUpdate(value);
+		}
+   	}
 end
