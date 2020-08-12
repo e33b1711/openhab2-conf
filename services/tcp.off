@@ -2,10 +2,10 @@
 # specified otherwise
 
 # Port to listen for incoming connections
-#port=25001
+port=8890
 
 # Cron-like string to reconnect remote ends, e.g for unstable connection or remote ends
-#reconnectcron=0 0 0 * * ?
+reconnectcron=* 0 * * * ?
 
 # Interval between reconnection attempts when recovering from a communication error,
 # in seconds
@@ -21,13 +21,13 @@ retryinterval=5
 #itemsharedconnections=true
 
 # Share connections between Item binding configurations
-#bindingsharedconnections=true
+bindingsharedconnections=true
 
 # Share connections between inbound and outbound connections
 #directionssharedconnections=false
 
 # Allow masks in ip:port addressing, e.g. 192.168.0.1:* etc
-#addressmask=true
+addressmask=true
 
 # Pre-amble that will be put in front of data being sent
 #preamble=
