@@ -1,0 +1,18 @@
+import org.eclipse.smarthome.model.script.ScriptServiceUtil
+
+rule PowerGatewayInRule
+when 
+	Item power_gateway received update
+then
+	//variables	
+	var String name_string = ""
+	var String value_string = ""
+	var float value=0
+
+	in_buffer = telnet_in.state.toString.trim
+	var String name_string  = transform("REGEX", "[ ]*([\S]*):[ ]*[0-9]*[ ]*", power_gateway.state.toString)
+	var String value_string = transform("REGEX", "[ ]*[\S]*:[ ]*([0-9]*)[ ]*", power_gateway.state.toString)
+	logInfo("PowerGatewayInRule", "name / value strings:" + name_string + " " + value_string)
+	//value=Float::parseFloat(parser_in_string.substring(index3+1,index4))
+   
+end
