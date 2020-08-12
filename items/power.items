@@ -1,26 +1,21 @@
 Group all
 Group s0_meter
-//Number powerUtility     "Power from Utility: [%.0f W]"      (all, s0_meter) { udp="<[*:*:*:REGEX(*powerUtility:[ ]*([0-9.]*))]"}
-//Number powerPV          "Power from PV [%.0f W]"            (all, s0_meter) { udp="<[*:*:*:REGEX(*powerPV:[ ]*([0-9.]*))]"}
+Number powerUtility     "Power from Utility: [%.0f W]"      (all, s0_meter) 
+Number powerPV          "Power from PV [%.0f W]"            (all, s0_meter)
 Number powerHeating     "Power to Heating [%.0f W]"         (all, s0_meter) 
 String powerGateway     "powerGateway [%s]"         	    (all, s0_meter) { udp="<[*:*:'REGEX((.*))']"}
 
 
 Group pv_heating
-//Number setPWM               "Set PWM Heating[%.0f]"          (all, pv_heating) 
-//Number balanced_power       "Balanced Power [%.0f W]"        (all, pv_heating) { udp="<[*:*:*:REGEX(*bal_power:[ ]*([0-9.]*))]"}
-//Number watchdog_counter     "Watchdog Counter [%.0f]"        (all, pv_heating) { udp="<[*:*:*:REGEX(*watchdog_counter:[ ]*([0-9.]*))]"}
+Number setPWM               "Set PWM Heating[%.0f]"          (all, pv_heating) 
+Number balanced_power       "Balanced Power [%.0f W]"        (all, pv_heating) 
+Number watchdog_counter     "Watchdog Counter [%.0f]"        (all, pv_heating) 
 
 Group sdm
-//Number energyUtility            "Energy Utility [%.0f]"        (all, sdm)        { udp="<[*:*:*:REGEX(*energyUtility:[ ]*([0-9.]*))]"}
-//Number energyHeat               "Energy Heat [%.0f]"           (all, pv_heating) { udp="<[*:*:*:REGEX(*energyHeat:[ ]*([0-9.]*))]"}
-//Number energyPV                 "Energy PV [%.0f]"             (all, pv_heating) { udp="<[*:*:*:REGEX(*energyPV:[ ]*([0-9.]*))]"}
-//Number energyExport             "Energy Export [%.0f]"         (all, pv_heating) { udp="<[*:*:*:REGEX(*energyExport:[ ]*([0-9.]*))]"}
-//Number unsalEnergyExport        "Energy Ex (unsal) [%.0f]"     (all, pv_heating) { udp="<[*:*:*:REGEX(*unsalEnergyExport:[ ]*([0-9.]*))]"}
-//Number unsalEnergyImport        "Energy Im (unsal) [%.0f]"     (all, pv_heating) { udp="<[*:*:*:REGEX(*unsalEnergyImport:[ ]*([0-9.]*))]"}
-
-//mber watchdog_counter     "Watchdog Counter [%.0f]"        (all, pv_heating) { udp="<[*:*:*:REGEX(*watchdog_counter:[ ]*([0-9.]*))]"}
-//mber watchdog_counter     "Watchdog Counter [%.0f]"        (all, pv_heating) { udp="<[*:*:*:REGEX(*watchdog_counter:[ ]*([0-9.]*))]"}
-//mber watchdog_counter     "Watchdog Counter [%.0f]"        (all, pv_heating) { udp="<[*:*:*:REGEX(*watchdog_counter:[ ]*([0-9.]*))]"}
-
+Number energyUtility            "Energy Utility [%.0f Wh]"        (all, sdm)        
+Number energyHeat               "Energy Heat [%.0f Wh]"           (all, pv_heating) 
+Number energyPV                 "Energy PV [%.0f Wh]"             (all, pv_heating) 
+Number energyExport             "Energy Export [%.0f Wh]"         (all, pv_heating) 
+Number unsalEnergyExport        "Energy Ex (unsal) [%.0f Wh]"     (all, pv_heating) 
+Number unsalEnergyImport        "Energy Im (unsal) [%.0f Wh]"     (all, pv_heating) 
 

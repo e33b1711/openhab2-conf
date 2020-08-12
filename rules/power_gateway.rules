@@ -13,9 +13,41 @@ then
 	value_string = transform("REGEX", "[ ]*[A-Za-z]*:[ ]*([0-9]*)[ ]*", powerGateway.state.toString)
 	logInfo("PowerGatewayInRule", "name / value strings:" + name_string + " " + value_string)
 	if (name_String!=null and value_String!== null){
+	
 		value=Float::parseFloat(value_string)
 		if (name_String="powerHeating"){
 			powerHeating.postUpdate(value);
 		}
+		value=Float::parseFloat(value_string)
+		if (name_String="powerPV"){
+			powerPV.postUpdate(value);
+		}
+		value=Float::parseFloat(value_string)
+		if (name_String="powerUtility"){
+			powerUtility.postUpdate(value);
+		}
+		
+		if (name_String="bal_power"){
+			bal_power.postUpdate(value);
+		}
+		if (name_String="watchtdog_counter"){
+			watchtdog_counter.postUpdate(value);
+		}
+		if (name_String="energyUtility"){
+			energyUtility.postUpdate(value);
+		}
+		if (name_String="energyHeat"){
+			energyHeat.postUpdate(value);
+		}
+		if (name_String="energyExport"){
+			energyExport.postUpdate(value);
+		}
+		if (name_String="unsalEnergyExport"){
+			unsalEnergyExport.postUpdate(value);
+		}
+		if (name_String="unsalEnergyImport"){
+			unsalEnergyImport.postUpdate(value);
+		}
+		
    	}
 end
