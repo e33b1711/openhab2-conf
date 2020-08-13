@@ -1,21 +1,21 @@
 Group all
 Group s0_meter
-Number powerUtility     "Power from Utility: [%.0f W]"      (all, s0_meter) 
-Number powerPV          "Power from PV [%.0f W]"            (all, s0_meter)
-Number powerHeating     "Power to Heating [%.0f W]"         (all, s0_meter) 
-String powerGateway     "powerGateway [%s]"         	    (all, s0_meter) { udp="<[*:*:'REGEX((.*))']"}
+Number powerUtility     "Power from Utility: [%.0f W]"      (all, s0_meter) { channel="mqtt:topic:power_control:powerUtility"}  
+Number powerPV          "Power from PV [%.0f W]"            (all, s0_meter) { channel="mqtt:topic:power_control:powerPV"} 
+Number powerHeating     "Power to Heating [%.0f W]"         (all, s0_meter) { channel="mqtt:topic:power_control:powerHeating"}
+//String powerGateway     "powerGateway [%s]"         	    (all, s0_meter) 
 
 
 Group pv_heating
-Number pwm_setpoint         "Set PWM Heating[%.0f]"          (all, pv_heating) 
-Number bal_power            "Balanced Power [%.0f W]"        (all, pv_heating) 
-Number watchdog_counter     "Watchdog Counter [%.0f]"        (all, pv_heating) 
+//Number pwm_setpoint         "Set PWM Heating[%.0f]"          (all, pv_heating)   
+Number powerBal              "Balanced Power [%.0f W]"        (all, pv_heating) { channel="mqtt:topic:power_control:powerBal"}
+//Number watchdog_counter     "Watchdog Counter [%.0f]"        (all, pv_heating) 
 
 Group sdm
-Number energyUtility            "Energy Utility [%.0f Wh]"        (all, sdm)        
-Number energyHeat               "Energy Heat [%.0f Wh]"           (all, pv_heating) 
-Number energyPV                 "Energy PV [%.0f Wh]"             (all, pv_heating) 
-Number energyExport             "Energy Export [%.0f Wh]"         (all, pv_heating) 
-Number unsalEnergyExport        "Energy Ex (unsal) [%.0f Wh]"     (all, pv_heating) 
-Number unsalEnergyImport        "Energy Im (unsal) [%.0f Wh]"     (all, pv_heating) 
+Number energyImport             "Energy Import [%.0f Wh]"         (all, sdm)          { channel="mqtt:topic:power_control:energyImport"}
+Number energyHeat               "Energy Heat [%.0f Wh]"           (all, pv_heating)   { channel="mqtt:topic:power_control:energyHeat"} 
+Number energyPV                 "Energy PV [%.0f Wh]"             (all, pv_heating)   { channel="mqtt:topic:power_control:energyPV"}
+Number energyExport             "Energy Export [%.0f Wh]"         (all, pv_heating)   { channel="mqtt:topic:power_control:energyExport"}
+//Number unsalEnergyExport        "Energy Ex (unsal) [%.0f Wh]"     (all, pv_heating) 
+//Number unsalEnergyImport        "Energy Im (unsal) [%.0f Wh]"     (all, pv_heating) 
 
