@@ -1,6 +1,3 @@
 sitemap power label="power" {
 	Group item=all 
-	Group item=sdm
-	Group item=pv_heating
-	Group item=s0_meter 
 }

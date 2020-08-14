@@ -1,21 +1,17 @@
-Group all
-Group s0_meter
-Number powerUtility     "Power from Utility: [%.0f W]"      (all, s0_meter) { channel="mqtt:topic:power_control:powerUtility"}  
-Number powerPV          "Power from PV [%.0f W]"            (all, s0_meter) { channel="mqtt:topic:power_control:powerPV"} 
-Number powerHeating     "Power to Heating [%.0f W]"         (all, s0_meter) { channel="mqtt:topic:power_control:powerHeating"}
-//String powerGateway     "powerGateway [%s]"         	    (all, s0_meter) 
+Group all  
+Number powerPV               "Power from PV [%.0f W]"                  (all)                { channel="mqtt:topic:power_control:powerPV"} 
+Number powerHeating          "Power to Heating [%.0f W]"               (all)                { channel="mqtt:topic:power_control:powerHeat"} 
+Number powerBal              "Balanced Power [%.0f W]"                 (all)                { channel="mqtt:topic:power_control:powerBal"} 
 
+Number energyImport          "Energy Import (Today) [%.0f Wh]"         (all)               { channel="mqtt:topic:power_control:energyImport"}
+Number energyHeat            "Energy Heat (Today) [%.0f Wh]"           (all)               { channel="mqtt:topic:power_control:energyHeat"} 
+Number energyPV              "Energy PV (Today) [%.0f Wh]"             (all)               { channel="mqtt:topic:power_control:energyPV"}
+Number energyExport          "Energy Export (Today) [%.0f Wh]"         (all)               { channel="mqtt:topic:power_control:energyExport"}
 
-Group pv_heating
-//Number pwm_setpoint         "Set PWM Heating[%.0f]"          (all, pv_heating)   
-Number powerBal              "Balanced Power [%.0f W]"        (all, pv_heating) { channel="mqtt:topic:power_control:powerBal"}
-//Number watchdog_counter     "Watchdog Counter [%.0f]"        (all, pv_heating) 
+Number lastEnergyImport      "Energy Import (Yesterday) [%.0f Wh]"     (all)               { channel="mqtt:topic:power_control:lastEnergyImport"}
+Number lastEnergyHeat        "Energy Heat (Yesterday) [%.0f Wh]"       (all)               { channel="mqtt:topic:power_control:lastEnergyHeat"}
+Number lastEnergyPV          "Energy PV (Yesterday) [%.0f Wh]"         (all)               { channel="mqtt:topic:power_control:lastEnergyPV"}
+Number lastEnergyExport      "Energy Export (Yesterday) [%.0f Wh]"     (all)               { channel="mqtt:topic:power_control:lastEnergyExport"}
 
-Group sdm
-Number energyImport             "Energy Import [%.0f Wh]"         (all, sdm)          { channel="mqtt:topic:power_control:energyImport"}
-Number energyHeat               "Energy Heat [%.0f Wh]"           (all, pv_heating)   { channel="mqtt:topic:power_control:energyHeat"} 
-Number energyPV                 "Energy PV [%.0f Wh]"             (all, pv_heating)   { channel="mqtt:topic:power_control:energyPV"}
-Number energyExport             "Energy Export [%.0f Wh]"         (all, pv_heating)   { channel="mqtt:topic:power_control:energyExport"}
-//Number unsalEnergyExport        "Energy Ex (unsal) [%.0f Wh]"     (all, pv_heating) 
-//Number unsalEnergyImport        "Energy Im (unsal) [%.0f Wh]"     (all, pv_heating) 
-
+String powerControlStatus    "Power Controller Status: [%s]"             (all)               { channel="mqtt:topic:power_control:status"}
+String powerControlVersion   "Power Controller Version: [%s]"            (all)               { channel="mqtt:topic:power_control:version"}     
