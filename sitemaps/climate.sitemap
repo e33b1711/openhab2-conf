@@ -77,7 +77,8 @@ sitemap climate label="Climate Charts" {
 		 		Text item=U_EG_E1 		label="Ist-Stellwert [%.1f]" icon="heating"
 		 		Setpoint item=UD_EG_E2  step=1 minValue=0 maxValue=15
 		 		Text item=U_EG_E2 		label="Ist-Stellwert [%.1f]" icon="heating"
-		 		Setpoint item=TS_EG_EZ  step=1 minValue=15 maxValue=25
+		 		Setpoint item=TS_EG_E1  step=1 minValue=15 maxValue=25
+                Setpoint item=TS_EG_E2  step=1 minValue=15 maxValue=25
 				Text item=TI_EG_EZ label="Ist-Temperatur [%.1f °C]" icon="temperature"
 			Text item=HI_EG_EZ label="Feuchtigkeit [%s %%]" icon="water"
 			}
