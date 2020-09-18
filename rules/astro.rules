@@ -2,6 +2,28 @@ import org.openhab.model.script.actions.Timer
 
 var Timer timer = null 
 
+rule "chicken_up"
+when
+        Channel 'astro:sun:chicken:rise#event' triggered START
+then
+        sonoff_pro_03_power3.postUpdate(ON)
+        sendNotification("e33b1711@gmail.com", "chicken up")
+end
+
+rule "chicken_down"
+when
+        Channel 'astro:sun:chicken:rise#event' triggered START
+then
+        sonoff_pro_04_power4.postUpdate(ON)
+        sendNotification("e33b1711@gmail.com", "chicken down")
+end
+
+
+
+
+
+
+
 rule "Sunset"
 when
 	Channel 'astro:sun:home:set#event' triggered START
