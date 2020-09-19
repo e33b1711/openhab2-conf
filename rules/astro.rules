@@ -12,7 +12,7 @@ end
 
 rule "chicken_down"
 when
-        Channel 'astro:sun:chicken:rise#event' triggered START
+        Channel 'astro:sun:chicken:set#event' triggered START
 then
         sonoff_pro_04_power4.postUpdate(ON)
         sendNotification("e33b1711@gmail.com", "chicken down")
