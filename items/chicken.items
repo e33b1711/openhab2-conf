@@ -1,0 +1,9 @@
+Group chicken_house     "Hühner-Haus" 		                <bath> 			    (Aussen)
+
+Rollershutter DO_CH	    "Hühner-Klappe" 	                                    (chicken_house, RS485_IN, RS485_OUT) 
+Switch LI_CH 	        "Licht Hühner-Haus"	 	                                (chicken_house, EG_WZ, RS485_IN, RS485_OUT) 
+
+Number ETI_CH           "HH Sensorfehler [%.0f]"            <error>	 	    	(sensor_error, Aussen, RS485_IN)
+
+Number TI_CH 	        "Temperatur Hühner-Haus [%.1f °C]"  <temperature> 		(Temperatur, Aussen, RS485_IN, temps_a)
+Number HI_CH            "Feuchte Hühner-Haus [%.1f %%]"		<water>	 		    (Feuchtigkeit, Aussen, RS485_IN, humis_a)

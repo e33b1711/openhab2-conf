@@ -101,6 +101,11 @@ Text label="Garage / Aussen" icon="garage_detached_selected" {
  		Switch item=ZE_EG_VH
             }
          }
+     Frame label="Hühner-Haus"  {
+		Switch item=LI_CH
+        Switch item=DO_CH
+            }
+         }
 		
 }
 

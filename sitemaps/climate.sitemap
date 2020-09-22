@@ -149,6 +149,8 @@ sitemap climate label="Climate Charts" {
 		 	Text item=HI_GR 		label="Feuchtigkeit (Innen) [%s %%]" icon="water"
 		 	Text item=TI_GR_A 		label="Ist-Temperatur (Aussen) [%.1f °C]" icon="temperature"
 		 	Text item=HI_GR_A 		label="Feuchtigkeit (Aussen) [%s %%]" icon="water"
+            Text item=TI_CH 		label="Ist-Temperatur (Hühner-Haus) [%.1f °C]" icon="temperature"
+            Text item=HI_CH 		label="Feuchtigkeit (Hühner-Haus) [%s %%]" icon="water"
 		}
 		
 		Switch item=Sommerbetrieb
@@ -172,7 +174,7 @@ sitemap climate label="Climate Charts" {
 
 		Text label="Garage / Aussen" icon="garage_detached_selected" {
 			Chart item=temps_a period=D refresh=10000
-			Chart item=humis_a period=D refresh=10000	 
+			Chart item=humis_a period=D refresh=10000	          
 		}
 
 		Text label="Sensor Fehler" icon="error" {
