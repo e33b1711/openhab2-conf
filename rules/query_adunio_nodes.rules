@@ -5,9 +5,9 @@ when
     System started or
     Time cron "0 0/10 * * * ?"
 then
-	logInfo("QUERY_STATES_ON_START", "Querying all arduino nodes.")
+    logInfo("QUERY_STATES_ON_START", "Querying all arduino nodes.")
     Thread::sleep(30000)
-	sendCommand(RS485_Gateway_out, "!post_all!eg_west!0$\n")
+    sendCommand(RS485_Gateway_out, "!post_all!eg_west!0$\n")
     Thread::sleep(5000)
     sendCommand(RS485_Gateway_out, "!post_all!eg_ost!0$\n")
     Thread::sleep(5000)
@@ -19,6 +19,8 @@ then
     Thread::sleep(5000)
     sendCommand(RS485_Gateway_out, "!post_all!gr!0$\n")
     Thread::sleep(5000)	
+    sendCommand(RS485_Gateway_out, "!post_all!ch!0$\n")
+    Thread::sleep(5000)
 end
 
 
