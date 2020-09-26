@@ -7,3 +7,13 @@ then
 	if (receivedCommand==DOWN) {message="!w!DO_GR!-1$\n"}
 	sendCommand(RS485_Gateway_out, message)    
 end
+
+rule DO_CH
+when
+        Item DO_CH received command
+then
+        var String message=""
+        if (receivedCommand==UP) {message="!w!DO_CH!1$\n"}
+        if (receivedCommand==DOWN) {message="!w!DO_CH!-1$\n"}
+        sendCommand(RS485_Gateway_out, message)
+end
