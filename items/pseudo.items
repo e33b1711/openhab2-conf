@@ -92,6 +92,10 @@ Switch DO_GR_DO		(All, RS485_IN, RS485_OUT)
 Switch DO_GR_UP		(All, RS485_IN, RS485_OUT) 
 Switch LI_GR_L3         (All, RS485_IN, RS485_OUT)
 Switch LI_GR_L4         (All, RS485_IN, RS485_OUT)
+Switch DO_CH_DO         (All, RS485_IN, RS485_OUT)
+Switch DO_CH_UP         (All, RS485_IN, RS485_OUT)
+
+
 
 Switch ST_OG_BA  	(All, RS485_IN, RS485_OUT) 
 
