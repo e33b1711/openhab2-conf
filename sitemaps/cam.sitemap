@@ -1,0 +1,7 @@
+sitemap cam label="Testing Some Sitemaps"
+{
+	Frame label="cam01 pic @ doorbell on" 
+	{
+        Image url="http://192.168.178.222:8080/static/cam01/latest.jpg"
+    }
+}
