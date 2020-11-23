@@ -1,7 +1,11 @@
 Group chicken_house     "Hühner-Haus" 		                <bath> 			    (Aussen)
 
 Rollershutter DO_CH	    "Hühner-Klappe" 	                                    (chicken_house, RS485_IN, RS485_OUT) 
-Switch LI_CH 	        "Licht Hühner-Haus"	 	                                (Licht, chicken_house, EG_WZ, RS485_IN, RS485_OUT) 
+Switch LI_CH 	        "Licht Hühner-Haus"	                                    (Licht, chicken_house, EG_WZ, RS485_IN, RS485_OUT) 
+Switch LI_CH_L2         "Licht Hühner-Haus (L2)"                                     (Licht, chicken_house, EG_WZ, RS485_IN, RS485_OUT, SunsetLights)
+Switch LI_CH_L3         "Licht Hühner-Haus (L3)"                                    (Licht, chicken_house, EG_WZ, RS485_IN, RS485_OUT)
+Switch LI_CH_L4         "Licht Hühner-Haus (L4)"                                   (Licht, chicken_house, EG_WZ, RS485_IN, RS485_OUT)
+
 
 Number ETI_CH           "HH Sensorfehler [%.0f]"            <error>	 	    	(sensor_error, Aussen, RS485_IN)
 

@@ -86,7 +86,7 @@ Switch LI_UG_GA     	"Licht Kellergang" 			                (Licht, UG_GA, RS485_
 Switch LI_UG_HN     	"Licht Hobbyraum Nord" 						(Licht, UG_HO, RS485_IN, RS485_OUT)         
 
 Switch LI_EG_VH     	"Vordach" 			    	                (Licht, Aussen, RS485_IN, RS485_OUT)        
-Switch LI_EG_AS     	"Terrasse Süden" 			                (Licht, Aussen, RS485_IN, RS485_OUT, SunsetLights)        
+Switch LI_EG_AS     	"Terrasse Süden" 			                (Licht, Aussen, RS485_IN, RS485_OUT)        
 Switch LI_EG_AW     	"Terrasse Westen" 			                (Licht, Aussen, RS485_IN, RS485_OUT)
 Switch LI_EG_AO     	"Wand Osten" 				                (Licht, Aussen, RS485_IN, RS485_OUT, SunsetLights) 
 
