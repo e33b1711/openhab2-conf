@@ -59,7 +59,7 @@ end
 
 rule SunsetOuterLight
 when
-	Channel 'astro:sun:ChickenOuterLights:rise#event' triggered START
+	Channel 'astro:sun:home:set#event' triggered START
 then
 	SunsetLights.members.forEach [ item |
 		item.sendCommand(ON)
@@ -77,7 +77,7 @@ then
 end
 
 
-rule RuleChickenOuterLights
+rule RuleChickenOuterLightsSet
 when
    	Channel 'astro:sun:ChickenOuterLights:set#event' triggered START
 then
@@ -95,9 +95,9 @@ then
 	]    	
 end
 
-rule RuleChickenOuterLights
+rule RuleChickenOuterLightsRise
 when
-   Time cron "0 0 16 * * ?"
+   Channel 'astro:sun:ChickenOuterLights:rise#event' triggered START
 then
     logInfo("RuleChickenOuterLights", "Setting all Timers...")
 	ChickenOuterLights.members.forEach [ item |
