@@ -59,8 +59,7 @@ end
 
 rule SunsetOuterLight
 when
-	Channel 'astro:sun:home:set#event' triggered START
-
+	Channel 'astro:sun:ChickenOuterLights:rise#event' triggered START
 then
 	SunsetLights.members.forEach [ item |
 		item.sendCommand(ON)
@@ -78,25 +77,41 @@ then
 end
 
 
-/*
-rule SunsetOuterLight
+rule RuleChickenOuterLights
 when
-	Channel 'astro:sun:home:set#event' triggered START
-	//Item LI_EG_GR received update ON
+   	Channel 'astro:sun:ChickenOuterLights:set#event' triggered START
 then
-	sendCommand(LI_EG_AO, ON)
-     if (lightTimers.containsKey(LI_EG_AO.name)){
-            lightTimers.get(LI_EG_AO.name)?.cancel()
-            logInfo("SunsetOuterLight", "Canceled old timer for " + LI_EG_AO.name)
-        }
-    lightTimers.put( LI_EG_AO.name, createTimer(now.plusMinutes(180), [|
-        LI_EG_AO.sendCommand(OFF)
-        lightTimers.put(LI_EG_AO.name, null) // remove the timer from the Hashmap
-        logInfo("SunsetOuterLight", "Destroyed timer for " + LI_EG_AO.name)
-    ]))
-    logInfo("SunsetOuterLight", "Created timer for " + LI_EG_AO.name)
+    logInfo("RuleChickenOuterLights", "Setting all Timers...")
+	ChickenOuterLights.members.forEach [ item |
+		if (lightTimers.containsKey(item.name)){
+		    lightTimers.get(item.name)?.cancel()
+		    logInfo("RuleChickenOuterLights", "Canceled old timer for " + item.name)
+		}
+		lightTimers.put( item.name, createTimer(now.plusMinutes(180), [|
+		    item.sendCommand(OFF)
+		    lightTimers.put(item.name, null) // remove the timer from the Hashmap
+		    logInfo("RuleChickenOuterLights", "Destroyed timer for " + item.name)
+		]))
+	]    	
 end
-*/
+
+rule RuleChickenOuterLights
+when
+   Time cron "0 0 16 * * ?"
+then
+    logInfo("RuleChickenOuterLights", "Setting all Timers...")
+	ChickenOuterLights.members.forEach [ item |
+		if (lightTimers.containsKey(item.name)){
+		    lightTimers.get(item.name)?.cancel()
+		    logInfo("RuleChickenOuterLights", "Canceled old timer for " + item.name)
+		}
+		lightTimers.put( item.name, createTimer(now.plusMinutes(240), [|
+		    item.sendCommand(OFF)
+		    lightTimers.put(item.name, null) // remove the timer from the Hashmap
+		    logInfo("RuleChickenOuterLights", "Destroyed timer for " + item.name)
+		]))
+	]    	
+end
 
 
 
