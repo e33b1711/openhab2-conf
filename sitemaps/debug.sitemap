@@ -9,10 +9,14 @@ sitemap debug label="debug" {
 	Frame label="Astro" {
 	 		Text item=time
             Text item=date
-            Text item=Sunrise_Time label="Sonnenaufgang [%1$tH:%1$tM]" 
-            Text item=Sunset_Time label="Sonnenuntergang [%1$tH:%1$tM]" 
-            Text item=Sun_Elevation label="Elevation der Sonne"
-            Text item=Sun_Azimuth label="Azimut der Sonne" 
+            Text item=Sunrise_Time                  label="Sonnenaufgang [%1$tH:%1$tM]" 
+            Text item=Sunset_Time                   label="Sonnenuntergang [%1$tH:%1$tM]" 
+            Text item=Sunrise_Time_chicken          label="Sonnenaufgang [%1$tH:%1$tM]" 
+            Text item=Sunset_Time_chicken           label="Sonnenuntergang [%1$tH:%1$tM]" 
+            Text item=Sunrise_Time_chicken_light    label="Sonnenaufgang [%1$tH:%1$tM]" 
+            Text item=Sunset_Time_chicken_light     
+            Text item=Sun_Elevation                 label="Elevation der Sonne"
+            Text item=Sun_Azimuth                   label="Azimut der Sonne" 
 			Default item=ItsDark
         }
 	Frame label="Presence" {
