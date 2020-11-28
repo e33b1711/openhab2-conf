@@ -1,7 +1,7 @@
 Number Sun_Elevation        "Elevation der Sonne"               <sun> 		{ channel = "astro:sun:home:position#elevation" }
 Number Sun_Azimuth          "Azimut der Sonne"                  <sun> 		{ channel = "astro:sun:home:position#azimuth" }
-DateTime Sunrise_Time       "Sonnenaufgang [%1$tH:%1$tM]"       <sunrise> 	{ channel = "astro:sun:home:rise#start" }
-DateTime Sunset_Time        "[%1$tH:%1$tM]"                     <sunset> 	{ channel = "astro:sun:home:set#start" }
+DateTime Sunrise_Time       "sun rise [%1$tH:%1$tM]"       <sunrise> 	{ channel = "astro:sun:home:rise#start" }
+DateTime Sunset_Time        "sun set  [%1$tH:%1$tM]"                     <sunset> 	{ channel = "astro:sun:home:set#start" }
 
 DateTime time 		"Uhrzeit [%1$tH:%1$tM]"             <time> 		{ channel="ntp:ntp:demo:dateTime" } 
 DateTime date 		"Datum [%1$tA, %1$td.%1$tm.%1$tY]"  <calendar> 	{ channel="ntp:ntp:demo:dateTime" }
@@ -9,7 +9,7 @@ DateTime date 		"Datum [%1$tA, %1$td.%1$tm.%1$tY]"  <calendar> 	{ channel="ntp:n
 DateTime Sunrise_Time_chicken       "sun rise (chicken door) [%1$tH:%1$tM]"       <sunrise> 	{ channel = "astro:sun:chicken:rise#start" }
 DateTime Sunset_Time_chicken        "sun set  (chicken door) [%1$tH:%1$tM]"       <sunset> 	{ channel = "astro:sun:chicken:set#start" }
 
-DateTime Sunrise_Time_chicken_light       "sun rise (chicken light) [%1$tH:%1$tM]"       <sunrise> 	{ channel = "astro:sun:chicken:rise#start" }
-DateTime Sunset_Time_chicken_light        "sun set  (chicken light) [%1$tH:%1$tM]"       <sunset> 	{ channel = "astro:sun:chicken:set#start" }
+DateTime Sunrise_Time_chicken_light       "sun rise (chicken light) [%1$tH:%1$tM]"       <sunrise> 	{ channel = "astro:sun:ChickenOuterLights:rise#start" }
+DateTime Sunset_Time_chicken_light        "sun set  (chicken light) [%1$tH:%1$tM]"       <sunset> 	{ channel = "astro:sun:ChickenOuterLights:set#start" }
 
 Switch ItsDark
