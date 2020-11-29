@@ -88,7 +88,7 @@ then
 		    lightTimers.get(item.name)?.cancel()
 		    logInfo("RuleChickenOuterLights", "Canceled old timer for " + item.name)
 		}
-		lightTimers.put( item.name, createTimer(now.plusMinutes(180), [|
+		lightTimers.put( item.name, createTimer(now.plusMinutes(240), [|
 		    item.sendCommand(OFF)
 		    lightTimers.put(item.name, null) // remove the timer from the Hashmap
 		    logInfo("RuleChickenOuterLights", "Destroyed timer for " + item.name)
@@ -107,7 +107,7 @@ then
 		    lightTimers.get(item.name)?.cancel()
 		    logInfo("RuleChickenOuterLights", "Canceled old timer for " + item.name)
 		}
-		lightTimers.put( item.name, createTimer(now.plusMinutes(240), [|
+		lightTimers.put( item.name, createTimer(now.plusMinutes(180), [|
 		    item.sendCommand(OFF)
 		    lightTimers.put(item.name, null) // remove the timer from the Hashmap
 		    logInfo("RuleChickenOuterLights", "Destroyed timer for " + item.name)
