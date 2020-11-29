@@ -83,6 +83,7 @@ when
 then
     logInfo("RuleChickenOuterLights", "Setting all Timers...")
 	ChickenOuterLights.members.forEach [ item |
+        item.sendCommand(ON)
 		if (lightTimers.containsKey(item.name)){
 		    lightTimers.get(item.name)?.cancel()
 		    logInfo("RuleChickenOuterLights", "Canceled old timer for " + item.name)
@@ -101,6 +102,7 @@ when
 then
     logInfo("RuleChickenOuterLights", "Setting all Timers...")
 	ChickenOuterLights.members.forEach [ item |
+        item.sendCommand(ON)
 		if (lightTimers.containsKey(item.name)){
 		    lightTimers.get(item.name)?.cancel()
 		    logInfo("RuleChickenOuterLights", "Canceled old timer for " + item.name)
