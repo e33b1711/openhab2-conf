@@ -43,8 +43,26 @@ Bridge mqtt:broker:mosquitto "Mosquitto" [ host="localhost", port=1883, secure=f
         Type switch : power2    "Power2"               [ stateTopic="stat/sonoff_pro_01/POWER2", commandTopic="cmnd/sonoff_pro_01/POWER2", retained=true]
         Type switch : power3    "Power3"               [ stateTopic="stat/sonoff_pro_01/POWER3", commandTopic="cmnd/sonoff_pro_01/POWER3", retained=true]
         Type switch : power4    "Power4"               [ stateTopic="stat/sonoff_pro_01/POWER4", commandTopic="cmnd/sonoff_pro_01/POWER4", retained=true]
-	Type number : rssi      "WiFi Signal Strength" [ stateTopic="tele/sonoff_pro_01/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+        Type number : rssi      "WiFi Signal Strength" [ stateTopic="tele/sonoff_pro_01/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
     }
+    
+    //power node
+    Thing topic power_control "Power Control" @ "debug" {
+    Channels:
+        Type number : powerPV       "powerPV"       [ stateTopic="power_control/powerPV"]
+        Type number : powerHeat     "powerHeat"     [ stateTopic="power_control/powerHeat"]
+        Type number : powerBal      "powerBal"      [ stateTopic="power_control/powerBal"]
+        
+        Type number : energyImport  "energyImport"  [ stateTopic="power_control/energyImport"]
+        Type number : energyHeat    "energyHeat"    [ stateTopic="power_control/energyHeat"]
+        Type number : energyPV      "energyPV"      [ stateTopic="power_control/energyPV"]
+        Type number : energyExport  "energyExport"  [ stateTopic="power_control/energyExport"]
+        
+        Type number : tempHigh      "tempHigh"      [ stateTopic="power_control/tempHigh"]           
+        Type number : tempLow       "tempLow"       [ stateTopic="power_control/tempLow"]                                                   
+                                                                                
+        Type number : powerControlStatus     "powerControlStatus"    [ stateTopic="power_control/powerControlStatus"] 
+        Type number : powerControlVersion    "powerControlVersion"   [ stateTopic="power_control/powerControlVersion"]
 
-	
+    
 }
