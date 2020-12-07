@@ -61,8 +61,8 @@ Bridge mqtt:broker:mosquitto "Mosquitto" [ host="localhost", port=1883, secure=f
         Type number : tempHigh      "tempHigh"      [ stateTopic="power_control/tempHigh"]           
         Type number : tempLow       "tempLow"       [ stateTopic="power_control/tempLow"]                                                   
                                                                                 
-        Type number : powerControlStatus     "powerControlStatus"    [ stateTopic="power_control/powerControlStatus"] 
-        Type number : powerControlVersion    "powerControlVersion"   [ stateTopic="power_control/powerControlVersion"]
-
+        Type string : powerControlStatus     "powerControlStatus"    [ stateTopic="power_control/status"] 
+        Type string : powerControlVersion    "powerControlVersion"   [ stateTopic="power_control/version"]
+    }
     
 }

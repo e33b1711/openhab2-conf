@@ -11,5 +11,5 @@ Number energyExport          "Energy Export (Today) [%.3f kWh]"         (all)   
 Number tempHigh              "Temperature (heating) [%.1f °C]"          (all)               { channel="mqtt:topic:mosquitto:power_control:tempHigh"}
 Number tempLow               "Temperature (middle) [%.1f °C]"           (all)               { channel="mqtt:topic:mosquitto:power_control:tempLow"}
 
-String powerControlStatus    "Power Controller Status: [%s]"            (all)               { channel="mqtt:topic:mosquitto:power_control:status"}
-String powerControlVersion   "Power Controller Version: [%s]"           (all)               { channel="mqtt:topic:mosquitto:power_control:version"}     
+String powerControlStatus    "Power Controller Status: [%s]"            (all)               { channel="mqtt:topic:mosquitto:power_control:powerControlStatus"}
+String powerControlVersion   "Power Controller Version: [%s]"           (all)               { channel="mqtt:topic:mosquitto:power_control:powerControlVersion"}     
