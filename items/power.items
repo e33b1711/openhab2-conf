@@ -1,15 +1,15 @@
 Group all  
-Number powerPV               "Power from PV [%.0f W]"                   (all)               { channel="mqtt:topic:power_control:powerPV"} 
-Number powerHeating          "Power to Heating [%.0f W]"                (all)               { channel="mqtt:topic:power_control:powerHeat"} 
-Number powerBal              "Balanced Power [%.0f W]"                  (all)               { channel="mqtt:topic:power_control:powerBal"} 
+Number powerPV               "Power from PV [%.0f W]"                   (all)               { channel="mqtt:topic:mosquitto:power_control:powerPV"} 
+Number powerHeating          "Power to Heating [%.0f W]"                (all)               { channel="mqtt:topic:mosquitto:power_control:powerHeat"} 
+Number powerBal              "Balanced Power [%.0f W]"                  (all)               { channel="mqtt:topic:mosquitto:power_control:powerBal"} 
 
-Number energyImport          "Energy Import (Today) [%.3f kWh]"         (all)               { channel="mqtt:topic:power_control:energyImport"}
-Number energyHeat            "Energy Heat (Today) [%.3f kWh]"           (all)               { channel="mqtt:topic:power_control:energyHeat"} 
-Number energyPV              "Energy PV (Today) [%.3f kWh]"             (all)               { channel="mqtt:topic:power_control:energyPV"}
-Number energyExport          "Energy Export (Today) [%.3f kWh]"         (all)               { channel="mqtt:topic:power_control:energyExport"}
+Number energyImport          "Energy Import (Today) [%.3f kWh]"         (all)               { channel="mqtt:topic:mosquitto:power_control:energyImport"}
+Number energyHeat            "Energy Heat (Today) [%.3f kWh]"           (all)               { channel="mqtt:topic:mosquitto:power_control:energyHeat"} 
+Number energyPV              "Energy PV (Today) [%.3f kWh]"             (all)               { channel="mqtt:topic:mosquitto:power_control:energyPV"}
+Number energyExport          "Energy Export (Today) [%.3f kWh]"         (all)               { channel="mqtt:topic:mosquitto:power_control:energyExport"}
 
-Number tempHigh              "Temperature (heating) [%.1f °C]"          (all)               { channel="mqtt:topic:power_control:tempHigh"}
-Number tempLow               "Temperature (middle) [%.1f °C]"           (all)               { channel="mqtt:topic:power_control:tempLow"}
+Number tempHigh              "Temperature (heating) [%.1f °C]"          (all)               { channel="mqtt:topic:mosquitto:power_control:tempHigh"}
+Number tempLow               "Temperature (middle) [%.1f °C]"           (all)               { channel="mqtt:topic:mosquitto:power_control:tempLow"}
 
-String powerControlStatus    "Power Controller Status: [%s]"            (all)               { channel="mqtt:topic:power_control:status"}
-String powerControlVersion   "Power Controller Version: [%s]"           (all)               { channel="mqtt:topic:power_control:version"}     
+String powerControlStatus    "Power Controller Status: [%s]"            (all)               { channel="mqtt:topic:mosquitto:power_control:status"}
+String powerControlVersion   "Power Controller Version: [%s]"           (all)               { channel="mqtt:topic:mosquitto:power_control:version"}     
