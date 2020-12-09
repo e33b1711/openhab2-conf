@@ -49,7 +49,7 @@ Switch LI_EG_WZ_L2 	    "Decke hinten" 	 			                (Licht, EG_WZ, RS485
 Switch LI_EG_KU_L1 	    "Arbeitsbeleuchtung" 		                (Licht, EG_KU, RS485_IN, RS485_OUT) 		
 
 Switch LI_EG_EZ 	    "Esstisch" 	 			                    (Licht, EG_EZ, RS485_IN, RS485_OUT) 		
-Switch LI_EG_EZ_L1  	"Wandleuchten" 				                (Licht, EG_EZ, RS485_IN, RS485_OUT) 		
+Switch LI_EG_EZ_L1  	"Wandleuchten" 				                (Licht, EG_EZ, RS485_IN, RS485_OUT, SunsetLights) 		
 Switch LI_EG_EZ_L3  	"Leselampe" 				                (Licht, EG_EZ, RS485_IN, RS485_OUT) 		
 Switch LI_EG_EZ_KU 	    "Grundbeleuchtung"			                (Licht, EG_EZ, EG_KU, RS485_IN, RS485_OUT)	
 
