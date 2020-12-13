@@ -86,6 +86,10 @@ Switch L53 		(All, RS485_IN, RS485_OUT)
 Switch L54 		(All, RS485_IN, RS485_OUT)
 Switch L55 		(All, RS485_IN, RS485_OUT)
 Switch L56 		(All, RS485_IN, RS485_OUT)
+Switch L57 		(All, RS485_IN, RS485_OUT)
+Switch L58 		(All, RS485_IN, RS485_OUT)
+Switch L59 		(All, RS485_IN, RS485_OUT)
+Switch L60 		(All, RS485_IN, RS485_OUT)
 
 Switch LI_01 		(All, RS485_IN, RS485_OUT)
 Switch LI_02 		(All, RS485_IN, RS485_OUT)
@@ -143,7 +147,10 @@ Switch LI_53 		(All, RS485_IN, RS485_OUT)
 Switch LI_54 		(All, RS485_IN, RS485_OUT)
 Switch LI_55 		(All, RS485_IN, RS485_OUT)
 Switch LI_56 		(All, RS485_IN, RS485_OUT)
-
+Switch LI_57 		(All, RS485_IN, RS485_OUT)
+Switch LI_58 		(All, RS485_IN, RS485_OUT)
+Switch LI_59 		(All, RS485_IN, RS485_OUT)
+Switch LI_60 		(All, RS485_IN, RS485_OUT)
 
 
 Number U_UG_01		(All, RS485_IN, RS485_OUT)
