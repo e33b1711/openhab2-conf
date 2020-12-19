@@ -54,10 +54,10 @@ Switch LI_EG_EZ_L3  	"Leselampe" 				                (Licht, EG_EZ, RS485_IN, RS
 Switch LI_EG_EZ_KU 	    "Grundbeleuchtung"			                (Licht, EG_EZ, EG_KU, RS485_IN, RS485_OUT)	
 
 
-Switch LI_EG_GA     	"Decke" 				                    (Licht, EG_GA, RS485_IN, RS485_OUT)         
+Switch LI_EG_GA     	"Decke" 				                    (Licht, EG_GA, RS485_IN, RS485_OUT, AlwaysTimer)         
 Switch LI_GA_L1 	    "Wandleuchten" 				                (Licht, EG_GA, RS485_IN, RS485_OUT, SunsetLights)         
 
-Switch LI_EG_GR     	"Decke" 				                    (Licht, EG_GR, RS485_IN, RS485_OUT)         
+Switch LI_EG_GR     	"Decke" 				                    (Licht, EG_GR, RS485_IN, RS485_OUT, AlwaysTimer)         
 
 Switch LI_EG_WC 	    "Decke" 				                    (Licht, EG_WC, RS485_IN, RS485_OUT)         
 
