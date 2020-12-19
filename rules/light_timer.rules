@@ -57,23 +57,23 @@ then
 end
 
 
-rule SunsetOuterLight
+rule SunsetLightsOn
 when
 	Channel 'astro:sun:home:set#event' triggered START
 then
 	SunsetLights.members.forEach [ item |
 		item.sendCommand(ON)
-     		if (lightTimers.containsKey(item.name)){
-            		lightTimers.get(item.name)?.cancel()
-            		logInfo("SunsetOuterLight", "Canceled old timer for " + item.name)
-        	}
-    		lightTimers.put( item.name, createTimer(now.plusMinutes(180), [|
-        		item.sendCommand(OFF)
-        		lightTimers.put(item.name, null) // remove the timer from the Hashmap
-        		logInfo("SunsetOuterLight", "Destroyed timer for " + itrem.name)
-    		]))
 	]
-    logInfo("SunsetOuterLight", "Created timer for all group items")
+end
+
+
+rule SunsetLightsOff
+when
+	Time cron "0 0 22 * * ?"
+then
+	SunsetLights.members.forEach [ item |
+		item.sendCommand(OFF)
+	]
 end
 
 

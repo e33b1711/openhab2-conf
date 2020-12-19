@@ -7,6 +7,7 @@ Text label="Keller" icon="cellar" {
 		Switch item=LI_UG_GA
 		Switch item=LI_UG_WK 
 		Switch item=LI_UG_HK
+        Switch item=LI_UG_TR
 }
 
 Text label="Erdgeschoss" icon="groundfloor" {

@@ -83,7 +83,8 @@ Switch LI_UG_HO 		"Licht Hobbyraum Büro" 						(Licht, UG_HO, RS485_IN, RS485_O
 Switch LI_UG_WK     	"Licht Waschküche" 			                (Licht, UG_WK, RS485_IN, RS485_OUT)         
 Switch LI_UG_HK     	"Licht Heizkeller" 			                (Licht, UG_HK, RS485_IN, RS485_OUT)         
 Switch LI_UG_GA     	"Licht Kellergang" 			                (Licht, UG_GA, RS485_IN, RS485_OUT, AlwaysTimer)         
-Switch LI_UG_HN     	"Licht Hobbyraum Nord" 						(Licht, UG_HO, RS485_IN, RS485_OUT)         
+Switch LI_UG_HN     	"Licht Hobbyraum Nord" 						(Licht, UG_HO, RS485_IN, RS485_OUT)       
+Switch LI_UG_TR     	"Licht Keller Treppe" 						(Licht, UG_GA, RS485_IN, RS485_OUT, SunsetLights)     
 
 Switch LI_EG_VH     	"Vordach" 			    	                (Licht, Aussen, RS485_IN, RS485_OUT)        
 Switch LI_EG_AS     	"Terrasse Süden" 			                (Licht, Aussen, RS485_IN, RS485_OUT)        
