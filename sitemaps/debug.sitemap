@@ -22,6 +22,10 @@ sitemap debug label="debug" {
 	Frame label="Presence" {
 		Default item=AkOnline 
 	}
+    
+    Frame label="WoL" {
+		Switch item=DESK_WOL
+	}
 
 }
 
