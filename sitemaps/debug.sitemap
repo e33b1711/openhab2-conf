@@ -25,7 +25,8 @@ sitemap debug label="debug" {
     
     Frame label="WoL" {
 		Switch item=DESK_WOL
-	}
+		Switch item=STRYDER_WOL
+        }
 
 }
 
