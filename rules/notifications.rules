@@ -31,11 +31,11 @@ end
 
 rule NotificationWW
 when
-	Item waterWarning received update ON
+	Item waterWarning changed
 then
-    logInfo("notifications", "Sending notification via app.")
-    sendNotification("e33b1711@gmail.com", "Wasserstand Pumpensumpf!!")
-		
+	if ((waterWarning.state as Number) != 0){
+    		logInfo("notifications", "Sending notification via app.")
+    		sendNotification("e33b1711@gmail.com", "Wasserstand Pumpensumpf!!")
 	}
 end
 
