@@ -13,3 +13,6 @@ Number tempLow               "Temperature (middle) [%.1f °C]"           (all)  
 
 String powerControlStatus    "Power Controller Status: [%s]"            (all)               { channel="mqtt:topic:mosquitto:power_control:powerControlStatus"}
 String powerControlVersion   "Power Controller Version: [%s]"           (all)               { channel="mqtt:topic:mosquitto:power_control:powerControlVersion"}     
+
+Number waterWarning          "Water Warning: [%.3f]"                    (all)               { channel="mqtt:topic:mosquitto:power_control:waterWarning"} 
+
