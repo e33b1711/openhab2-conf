@@ -64,7 +64,10 @@ Bridge mqtt:broker:mosquitto "Mosquitto" [ host="localhost", port=1883, secure=f
         Type string : powerControlStatus     "powerControlStatus"    [ stateTopic="power_control/status"] 
         Type string : powerControlVersion    "powerControlVersion"   [ stateTopic="power_control/version"]
         
-        Type number : waterWarning       "waterWarning"       [ stateTopic="power_control/waterWarning"]    
+        Type number : waterWarning       "waterWarning"       [ stateTopic="power_control/waterWarning"]   
+
+        Type number : controlMode     "controlMode"    [ stateTopic="power_control/controlMode"] 
+        Type number : targetPower     "targetPower"   [ stateTopic="power_control/targetPower"]        
     }
     
 }

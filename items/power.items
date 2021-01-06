@@ -16,3 +16,6 @@ String powerControlVersion   "Power Controller Version: [%s]"           (all)   
 
 Number waterWarning          "Water Warning: [%.3f]"                    (all)               { channel="mqtt:topic:mosquitto:power_control:waterWarning"} 
 
+Number controlMode           "Control Mode [%.1f]"                      (all)               { channel="mqtt:topic:mosquitto:power_control:controlMode"}
+Number targetPower           "Target Power [%.1f]"                      (all)               { channel="mqtt:topic:mosquitto:power_control:targetPower"}
+
