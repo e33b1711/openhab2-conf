@@ -1,6 +1,6 @@
 Group WOL (all)
 
-Switch DESK_WOL                 "DESK Wake-On LAN"              (WOL) { wol="192.168.178.255#b0:6e:bf:d1:2e:31", autoupdate="false"}
-Switch STRYDER_WOL              "STRYDER Wake-On LAN"           (WOL) { wol="192.168.178.255#00:e0:4c:0a:1d:14", autoupdate="false"}
-Switch OPENMEDIAVAULT_WOL       "OPENMEDIAVAULT Wake-On LAN"    (WOL) { wol="192.168.178.255#00:26:2d:03:61:50", autoupdate="false"}
-Switch HURTLOCKER_WOL           "HURTLOCKER Wake-On LAN"        (WOL) { wol="192.168.178.255#6c:f0:49:55:42:bf", autoupdate="false"}
+Switch DESK_WOL                 "DESK"            <screen>  (WOL) { wol="192.168.178.255#b0:6e:bf:d1:2e:31", autoupdate="false"}
+Switch STRYDER_WOL              "STRYDER"         <screen>  (WOL) { wol="192.168.178.255#00:e0:4c:0a:1d:14", autoupdate="false"}
+Switch OPENMEDIAVAULT_WOL       "OPENMEDIAVAULT"  <screen>  (WOL) { wol="192.168.178.255#00:26:2d:03:61:50", autoupdate="false"}
+Switch HURTLOCKER_WOL           "HURTLOCKER"      <screen>  (WOL) { wol="192.168.178.255#6c:f0:49:55:42:bf", autoupdate="false"}
