@@ -2,13 +2,13 @@ astro:sun:chicken   [ geolocation="47.81, 11.64", interval=600 ]
 {
     Channels:
         Type start : rise#start [
-            offset=0
+            offset=90
         ]
         Type end : set#start [
             offset=30
         ]
         Type rangeEvent : rise#event [
-            offset=0
+            offset=90
         ]
         Type rangeEvent : set#event [
             offset=30
