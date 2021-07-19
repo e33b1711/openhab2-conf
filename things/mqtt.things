@@ -49,25 +49,17 @@ Bridge mqtt:broker:mosquitto "Mosquitto" [ host="localhost", port=1883, secure=f
     //power node
     Thing topic power_control "Power Control" @ "debug" {
     Channels:
-        Type number : powerPV       "powerPV"       [ stateTopic="power_control/powerPV"]
-        Type number : powerHeat     "powerHeat"     [ stateTopic="power_control/powerHeat"]
-        Type number : powerBal      "powerBal"      [ stateTopic="power_control/powerBal"]
+        Type number : power_pv       "powerPV"       [ stateTopic="power_control/power_pv"]
+        Type number : power_heat     "powerHeat"     [ stateTopic="power_control/power_heat"]
+        Type number : power_bal      "powerBal"      [ stateTopic="power_control/power_bal"]
+        Type number : power_p3       "powerBal"      [ stateTopic="power_control/power_p1"]
+        Type number : power_p2       "powerBal"      [ stateTopic="power_control/power_p2"]
+        Type number : power_p1       "powerBal"      [ stateTopic="power_control/power_p3"]
         
-        Type number : energyImport  "energyImport"  [ stateTopic="power_control/energyImport"]
-        Type number : energyHeat    "energyHeat"    [ stateTopic="power_control/energyHeat"]
-        Type number : energyPV      "energyPV"      [ stateTopic="power_control/energyPV"]
-        Type number : energyExport  "energyExport"  [ stateTopic="power_control/energyExport"]
-        
-        Type number : tempHigh      "tempHigh"      [ stateTopic="power_control/tempHigh"]           
-        Type number : tempLow       "tempLow"       [ stateTopic="power_control/tempLow"]                                                   
+        Type number : temp_high      "tempHigh"      [ stateTopic="power_control/temp_highigh"]           
+        Type number : temp_low       "tempLow"       [ stateTopic="power_control/temp_low"]                                                   
                                                                                 
-        Type string : powerControlStatus     "powerControlStatus"    [ stateTopic="power_control/status"] 
-        Type string : powerControlVersion    "powerControlVersion"   [ stateTopic="power_control/version"]
-        
-        Type number : waterWarning       "waterWarning"       [ stateTopic="power_control/waterWarning"]   
-
-        Type number : controlMode     "controlMode"    [ stateTopic="power_control/controlMode"] 
-        Type number : targetPower     "targetPower"   [ stateTopic="power_control/targetPower"]        
+    
     }
     
 }
