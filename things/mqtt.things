@@ -56,7 +56,7 @@ Bridge mqtt:broker:mosquitto "Mosquitto" [ host="localhost", port=1883, secure=f
         Type number : power_p2       "powerBal"      [ stateTopic="power_control/power_p2"]
         Type number : power_p1       "powerBal"      [ stateTopic="power_control/power_p3"]
         
-        Type number : temp_high      "tempHigh"      [ stateTopic="power_control/temp_highigh"]           
+        Type number : temp_high      "tempHigh"      [ stateTopic="power_control/temp_high"]
         Type number : temp_low       "tempLow"       [ stateTopic="power_control/temp_low"]                                                   
                                                                                 
     
