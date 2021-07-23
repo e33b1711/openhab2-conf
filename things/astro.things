@@ -5,13 +5,13 @@ astro:sun:chicken   [ geolocation="47.81, 11.64", interval=600 ]
             offset=90
         ]
         Type end : set#start [
-            offset=30
+            offset=0
         ]
         Type rangeEvent : rise#event [
             offset=90
         ]
         Type rangeEvent : set#event [
-            offset=30
+            offset=0
         ]
 }
 
