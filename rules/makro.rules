@@ -6,15 +6,7 @@ then
     Thread::sleep(200) 
     sendCommand(RO_OG_KS, DOWN)
     Thread::sleep(200) 
-    sendCommand(RO_OG_BA, DOWN)
-    Thread::sleep(200) 
     sendCommand(RO_OG_SZ, DOWN)
-    Thread::sleep(200) 
-    sendCommand(VD_OG_SZ, DOWN)
-    Thread::sleep(200) 
-    sendCommand(VD_OG_KN, DOWN)
-    Thread::sleep(200) 
-    sendCommand(VD_OG_KS, DOWN)
 end
 
 rule VD_UG_UP
