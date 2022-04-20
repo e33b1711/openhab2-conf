@@ -1,6 +1,5 @@
 Group power
-Switch heat_control          "heat_control"                             (All, power)               { channel="mqtt:topic:mosquitto:power_control:heat_control", autoupdate="false"}  
+Switch heat_control          "heat_control"                            (All, power)               { channel="mqtt:topic:mosquitto:power_control:heat_control", autoupdate="false"}  
 
-Number TI_PU_O               "Temperature (heating) [%.1f °C]"          (All, power, RS485_IN)
-Number TI_PU_U               "Temperature (middle) [%.1f °C]"           (All, power, RS485_IN)
-
+Number TI_PU_O               "Temperature (Buffer Top) [%.1f °C]"      (All, power, RS485_IN)
+Number TI_PU_U               "Temperatue (Buffer Middle) [%.1f °C]"    (All, power, RS485_IN)

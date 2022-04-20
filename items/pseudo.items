@@ -1,3 +1,5 @@
+Number P_EL 			(All, RSS485_IN)
+
 Switch RO_EG_SU_DO  	(Licht, EG_EZ, RS485_IN, RS485_OUT) 
 Switch RO_EG_WE_DO	    (Licht, EG_EZ, RS485_IN, RS485_OUT)
 Switch RO_OG_BA_DO 	    (Licht, OG_BA, RS485_IN, RS485_OUT) 
