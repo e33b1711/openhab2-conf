@@ -49,17 +49,7 @@ Bridge mqtt:broker:mosquitto "Mosquitto" [ host="localhost", port=1883, secure=f
     //power node
     Thing topic power_control "Power Control" @ "debug" {
     Channels:
-        Type number : power_pv       "powerPV"       [ stateTopic="power_control/power_pv"]
-        Type number : power_heat     "powerHeat"     [ stateTopic="power_control/power_heat"]
-        Type number : power_bal      "powerBal"      [ stateTopic="power_control/power_bal"]
-        Type number : power_p3       "powerBal"      [ stateTopic="power_control/power_p1"]
-        Type number : power_p2       "powerBal"      [ stateTopic="power_control/power_p2"]
-        Type number : power_p1       "powerBal"      [ stateTopic="power_control/power_p3"]
-        
-        Type number : temp_high      "tempHigh"      [ stateTopic="power_control/temp_high"]
-        Type number : temp_low       "tempLow"       [ stateTopic="power_control/temp_low"]                                                   
-                                                                                
-    
+        Type switch : heat_control   "heat_control"   [ stateTopic="power_state/heat_control", commandTopic="power_command/heat_control"]
     }
     
 }
