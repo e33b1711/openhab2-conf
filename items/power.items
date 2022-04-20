@@ -1,11 +1,11 @@
-Group all  
-Number powerPV               "Power from PV [%.0f W]"                   (all)               { channel="mqtt:topic:mosquitto:power_control:power_pv"} 
-Number powerHeating          "Power to Heating [%.0f W]"                (all)               { channel="mqtt:topic:mosquitto:power_control:power_heat"} 
-Number powerBal              "Balanced Power [%.0f W]"                  (all)               { channel="mqtt:topic:mosquitto:power_control:power_bal"} 
-Number powerP1               "P1 Power [%.0f W]"                        (all)               { channel="mqtt:topic:mosquitto:power_control:power_p1"} 
-Number powerP2               "P2 Power [%.0f W]"                        (all)               { channel="mqtt:topic:mosquitto:power_control:power_p2"} 
-Number powerP3               "P3 Power [%.0f W]"                        (all)               { channel="mqtt:topic:mosquitto:power_control:power_p3"} 
+Group power
+Number powerPV               "Power from PV [%.0f W]"                   (All, power)               { channel="mqtt:topic:mosquitto:power_control:power_pv"} 
+Number powerHeating          "Power to Heating [%.0f W]"                (All, power)               { channel="mqtt:topic:mosquitto:power_control:power_heat"} 
+Number powerBal              "Balanced Power [%.0f W]"                  (All, power)               { channel="mqtt:topic:mosquitto:power_control:power_bal"} 
+Number powerP1               "P1 Power [%.0f W]"                        (All, power)               { channel="mqtt:topic:mosquitto:power_control:power_p1"} 
+Number powerP2               "P2 Power [%.0f W]"                        (All, power)               { channel="mqtt:topic:mosquitto:power_control:power_p2"} 
+Number powerP3               "P3 Power [%.0f W]"                        (All, power)               { channel="mqtt:topic:mosquitto:power_control:power_p3"} 
 
-Number tempHigh              "Temperature (heating) [%.1f °C]"          (all)               { channel="mqtt:topic:mosquitto:power_control:temp_high"}
-Number tempLow               "Temperature (middle) [%.1f °C]"           (all)               { channel="mqtt:topic:mosquitto:power_control:temp_low"}
+Number TI_PU_O               "Temperature (heating) [%.1f °C]"          (All, power, RS485_IN)
+Number TI_PU_U               "Temperature (middle) [%.1f °C]"           (All, power, RS485_IN)
 
