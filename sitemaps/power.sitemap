@@ -1,3 +1,4 @@
 sitemap power label="Power" {
-	Group item=power 
+	Group item=power
+	Group item=WOL 
 }
