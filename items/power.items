@@ -1,5 +1,15 @@
 Group power
-Switch heat_control          "heat_control"                            (All, power)               { channel="mqtt:topic:mosquitto:power_control:heat_control", autoupdate="false"}  
+Switch heat_control         "PV to Heat"                                                (All, power)    { channel="mqtt:topic:mosquitto:power_control:heat_control", autoupdate="false"}  
 
-Number TI_PU_O               "Temperature (Buffer Top) [%.1f °C]"      (All, power, RS485_IN)
-Number TI_PU_U               "Temperatue (Buffer Middle) [%.1f °C]"    (All, power, RS485_IN)
+Switch pv_charge_bypass     "PV Charger Bypass"                                         (All, power)    { channel="mqtt:topic:mosquitto:power_control:pv_charge_bypass", autoupdate="false"} 
+
+Number charge_power         "Charging Power (Car) [%.1f kW]"           <pressure>       (All, power)    { channel="mqtt:topic:mosquitto:power_control:wallbox_power"} 
+Number heat_power           "Heating Power [%.1f kW]"                  <pressure>       (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_heat_power"}
+
+
+Number solar_power          "Solar Power [%.1f kW]"                    <pressure>       (All, power)    { channel="mqtt:topic:mosquitto:power_control:solar_power"}
+Number state_of_charge      "SOC (House) [%.0f %%]"                       <batterylevel>   (All, power)    { channel="mqtt:topic:mosquitto:power_control:soc"}
+
+
+Number TI_PU_O              "Temperature (Buffer Top) [%.1f °C]"       <temperature>    (All, power, RS485_IN)
+Number TI_PU_U              "Temperatue (Buffer Middle) [%.1f °C]"     <temperature>    (All, power, RS485_IN)

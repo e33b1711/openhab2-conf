@@ -49,7 +49,12 @@ Bridge mqtt:broker:mosquitto "Mosquitto" [ host="localhost", port=1883, secure=f
     //power node
     Thing topic power_control "Power Control" @ "debug" {
     Channels:
-        Type switch : heat_control   "heat_control"   [ stateTopic="power_state/heat_control", commandTopic="power_command/heat_control"]
+        Type switch : heat_control          "heat_control"          [ stateTopic="power_state/heat_control", commandTopic="power_command/heat_control"]
+        Type switch : pv_charge_bypass      "pv_charge_bypass"      [ stateTopic="power_state/pv_charge_bypass", commandTopic="power_command/pv_charge_bypass"]
+        Type number : victron_heat_power    "victron_heat_power"    [ stateTopic="power_state/victron_heat_power"]
+        Type number : wallbox_power         "wallbox_power"         [ stateTopic="power_state/wallbox_power"]
+        Type number : soc                   "soc"                   [ stateTopic="power_state/soc"]
+        Type number : solar_power           "solar_power"           [ stateTopic="power_state/solar_power"]
     }
     
 }
