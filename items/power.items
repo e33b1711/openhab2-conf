@@ -1,7 +1,7 @@
 Group power
 Switch heat_control         "PV to Heat"                                                (All, power)    { channel="mqtt:topic:mosquitto:power_control:heat_control", autoupdate="false"}  
 
-Switch pv_charge_bypass     "PV Charger Bypass"                                         (All, power)    { channel="mqtt:topic:mosquitto:power_control:pv_charge_bypass", autoupdate="false"} 
+Switch pv_charge_bypass     "Zwangsladen +50%"                                          (All, power)    { channel="mqtt:topic:mosquitto:power_control:pv_charge_bypass", autoupdate="false"} 
 
 Number charge_power         "Charging Power (Car) [%.1f kW]"           <pressure>       (All, power)    { channel="mqtt:topic:mosquitto:power_control:wallbox_power"} 
 Number heat_power           "Heating Power [%.1f kW]"                  <pressure>       (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_heat_power"}
