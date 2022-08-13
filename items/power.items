@@ -7,13 +7,13 @@ Number  battery_power           "Battery Power [%.1f kW]"                   <pre
 Number  loads_power             "Loads Power [%.1f kW]"                     <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:loads_power"} 
 Number  criticial_loads_power   "Critical Loads Power Power [%.1f kW]"      <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:criticial_loads_power"} 
 Number  charger_power           "Charger Power [%.1f kW]"                   <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_power"} 
-Number  charger_setpoint        "Charger Power [%d A]"                      <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_setpoint"} 
+Number  charger_setpoint        "Charger setpoint [%d A]"                   <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_setpoint"} 
 Number  U_EL                    "Heating Setpoint [%.1f]"                   <pressure>      (All, power, RS485_IN)    
-Contact victron_connected       "victron: [%s]"                                             (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_connected"} 
-String  victron_status          "victron: [%s]"                                             (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_status"} 
+Contact victron_connected       "victron connected: [%s]"                                   (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_connected"} 
+String  victron_status          "victron power: [%s]"                                       (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_status"} 
 Number  state_of_charge         "State of Charge: [%.0f %%]"                <batterylevel>  (All, power)    { channel="mqtt:topic:mosquitto:power_control:soc"}
-Contact wallbox_connected       "wallbox: [%s]"                                             (All, power)    { channel="mqtt:topic:mosquitto:power_control:wallbox_connected"} 
-String  wallbox_status          "wallbox: [%s]"                                             (All, power)    { channel="mqtt:topic:mosquitto:power_control:wallbox_status"} 
+Contact charger_connected       "charger connected: [%s]"                                   (All, power)    { channel="mqtt:topic:mosquitto:power_control:wallbox_connected"} 
+String  charger_status          "charger status: [%s]"                                      (All, power)    { channel="mqtt:topic:mosquitto:power_control:wallbox_status"} 
 
 
 //control

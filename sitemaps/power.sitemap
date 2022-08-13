@@ -11,8 +11,8 @@ sitemap power label="Power" {
         Text item=victron_connected     
         Text item=victron_status        
         Text item=state_of_charge       
-        Text item=wallbox_connected     
-        Text item=wallbox_status
+        Text item=charger_connected     
+        Text item=charger_status
         Text item=TI_PU_O     
         Text item=TI_PU_U           
     }
