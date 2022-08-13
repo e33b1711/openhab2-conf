@@ -18,8 +18,9 @@ String  wallbox_status          "wallbox: [%s]"                                 
 //control
 Switch  solar2heat              "Solar2Heat"                                                (All, power)    { channel="mqtt:topic:mosquitto:power_control:solar2heat",  autoupdate="false"} 
 Switch  solar2car               "Solar2Car"                                                 (All, power)    { channel="mqtt:topic:mosquitto:power_control:solar2car",   autoupdate="false"}   
-Number  charger_setpoint        "Charger Setpoint: [%d Amp]"                <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_setpoint",  autoupdate="false"} 
+Dimmer  charger_setpoint        "Charger Setpoint: [%d Amp]"                <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_setpoint",  autoupdate="false"} 
 
 //over arduino nodes
 Number  TI_PU_O                 "Temperature (Top)    [%.1f °C]"            <temperature>   (All, power, RS485_IN)
 Number  TI_PU_U                 "Temperature (Middle) [%.1f °C]"            <temperature>   (All, power, RS485_IN)
+
