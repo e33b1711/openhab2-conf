@@ -4,13 +4,13 @@ sitemap power label="Power" {
         Text item=solar_power           
         Text item=battery_power         
         Text item=loads_power 
+        Text item=criticial_loads_power
         Text item=victron_connected     
         Text item=victron_status        
         Text item=state_of_charge      
     }
     Frame label="Heater" {
         Switch item=solar2heat       mappings=[ON= "On" , OFF= "Off"]   
-        Text item=criticial_loads_power
         Text item=U_EL
         Text item=TI_PU_O     
         Text item=TI_PU_U 
