@@ -11,7 +11,9 @@ sitemap power label="Power" {
         Text item=victron_status        
         Text item=state_of_charge       
         Text item=wallbox_connected     
-        Text item=wallbox_status         
+        Text item=wallbox_status
+        Text item=TI_PU_O     
+        Text item=TI_PU_U           
     }
      Frame label="Power Control" {
         Switch item=solar2heat               
