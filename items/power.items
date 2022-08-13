@@ -7,6 +7,7 @@ Number  battery_power           "Battery Power [%.1f kW]"                   <pre
 Number  loads_power             "Loads Power [%.1f kW]"                     <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:loads_power"} 
 Number  criticial_loads_power   "Critical Loads Power Power [%.1f kW]"      <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:criticial_loads_power"} 
 Number  charger_power           "Charger Power [%.1f kW]"                   <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_power"} 
+Number  charger_setpoint        "Charger Power [%d A]"                      <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_setpoint"} 
 Number  heat_setpoint           "Heating Setpoint [%d /255]"                <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:grip_power"} 
 Contact victron_connected       "victron: [%s]"                                             (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_connected"} 
 String  victron_status          "victron: [%s]"                                             (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_status"} 
@@ -18,7 +19,7 @@ String  wallbox_status          "wallbox: [%s]"                                 
 //control
 Switch  solar2heat              "Solar2Heat"                                                (All, power)    { channel="mqtt:topic:mosquitto:power_control:solar2heat",  autoupdate="false"} 
 Switch  solar2car               "Solar2Car"                                                 (All, power)    { channel="mqtt:topic:mosquitto:power_control:solar2car",   autoupdate="false"}   
-Dimmer  charger_setpoint        "Charger Setpoint: [%d Amp]"                <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_setpoint",  autoupdate="false"} 
+Switch  charger_control         "Charger Current Control"                   <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_control",  autoupdate="false"} 
 
 //over arduino nodes
 Number  TI_PU_O                 "Temperature (Top)    [%.1f °C]"            <temperature>   (All, power, RS485_IN)
