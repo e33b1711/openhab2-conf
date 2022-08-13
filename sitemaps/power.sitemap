@@ -6,7 +6,8 @@ sitemap power label="Power" {
         Text item=loads_power           
         Text item=criticial_loads_power 
         Text item=charger_power         
-        Text item=heat_setpoint         
+        Text item=heat_setpoint
+        Text item=charger_setpoint             
         Text item=victron_connected     
         Text item=victron_status        
         Text item=state_of_charge       
@@ -18,7 +19,7 @@ sitemap power label="Power" {
      Frame label="Power Control" {
         Switch item=solar2heat                       
         Switch item=solar2car                         
-        Setpoint item=charger_setpoint         
+        Setpoint item=charger_setpoint  mappings=[ON= "Up" , OFF= "Down" ]        
     }
     Frame label="Wake on LAN" {
         Switch item=DESK_WOL    
