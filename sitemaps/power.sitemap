@@ -13,7 +13,13 @@ sitemap power label="Power" {
         Text item=wallbox_connected     
         Text item=wallbox_status         
     }
+     Frame label="Power Control" {
+        Text item=solar2heat               
+        Text item=solar2car                
+        Text item=charger_setpoint         
+    }
     Frame label="Wake on LAN" {
-        Group item=WOL 
+        Group item=DESK_WOL    
+        Group item=STRYDER_WOL 
     }
 }
