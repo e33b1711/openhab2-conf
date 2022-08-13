@@ -17,8 +17,8 @@ sitemap power label="Power" {
         Text item=TI_PU_U           
     }
      Frame label="Power Control" {
-        Switch item=solar2heat                       
-        Switch item=solar2car                         
+        Switch item=solar2heat       mappings=[ON= "On" , OFF= "Off"]                
+        Switch item=solar2car        mappings=[ON= "On" , OFF= "Off"]                 
         Switch item=charger_control  mappings=[ON= "Up" , OFF= "Down"]       
     }
     Frame label="Wake on LAN" {
