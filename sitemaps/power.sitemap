@@ -1,25 +1,27 @@
 sitemap power label="Power" {
-    Frame label="Power Status" {
+    Frame label="ESS Status" {
         Text item=grid_power            
         Text item=solar_power           
         Text item=battery_power         
-        Text item=loads_power           
-        Text item=criticial_loads_power 
-        Text item=charger_power         
-        Text item=U_EL
-        Text item=charger_setpoint             
+        Text item=loads_power 
         Text item=victron_connected     
         Text item=victron_status        
-        Text item=state_of_charge       
-        Text item=charger_connected     
-        Text item=charger_status
-        Text item=TI_PU_O     
-        Text item=TI_PU_U           
+        Text item=state_of_charge      
     }
-     Frame label="Power Control" {
-        Switch item=solar2heat       mappings=[ON= "On" , OFF= "Off"]                
-        Switch item=solar2car        mappings=[ON= "On" , OFF= "Off"]                 
-        Switch item=charger_control  mappings=[ON= "Up" , OFF= "Down"]       
+    Frame label="Heater" {
+        Switch item=solar2heat       mappings=[ON= "On" , OFF= "Off"]   
+        Text item=criticial_loads_power
+        Text item=U_EL
+        Text item=TI_PU_O     
+        Text item=TI_PU_U 
+    }
+    Frame label="Charger" {
+        Switch item=solar2car        mappings=[ON= "On" , OFF= "Off"]  
+        Switch item=charger_control  mappings=[ON= "Up" , OFF= "Down"]        
+        Text item=charger_power         
+        Text item=charger_setpoint             
+        Text item=charger_connected     
+        Text item=charger_status         
     }
     Frame label="Wake on LAN" {
         Switch item=DESK_WOL    
