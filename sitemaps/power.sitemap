@@ -24,4 +24,5 @@ sitemap power label="Power" {
         Switch item=DESK_WOL    
         Switch item=STRYDER_WOL 
     }
+    Group item=power_control
 }
