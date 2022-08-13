@@ -9,10 +9,10 @@ Number  criticial_loads_power   "Critical Loads Power Power [%.1f kW]"      <pre
 Number  charger_power           "Charger Power [%.1f kW]"                   <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_power"} 
 Number  heat_setpoint           "Heating Setpoint [%d /255]"                <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:grip_power"} 
 Contact victron_connected       "victron: [%s]"                                             (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_connected"} 
-Contact victron_status          "victron: [%s]"                                             (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_status"} 
+String  victron_status          "victron: [%s]"                                             (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_status"} 
 Number  state_of_charge         "State of Charge: [%.0f %%]"                <batterylevel>  (All, power)    { channel="mqtt:topic:mosquitto:power_control:soc"}
 Contact wallbox_connected       "wallbox: [%s]"                                             (All, power)    { channel="mqtt:topic:mosquitto:power_control:wallbox_connected"} 
-Contact wallbox_status          "wallbox: [%s]"                                             (All, power)    { channel="mqtt:topic:mosquitto:power_control:wallbox_status"} 
+String  wallbox_status          "wallbox: [%s]"                                             (All, power)    { channel="mqtt:topic:mosquitto:power_control:wallbox_status"} 
 
 
 //control
