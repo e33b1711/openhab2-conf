@@ -1,4 +1,19 @@
 sitemap power label="Power" {
-	Group item=power
-	Group item=WOL 
+    Frame label="Power Status" {
+        Text item=grid_power            
+        Text item=solar_power           
+        Text item=battery_power         
+        Text item=loads_power           
+        Text item=criticial_loads_power 
+        Text item=charger_power         
+        Text item=heat_setpoint         
+        Text item=victron_connected     
+        Text item=victron_status        
+        Text item=state_of_charge       
+        Text item=wallbox_connected     
+        Text item=wallbox_status         
+    }
+    Frame label="Wake on LAN" {
+        Group item=WOL 
+    }
 }
