@@ -61,9 +61,9 @@ Bridge mqtt:broker:mosquitto "Mosquitto" [ host="localhost", port=1883, secure=f
         Type number : state_of_charge       "state_of_charge"       [ stateTopic="power_state/state_of_charge"]      
         Type number : wallbox_connected     "wallbox_connected"     [ stateTopic="power_state/wallbox_connected"]    
         Type number : wallbox_status        "wallbox_status"        [ stateTopic="power_state/wallbox_status"]       
-        Type switch : solar2heat            "solar2heat"            [ stateTopic="power_state/solar2heat",       commandTopic="power_state/solar2heat"]      
-        Type switch : solar2car             "solar2car"             [ stateTopic="power_state/solar2car",        commandTopic="power_state/solar2car"]      
-        Type number : charger_setpoint      "charger_setpoint"      [ stateTopic="power_state/charger_setpoint", commandTopic="power_state/charger_setpoint"]
+        Type switch : solar2heat            "solar2heat"            [ stateTopic="power_state/solar2heat",       commandTopic="power_command/solar2heat"]      
+        Type switch : solar2car             "solar2car"             [ stateTopic="power_state/solar2car",        commandTopic="power_command/solar2car"]      
+        Type number : charger_setpoint      "charger_setpoint"      [ stateTopic="power_state/charger_setpoint", commandTopic="power_command/charger_setpoint"]
     }      
     
 }

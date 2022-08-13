@@ -16,13 +16,12 @@ sitemap power label="Power" {
         Text item=TI_PU_U           
     }
      Frame label="Power Control" {
-        Switch item=solar2heat              mappings=[ON="ON", OFF="OFF"]          
-        Switch item=solar2car               mappings=[ON="ON", OFF="OFF"]          
-        Setpoint item=charger_setpoint      minValue=6 maxValue=20 step=1   
+        Switch item=solar2heat                       
+        Switch item=solar2car                         
+        Setpoint item=charger_setpoint         
     }
     Frame label="Wake on LAN" {
         Switch item=DESK_WOL    
         Switch item=STRYDER_WOL 
     }
-    Group item=power
 }
