@@ -12,8 +12,8 @@ Number  U_EL                    "Heating Setpoint [%.1f]"                   <pre
 Contact victron_connected       "victron connected: [%s]"                                   (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_connected"} 
 String  victron_status          "victron power: [%s]"                                       (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_status"} 
 Number  state_of_charge         "State of Charge: [%.0f %%]"                <batterylevel>  (All, power)    { channel="mqtt:topic:mosquitto:power_control:soc"}
-Contact charger_connected       "charger connected: [%s]"                                   (All, power)    { channel="mqtt:topic:mosquitto:power_control:wallbox_connected"} 
-String  charger_status          "charger status: [%s]"                                      (All, power)    { channel="mqtt:topic:mosquitto:power_control:wallbox_status"} 
+Contact charger_connected       "charger connected: [%s]"                                   (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_connected"} 
+String  charger_status          "charger status: [%s]"                                      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_status"} 
 
 
 //control
