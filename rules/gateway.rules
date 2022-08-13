@@ -55,6 +55,10 @@ then
 						logInfo("ListenRulen", "handler: w / HI " + this_item.name + " " + value.toString())	
 						postUpdate(this_item, value )
 					}
+                    if (address.contains("U_")){
+						logInfo("ListenRulen", "handler: w / U " + this_item.name + " " + value.toString())	
+						postUpdate(this_item, value )
+					}
 					if (address.contains("ETI_")){
 						logInfo("ListenRulen", "handler: w / ETI " + this_item.name + " " + value.toString())	
 						postUpdate(this_item, value )
