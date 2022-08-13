@@ -19,7 +19,7 @@ sitemap power label="Power" {
      Frame label="Power Control" {
         Switch item=solar2heat                       
         Switch item=solar2car                         
-        Switch item=charger_control  mappings=[ON= "Up" , OFF= "Down"]        
+        Switch item=charger_control  mappings=[ON= "Up" , OFF= "Down"]       
     }
     Frame label="Wake on LAN" {
         Switch item=DESK_WOL    
