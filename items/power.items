@@ -1,17 +1,17 @@
 Group power
 
 //pure display values
-Number  grid_power              "Grid Power [%.1f kW]"                      <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:grip_power"} 
-Number  solar_power             "Solar Power [%.1f kW]"                     <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:solar_power"} 
-Number  battery_power           "Battery Power [%.1f kW]"                   <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:battery_power"} 
-Number  loads_power             "Loads Power [%.1f kW]"                     <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:loads_power"} 
-Number  criticial_loads_power   "Critical Loads Power Power [%.1f kW]"      <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:criticial_loads_power"} 
-Number  charger_power           "Charger Power [%.1f kW]"                   <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_power"} 
+Number  grid_power              "Grid Power [%.1f W]"                      <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:grid_power"} 
+Number  solar_power             "Solar Power [%.1f W]"                     <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:solar_power"} 
+Number  battery_power           "Battery Power [%.1f W]"                   <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:battery_power"} 
+Number  loads_power             "Loads Power [%.1f k]"                     <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:loads_power"} 
+Number  criticial_loads_power   "Critical Loads Power Power [%.1f W]"      <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:criticial_loads_power"} 
+Number  charger_power           "Charger Power [%.1f W]"                   <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_power"} 
 Number  charger_setpoint        "Charger setpoint [%d A]"                   <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_setpoint"} 
 Number  U_EL                    "Heating Setpoint [%.1f]"                   <pressure>      (All, power, RS485_IN)    
 Contact victron_connected       "victron connected: [%s]"                                   (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_connected"} 
 String  victron_status          "victron power: [%s]"                                       (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_status"} 
-Number  state_of_charge         "State of Charge: [%.0f %%]"                <batterylevel>  (All, power)    { channel="mqtt:topic:mosquitto:power_control:soc"}
+Number  state_of_charge         "State of Charge: [%.0f %%]"                <batterylevel>  (All, power)    { channel="mqtt:topic:mosquitto:power_control:state_of_charge"}
 Contact charger_connected       "charger connected: [%s]"                                   (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_connected"} 
 String  charger_status          "charger status: [%s]"                                      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_status"} 
 
