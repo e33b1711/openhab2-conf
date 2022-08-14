@@ -18,7 +18,7 @@ then
 		parser_in_string=in_buffer.substring(0,in_buffer.indexOf("$")+1)
 	    	in_buffer=in_buffer.substring(in_buffer.indexOf("$")+1).trim
 	    	
-	    	logInfo("ListenRule", "Input String for Parser: >>" + parser_in_string + "<<")
+	    	//logInfo("ListenRule", "Input String for Parser: >>" + parser_in_string + "<<")
 	    	
 	    	var int index4 = parser_in_string.indexOf("$")						
 		var int index1 = parser_in_string.indexOf("!")
@@ -34,7 +34,7 @@ then
 			else{
 				value=Float::parseFloat(parser_in_string.substring(index3+1,index4))
 			}			
-			logInfo("ListenRule", "messageType: " + messageType + " address: " + address + " value: " + value.toString())
+			//logInfo("ListenRule", "messageType: " + messageType + " address: " + address + " value: " + value.toString())
 			
 			//auf "w" messages reagieren
 			if ((messageType=="w") || (messageType=="i")) {
@@ -46,17 +46,17 @@ then
 					
 					//ON/OFF Typen
 					if( (address.contains("LI_")) || (address.contains("BELL")) || (address.contains("ZE_")) || (address.contains("PUMP")) ){
-						logInfo("ListenRulen", "handler: w / LI " + this_item.name + " " + value.toString())
+						//logInfo("ListenRulen", "handler: w / LI " + this_item.name + " " + value.toString())
 						postUpdate(this_item, if(value==0) OFF else ON)
 					}				
 				
 					//Temperaturen
 					if (address.contains("HI_")){
-						logInfo("ListenRulen", "handler: w / HI " + this_item.name + " " + value.toString())	
+						//logInfo("ListenRulen", "handler: w / HI " + this_item.name + " " + value.toString())	
 						postUpdate(this_item, value )
 					}
                     if (address.contains("U_")){
-						logInfo("ListenRulen", "handler: w / U " + this_item.name + " " + value.toString())	
+						//logInfo("ListenRulen", "handler: w / U " + this_item.name + " " + value.toString())	
 						postUpdate(this_item, value )
 					}
 					if (address.contains("ETI_")){
@@ -64,14 +64,14 @@ then
 						postUpdate(this_item, value )
 					}else{
 						if(address.contains("TI_")){
-						logInfo("ListenRulen", "handler: w / TI " + this_item.name + " " + value.toString())	
+						//logInfo("ListenRulen", "handler: w / TI " + this_item.name + " " + value.toString())	
 						postUpdate(this_item, value*0.1 )
 						}
 					}
 				
 					//Verdunkelungen, Dachfenster, Rollos
 					if(address.contains("RO_") || address.contains("VD_") || address.contains("DO_") || address.contains("DF_")){
-						logInfo("ListenRulen", "handler: w / RO " + this_item.name + " " + value.toString())	
+						//logInfo("ListenRulen", "handler: w / RO " + this_item.name + " " + value.toString())	
 						if (value==1) {postUpdate(this_item, 0)}
 						else if (value==-1) {postUpdate(this_item, 100)}
 						else {postUpdate(this_item, 50)}

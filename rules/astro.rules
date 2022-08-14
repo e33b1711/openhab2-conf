@@ -6,7 +6,7 @@ rule "chicken_up"
 when
         Channel 'astro:sun:chicken:rise#event' triggered START
 then
-         sendCommand(DO_CH, UP)
+        sendCommand(DO_CH, UP)
         sendNotification("e33b1711@gmail.com", "chicken up")
 end
 
@@ -67,7 +67,7 @@ when
 then
 	logInfo("GarageOuterLight", "triggered")
 	if (ItsDark.state == ON){
-		logInfo("GarageOuterLight", "switched")
+		//logInfo("GarageOuterLight", "switched")
 		postUpdate(ZE_GR_2, ON)
 		postUpdate(ZE_EG_VH, ON)
 		sendCommand(ZE_GR_2, ON)

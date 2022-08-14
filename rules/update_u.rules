@@ -8,28 +8,28 @@ when
 then
     heizung_stellwert.members.forEach [ item |
         //get base name
-        logInfo("HeatingControllerRule: item.name:", item.name)
+        //logInfo("HeatingControllerRule: item.name:", item.name)
         val String item_base_name = item.name.substring(1,7)
-        logInfo("HeatingControllerRule", "item_base_name: >>" + item_base_name + "<<")
+        //logInfo("HeatingControllerRule", "item_base_name: >>" + item_base_name + "<<")
         
     	//get input values
 		var Number temp_ist = ScriptServiceUtil.getItemRegistry.getItem("TI" + item_base_name).state as DecimalType
-		logInfo("HeatingControllerRule", "temp_ist: " + temp_ist.toString())
+		//logInfo("HeatingControllerRule", "temp_ist: " + temp_ist.toString())
 
 		var Number temp_soll = ScriptServiceUtil.getItemRegistry.getItem("TS" + item_base_name).state as DecimalType
-		logInfo("HeatingControllerRule", "temp_soll: " + temp_soll.toString())
+		//logInfo("HeatingControllerRule", "temp_soll: " + temp_soll.toString())
 
 		var Number u_default = ScriptServiceUtil.getItemRegistry.getItem("UD" + item_base_name).state as DecimalType
-		logInfo("HeatingControllerRule", "u_default: " + u_default.toString())  
+		//logInfo("HeatingControllerRule", "u_default: " + u_default.toString())  
 		
 		var Number s_error = ScriptServiceUtil.getItemRegistry.getItem("ETI" + item_base_name).state as DecimalType
-		logInfo("HeatingControllerRule", "s_error: " + s_error.toString())
+		//logInfo("HeatingControllerRule", "s_error: " + s_error.toString())
 
 		//control algorithm
 		var Number u_nxt=0;
 		u_nxt=u_default;
 		var temp_diff = temp_ist - temp_soll
-		logInfo("HeatingControllerRule", "temp_diff: " + temp_diff.toString())
+		//logInfo("HeatingControllerRule", "temp_diff: " + temp_diff.toString())
         if((temp_ist<1) || (temp_ist>35) || (s_error != 0)){
         	u_nxt=u_default
         }else{
@@ -51,19 +51,19 @@ when
 then
     	val item = ScriptServiceUtil.getItemRegistry.getItem("U_OG_BA")
         //get base name
-        logInfo("HeatingControllerRule: item.name:", item.name)
+        //logInfo("HeatingControllerRule: item.name:", item.name)
         val String item_base_name = item.name.substring(1,7)
-        logInfo("HeatingControllerRule", "item_base_name: >>" + item_base_name + "<<")
+        //logInfo("HeatingControllerRule", "item_base_name: >>" + item_base_name + "<<")
         
         //get input values
 	val temp_ist = ScriptServiceUtil.getItemRegistry.getItem("TI" + item_base_name).state as DecimalType
-	logInfo("HeatingControllerRule", "temp_ist: " + temp_ist.toString())
+	//logInfo("HeatingControllerRule", "temp_ist: " + temp_ist.toString())
 
         val temp_soll = ScriptServiceUtil.getItemRegistry.getItem("TS" + item_base_name).state as DecimalType
-	logInfo("HeatingControllerRule", "temp_soll: "+ temp_soll.toString())
+	//logInfo("HeatingControllerRule", "temp_soll: "+ temp_soll.toString())
 
         val u_default = ScriptServiceUtil.getItemRegistry.getItem("UD" + item_base_name).state as DecimalType
-	logInfo("HeatingControllerRule", "u_default: "+ u_default.toString())
+	//logInfo("HeatingControllerRule", "u_default: "+ u_default.toString())
       
 	val s_error = ScriptServiceUtil.getItemRegistry.getItem("ETI" + item_base_name).state as DecimalType
        	logInfo("HeatingControllerRule", "s_error: "+ s_error.toString())
@@ -71,7 +71,7 @@ then
         //control algorithm
         val u_nxt=u_default;
 	val temp_diff = temp_ist - temp_soll
-	logInfo("HeatingControllerRule", "temp_diff: "+ temp_diff.toString())
+	//logInfo("HeatingControllerRule", "temp_diff: "+ temp_diff.toString())
         if((temp_ist<1) || (temp_ist>35) || (s_error != 0)){
         	u_nxt=u_default
         }else{
@@ -79,7 +79,7 @@ then
 		if (temp_diff<-1){u_nxt=15}
 	    }
         if(Sommerbetrieb.state==ON){u_nxt=0}
-	logInfo("HeatingControllerRule", "u_nxt: " + u_nxt.toString())
+	//logInfo("HeatingControllerRule", "u_nxt: " + u_nxt.toString())
 
         //postUpdate
         item.postUpdate(u_nxt)
@@ -124,11 +124,11 @@ then
 	var temp=TI_EG_GA.state as Number
 	TI_EG_GR.postUpdate(temp)
 	TI_EG_WC.postUpdate(temp)
-	logInfo("CalcTempEgRule: temp ga:", temp.toString())
+	//logInfo("CalcTempEgRule: temp ga:", temp.toString())
 	temp=TI_EG_EZ.state as Number
 	TI_EG_E1.postUpdate(temp)
 	TI_EG_E2.postUpdate(temp)
-	logInfo("CalcTempEgRule: temp ez:", temp.toString())
+	//logInfo("CalcTempEgRule: temp ez:", temp.toString())
 end
 
 
@@ -136,10 +136,10 @@ rule RuleUpdateSetpoints
 when
 	Member of heizung_stellwert received update
 then
-	logInfo("RuleUpdateSetpoints", "The item " + triggeringItem.name + " received update " + triggeringItem.state)
+	//logInfo("RuleUpdateSetpoints", "The item " + triggeringItem.name + " received update " + triggeringItem.state)
 	val message = "!w!" + triggeringItem.name + String::format("!%1$01d$\n",(triggeringItem.state as DecimalType).intValue)
 	sendCommand(RS485_Gateway_out, message)  
-	logInfo("RuleUpdateSetpoints", message)
+	//logInfo("RuleUpdateSetpoints", message)
 end
 
 

@@ -2,24 +2,24 @@ rule RuleUpdateLights
 when
     Member of Licht received command
 then
-    logInfo("RuleUpdateLights", "The item " + triggeringItem.name + " received command " + receivedCommand)
+    //logInfo("RuleUpdateLights", "The item " + triggeringItem.name + " received command " + receivedCommand)
     var String message="!w!" + triggeringItem.name + "!3$\n"
     if (receivedCommand==ON)   {message="!w!" + triggeringItem.name + "!1$\n"}
 	if (receivedCommand==OFF)  {message="!w!" + triggeringItem.name + "!0$\n"}
 	sendCommand(RS485_Gateway_out, message)
-    logInfo("RuleUpdateLights", message)
+    //logInfo("RuleUpdateLights", message)
 end
 
 rule RuleUpdateTimers
 when
     Member of Timer received command
 then
-    logInfo("RuleUpdateTimers", "The item " + triggeringItem.name + " received command " + receivedCommand)
+    //logInfo("RuleUpdateTimers", "The item " + triggeringItem.name + " received command " + receivedCommand)
     var String message="!w!" + triggeringItem.name + "!3$\n"
     if (receivedCommand==ON)   {message="!w!" + triggeringItem.name + "!1$\n"}
 	if (receivedCommand==OFF)  {message="!w!" + triggeringItem.name + "!0$\n"}
 	sendCommand(RS485_Gateway_out, message)
-    logInfo("RuleUpdateTimers", message)
+    //logInfo("RuleUpdateTimers", message)
 end
 
 

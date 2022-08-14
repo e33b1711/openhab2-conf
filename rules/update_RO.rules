@@ -2,7 +2,7 @@ rule RuleUpdateRollerShuter
 when
     Member of Rollo received command
 then
-    logInfo("RuleUpdateRollerShuter", "The item " + triggeringItem.name + " received command " + receivedCommand)
+    //logInfo("RuleUpdateRollerShuter", "The item " + triggeringItem.name + " received command " + receivedCommand)
     var String message=""
 	if (receivedCommand==STOP){
         postUpdate(RO_EG_SU, 50) 
@@ -17,5 +17,5 @@ then
         message="!w!" + triggeringItem.name + "!-1$\n"
     }
     sendCommand(RS485_Gateway_out, message)
-    logInfo("RuleUpdateRollerShuter", message)
+    //logInfo("RuleUpdateRollerShuter", message)
 end
