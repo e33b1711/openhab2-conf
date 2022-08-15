@@ -7,7 +7,7 @@ Number  battery_power           "Battery Power [%.1f W]"                   <pres
 Number  loads_power             "Loads Power [%.1f W]"                     <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:loads_power"} 
 Number  criticial_loads_power   "Critical Loads Power Power [%.1f W]"      <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:criticial_loads_power"} 
 Number  charger_power           "Charger Power [%.1f W]"                   <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_power"} 
-Number  U_EL                    "Heating Setpoint [%.1f]"                  <pressure>      (All, power, RS485_IN)    
+Number  U_EL                    "Heating Setpoint [%.1f]"                  <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:ard_state:U_EL"} 
 Number  victron_connected       "victron connected: [%d]"                                  (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_connected"} 
 Number  victron_status          "victron status: [%d]"                                     (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_status"} 
 Number  state_of_charge         "State of Charge: [%.0f %%]"               <batterylevel>  (All, power)    { channel="mqtt:topic:mosquitto:power_control:state_of_charge"}
