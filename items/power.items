@@ -23,6 +23,6 @@ Switch  charger_control         "Charger Current Control"                   <pre
 Number  charger_setpoint        "Charger setpoint [%d A]"                   <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_setpoint",  autoupdate="false"} 
 
 //over arduino nodes
-Number  TI_PU_O                 "Temperature (Top)    [%.1f °C]"            <temperature>   (All, power, RS485_IN)
-Number  TI_PU_U                 "Temperature (Middle) [%.1f °C]"            <temperature>   (All, power, RS485_IN)
+Number  TI_PU_O                 "Temperature (Top)    [%.1f °C]"            <temperature>   (All, power)    { channel="mqtt:topic:mosquitto:power_control:TI_PU_O"} 
+Number  TI_PU_U                 "Temperature (Middle) [%.1f °C]"            <temperature>   (All, power)    { channel="mqtt:topic:mosquitto:power_control:TI_PU_U"} 
 
