@@ -67,6 +67,13 @@ Bridge mqtt:broker:mosquitto "Mosquitto" [ host="localhost", port=1883, secure=f
         Type number : U_EL                  "U_EL"                  [ stateTopic="ard_state/U_EL",               commandTopic="ard_command/U_EL"]
         Type number : TI_PU_O               "TI_PU_O"               [ stateTopic="ard_state/TI_PU_U"]       
         Type number : TI_PU_U               "TI_PU_O"               [ stateTopic="ard_state/TI_PU_O"]        
-    }      
+    }
+
+    Thing topic arduino_nodes "Arduino Nodes" @ "debug" {
+    Channels:
+        Type number : U_EL                  "U_EL"                  [ stateTopic="ard_state/U_EL",               commandTopic="ard_command/U_EL"]
+        Type number : TI_PU_O               "TI_PU_O"               [ stateTopic="ard_state/TI_PU_U"]       
+        Type number : TI_PU_U               "TI_PU_O"               [ stateTopic="ard_state/TI_PU_O"]        
+    }          
     
 }
