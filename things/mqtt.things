@@ -70,9 +70,24 @@ Bridge mqtt:broker:mosquitto "Mosquitto" [ host="localhost", port=1883, secure=f
 
     Thing topic arduino_nodes "Arduino Nodes" @ "debug" {
     Channels:
-        Type number : U_EL                  "U_EL"                  [ stateTopic="ard_state/U_EL",               commandTopic="ard_command/U_EL"]
-        Type number : TI_PU_O               "TI_PU_O"               [ stateTopic="ard_state/TI_PU_U"]       
-        Type number : TI_PU_U               "TI_PU_O"               [ stateTopic="ard_state/TI_PU_O"]        
+        Type number        : U_EL           "U_EL"                            [ stateTopic="ard_state/U_EL",          commandTopic="ard_command/U_EL"]
+        Type number        : TI_PU_O        "TI_PU_O"                         [ stateTopic="ard_state/TI_PU_U"]       
+        Type number        : TI_PU_U        "TI_PU_O"                         [ stateTopic="ard_state/TI_PU_O"]  
+        
+        Type switch        : LI_OG_KN 	    "LI_OG_KN" 	                      [ stateTopic="ard_state/LI_OG_KN", 	  stateTopic="ard_state/LI_OG_KN"] 	
+        Type switch        : LI_OG_KN_L1 	"LI_OG_KN_L1" 	                  [ stateTopic="ard_state/LI_OG_KN_L1",   stateTopic="ard_state/LI_OG_KN_L1"] 
+        Type switch        : LI_OG_KS 	    "LI_OG_KS" 	                      [ stateTopic="ard_state/LI_OG_KS", 	  stateTopic="ard_state/LI_OG_KS"] 	
+        Type switch        : LI_OG_KS_L1 	"LI_OG_KS_L1" 	                  [ stateTopic="ard_state/LI_OG_KS_L1",   stateTopic="ard_state/LI_OG_KS_L1"] 
+        Type switch        : LI_OG_GA 	    "LI_OG_GA" 	                      [ stateTopic="ard_state/LI_OG_GA", 	  stateTopic="ard_state/LI_OG_GA"] 	
+        Type switch        : LI_OG_GA_L1  	"LI_OG_GA_L1"                     [ stateTopic="ard_state/LI_OG_GA_L1",   stateTopic="ard_state/LI_OG_GA_L1"] 
+        Type rollershutter : RO_OG_KN 	    "RO_OG_KN" 	                      [ stateTopic="ard_state/RO_OG_KN", 	  stateTopic="ard_state/RO_OG_KN"] 	
+        Type rollershutter : VD_OG_KN	    "VD_OG_KN"	                      [ stateTopic="ard_state/VD_OG_KN",	  stateTopic="ard_state/VD_OG_KN"]	
+        Type rollershutter : DF_OG_KN	    "DF_OG_KN"	                      [ stateTopic="ard_state/DF_OG_KN",	  stateTopic="ard_state/DF_OG_KN"]	
+        Type rollershutter : RO_OG_KS 	    "RO_OG_KS" 	                      [ stateTopic="ard_state/RO_OG_KS", 	  stateTopic="ard_state/RO_OG_KS"] 	
+        Type rollershutter : VD_OG_KS	    "VD_OG_KS"	                      [ stateTopic="ard_state/VD_OG_KS",	  stateTopic="ard_state/VD_OG_KS"]	
+        Type rollershutter : DF_OG_KS	    "DF_OG_KS"	                      [ stateTopic="ard_state/DF_OG_KS",	  stateTopic="ard_state/DF_OG_KS"]	        
     }          
     
 }
+
+

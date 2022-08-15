@@ -66,18 +66,18 @@ Switch LI_EG_SP 	    "Speis" 				                    (Licht, EG_KU, RS485_IN, RS
 
 Switch LI_OG_BA     	"Decke" 		    		                (Licht, OG_BA, RS485_IN, RS485_OUT)         
 
-Switch LI_OG_KN 	    "Decke" 		    		                (Licht, OG_KN, RS485_IN, RS485_OUT)         
-Switch LI_OG_KN_L1 	    "Spots" 		    		                (Licht, OG_KN, RS485_IN, RS485_OUT)         
+Switch LI_OG_KN 	    "Decke" 		    		                (Licht, OG_KN)      { channel="mqtt:topic:mosquitto:arduino_nodes:LI_OG_KN", autoupdate="false"}     
+Switch LI_OG_KN_L1 	    "Spots" 		    		                (Licht, OG_KN)       { channel="mqtt:topic:mosquitto:arduino_nodes:LI_OG_KN_L1", autoupdate="false"}    
 
-Switch LI_OG_KS 	    "Decke" 		    	                	(Licht, OG_KS, RS485_IN, RS485_OUT)         
-Switch LI_OG_KS_L1 	    "Spots" 		    	                	(Licht, OG_KS, RS485_IN, RS485_OUT)         
+Switch LI_OG_KS 	    "Decke" 		    	                	(Licht, OG_KS)       { channel="mqtt:topic:mosquitto:arduino_nodes:LI_OG_KS", autoupdate="false"}    
+Switch LI_OG_KS_L1 	    "Spots" 		    	                	(Licht, OG_KS)      { channel="mqtt:topic:mosquitto:arduino_nodes:LI_OG_KS_L1", autoupdate="false"}     
 
 Switch LI_OG_SZ 	    "Decke" 			                    	(Licht, OG_SZ, RS485_IN, RS485_OUT)         
 Switch LI_OG_SZ_L1 	    "Leselampe Melli" 		                	(Licht, OG_SZ, RS485_IN, RS485_OUT)         
 Switch LI_OG_SZ_L2  	"Leselampe Anselm" 		                	(Licht, OG_SZ, RS485_IN, RS485_OUT)         
 
-Switch LI_OG_GA 	    "Decke" 	  		    	                (Licht, OG_GA, RS485_IN, RS485_OUT)         
-Switch LI_OG_GA_L1  	"Spots" 	  		    	                (Licht, OG_GA, RS485_IN, RS485_OUT)         
+Switch LI_OG_GA 	    "Decke" 	  		    	                (Licht, OG_GA)    { channel="mqtt:topic:mosquitto:arduino_nodes:LI_OG_GA", autoupdate="false"}       
+Switch LI_OG_GA_L1  	"Spots" 	  		    	                (Licht, OG_GA)    { channel="mqtt:topic:mosquitto:arduino_nodes:LI_OG_GA_L1", autoupdate="false"}      
 
 Switch LI_UG_HO 		"Licht Hobbyraum Büro" 						(Licht, UG_HO, RS485_IN, RS485_OUT)          
 Switch LI_UG_WK     	"Licht Waschküche" 			                (Licht, UG_WK, RS485_IN, RS485_OUT)         
@@ -120,13 +120,13 @@ Rollershutter RO_OG_BA 	"Rollo" 				                    (Rollo, OG_BA, RS485_IN,
 
 Rollershutter DF_OG_GA	 "Dachfenster" 				                (Dachfenster, OG_GA, RS485_IN, RS485_OUT)
 
-Rollershutter RO_OG_KN 	"Rollo" 				                    (Rollo, OG_KN, RS485_IN, RS485_OUT) 
-Rollershutter VD_OG_KN	"Verdunkelung Dachfenster" 	                (Verdunkelung, OG_KN, RS485_IN, RS485_OUT) 
-Rollershutter DF_OG_KN	"Dachfenster" 				                (Dachfenster, OG_KN, RS485_IN, RS485_OUT)
+Rollershutter RO_OG_KN 	"Rollo" 				                    (Rollo, OG_KN)             { channel="mqtt:topic:mosquitto:arduino_nodes:RO_OG_KN", autoupdate="false"}
+Rollershutter VD_OG_KN	"Verdunkelung Dachfenster" 	                (Verdunkelung, OG_KN)      { channel="mqtt:topic:mosquitto:arduino_nodes:VD_OG_KN", autoupdate="false"}
+Rollershutter DF_OG_KN	"Dachfenster" 				                (Dachfenster, OG_KN)       { channel="mqtt:topic:mosquitto:arduino_nodes:DF_OG_KN", autoupdate="false"}
 
-Rollershutter RO_OG_KS 	"Rollo"  				                    (Rollo, OG_KS, RS485_IN, RS485_OUT) 
-Rollershutter VD_OG_KS	"Verdunkelung Dachfenster"	                (Verdunkelung,OG_KS, RS485_IN, RS485_OUT)
-Rollershutter DF_OG_KS	"Dachfenster" 				                (Dachfenster, OG_KS, RS485_IN, RS485_OUT) 
+Rollershutter RO_OG_KS 	"Rollo"  				                    (Rollo, OG_KS)             { channel="mqtt:topic:mosquitto:arduino_nodes:RO_OG_KS", autoupdate="false"}
+Rollershutter VD_OG_KS	"Verdunkelung Dachfenster"	                (Verdunkelung,OG_KS)       { channel="mqtt:topic:mosquitto:arduino_nodes:VD_OG_KS", autoupdate="false"}
+Rollershutter DF_OG_KS	"Dachfenster" 				                (Dachfenster, OG_KS)       { channel="mqtt:topic:mosquitto:arduino_nodes:DF_OG_KS", autoupdate="false"}
 
 Rollershutter RO_OG_SZ 	"Rollo" 				                    (Rollo, OG_SZ, RS485_IN, RS485_OUT) 
 Rollershutter VD_OG_SZ	"Verdunkelung Dachfenster" 	                (Verdunkelung, OG_SZ, RS485_IN, RS485_OUT)
