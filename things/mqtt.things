@@ -55,7 +55,7 @@ Bridge mqtt:broker:mosquitto "Mosquitto" [ host="localhost", port=1883, secure=f
         Type number : loads_power           "loads_power"           [ stateTopic="power_state/loads_power"]          
         Type number : criticial_loads_power "criticial_loads_power" [ stateTopic="power_state/criticial_loads_power"]
         Type number : charger_power         "charger_power"         [ stateTopic="power_state/charger_power"]        
-        Type number : charger_setpoint      "charger_setpoint"      [ stateTopic="power_state/charger_setpoint", stateTopic="power_command/charger_setpoint"]          
+        Type number : charger_setpoint      "charger_setpoint"      [ stateTopic="power_state/charger_setpoint", commandTopic="power_command/charger_setpoint"]          
         Type number : victron_connected     "victron_connected"     [ stateTopic="power_state/victron_connected"]    
         Type number : victron_status        "victron_status"        [ stateTopic="power_state/victron_status"]       
         Type number : state_of_charge       "state_of_charge"       [ stateTopic="power_state/state_of_charge"]      
