@@ -7,19 +7,20 @@ Number  battery_power           "Battery Power [%.1f W]"                   <pres
 Number  loads_power             "Loads Power [%.1f W]"                     <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:loads_power"} 
 Number  criticial_loads_power   "Critical Loads Power Power [%.1f W]"      <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:criticial_loads_power"} 
 Number  charger_power           "Charger Power [%.1f W]"                   <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_power"} 
-Number  charger_setpoint        "Charger setpoint [%d A]"                   <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_setpoint",  autoupdate="false"} 
-Number  U_EL                    "Heating Setpoint [%.1f]"                   <pressure>      (All, power, RS485_IN)    
-Number  victron_connected       "victron connected: [%d]"                                   (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_connected"} 
-Number  victron_status          "victron status: [%d]"                                       (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_status"} 
-Number  state_of_charge         "State of Charge: [%.0f %%]"                <batterylevel>  (All, power)    { channel="mqtt:topic:mosquitto:power_control:state_of_charge"}
-Number  charger_connected       "charger connected: [%d]"                                   (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_connected"} 
-Number  charger_status          "charger status: [%d]"                                      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_status"} 
+Number  U_EL                    "Heating Setpoint [%.1f]"                  <pressure>      (All, power, RS485_IN)    
+Number  victron_connected       "victron connected: [%d]"                                  (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_connected"} 
+Number  victron_status          "victron status: [%d]"                                     (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_status"} 
+Number  state_of_charge         "State of Charge: [%.0f %%]"               <batterylevel>  (All, power)    { channel="mqtt:topic:mosquitto:power_control:state_of_charge"}
+Number  battery_charge_limit    "Charge Limit: [%.0f %%]"                                  (All, power)    { channel="mqtt:topic:mosquitto:power_control:battery_charge_limit"}
+Number  charger_connected       "charger connected: [%d]"                                  (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_connected"} 
+Number  charger_status          "charger status: [%d]"                                     (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_status"} 
 
 
 //control
 Switch  solar2heat              "Solar2Heat"                                                (All, power)    { channel="mqtt:topic:mosquitto:power_control:solar2heat",  autoupdate="false"} 
 Switch  solar2car               "Solar2Car"                                                 (All, power)    { channel="mqtt:topic:mosquitto:power_control:solar2car",   autoupdate="false"}   
 Switch  charger_control         "Charger Current Control"                   <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_control",  autoupdate="false"} 
+Number  charger_setpoint        "Charger setpoint [%d A]"                   <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_setpoint",  autoupdate="false"} 
 
 //over arduino nodes
 Number  TI_PU_O                 "Temperature (Top)    [%.1f °C]"            <temperature>   (All, power, RS485_IN)
