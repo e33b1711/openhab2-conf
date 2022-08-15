@@ -7,8 +7,7 @@ sitemap power label="Power" {
         Text item=criticial_loads_power
         Text item=victron_connected     
         Text item=victron_status        
-        Text item=state_of_charge
-        Text item=battery_charge_limit        
+        Text item=state_of_charge      
     }
     Frame label="Heater" {
         Switch item=solar2heat     

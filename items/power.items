@@ -11,7 +11,6 @@ Number  U_EL                    "Heating Setpoint [%.1f]"                  <pres
 Number  victron_connected       "victron connected: [%d]"                                  (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_connected"} 
 Number  victron_status          "victron status: [%d]"                                     (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_status"} 
 Number  state_of_charge         "State of Charge: [%.0f %%]"               <batterylevel>  (All, power)    { channel="mqtt:topic:mosquitto:power_control:state_of_charge"}
-Number  battery_charge_limit    "Charge Limit: [%.0f %%]"                                  (All, power)    { channel="mqtt:topic:mosquitto:power_control:battery_charge_limit"}
 Number  charger_connected       "charger connected: [%d]"                                  (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_connected"} 
 Number  charger_status          "charger status: [%d]"                                     (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_status"} 
 
