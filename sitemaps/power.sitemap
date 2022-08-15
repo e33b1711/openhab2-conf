@@ -18,7 +18,7 @@ sitemap power label="Power" {
     Frame label="Charger" {
         Switch item=solar2car    
         Text item=charger_power         
-        Slider  item=charger_setpoint   [minValue=6] [maxValue=20] [step=1]          
+        Slider item=charger_setpoint  minValue=6 maxValue=20 step=1         
         Text item=charger_connected     
         Text item=charger_status         
     }
