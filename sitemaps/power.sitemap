@@ -10,16 +10,15 @@ sitemap power label="Power" {
         Text item=state_of_charge      
     }
     Frame label="Heater" {
-        Switch item=solar2heat       mappings=[ON= "On" , OFF= "Off"]   
+        Switch item=solar2heat     
         Text item=U_EL
         Text item=TI_PU_O     
         Text item=TI_PU_U 
     }
     Frame label="Charger" {
-        Switch item=solar2car        mappings=[ON= "On" , OFF= "Off"]  
-        Switch item=charger_control  mappings=[ON= "Up" , OFF= "Down"]        
+        Switch item=solar2car    
         Text item=charger_power         
-        Text item=charger_setpoint             
+        Slider  item=charger_setpoint   [minValue=6] [maxValue=20] [step=1]          
         Text item=charger_connected     
         Text item=charger_status         
     }
