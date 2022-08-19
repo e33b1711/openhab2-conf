@@ -71,10 +71,8 @@ then
 				
 					//Verdunkelungen, Dachfenster, Rollos
 					if(address.contains("RO_") || address.contains("VD_") || address.contains("DO_") || address.contains("DF_")){
-						//logInfo("ListenRulen", "handler: w / RO " + this_item.name + " " + value.toString())	
-						if (value==1) {postUpdate(this_item, 0)}
-						else if (value==-1) {postUpdate(this_item, 100)}
-						else {postUpdate(this_item, 50)}
+						logInfo("ListenRulen", "handler: w / ETI " + this_item.name + " " + value.toString())	
+						postUpdate(this_item, value )
 					}
 				}
 				
