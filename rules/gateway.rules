@@ -37,7 +37,7 @@ then
 			//logInfo("ListenRule", "messageType: " + messageType + " address: " + address + " value: " + value.toString())
 			
 			//auf "w" messages reagieren
-			if ((messageType=="w") || (messageType=="i")) {
+			if (messageType=="s") {
 				//var this_item = RS485_IN.members.findFirst([name==address])
 				var this_item = ScriptServiceUtil.getItemRegistry.getItem(address)
 				if (this_item === null){
