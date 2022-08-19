@@ -3,8 +3,8 @@ when
 	Item DO_GR received command
 then
 	var String message=""
-	if (receivedCommand==UP) {message="!c!DO_GR!1$\n"}
-	if (receivedCommand==DOWN) {message="!c!DO_GR!-1$\n"}
+	if (receivedCommand==UP) {message="!c!DO_GR!0$\n"}
+	if (receivedCommand==DOWN) {message="!c!DO_GR!100$\n"}
 	sendCommand(RS485_Gateway_out, message)    
 end
 
