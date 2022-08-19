@@ -7,7 +7,7 @@ Number  battery_power           "Battery Power [%.1f W]"                   <pres
 Number  loads_power             "Loads Power [%.1f W]"                     <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:loads_power"} 
 Number  criticial_loads_power   "Critical Loads Power Power [%.1f W]"      <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:criticial_loads_power"} 
 Number  charger_power           "Charger Power [%.1f W]"                   <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_power"} 
-Number  U_EL                    "Heating Setpoint [%.1f]"                  <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:arduino_nodes:U_EL"} 
+
 Number  victron_connected       "victron connected: [%d]"                                  (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_connected"} 
 Number  victron_status          "victron status: [%d]"                                     (All, power)    { channel="mqtt:topic:mosquitto:power_control:victron_status"} 
 Number  state_of_charge         "State of Charge: [%.0f %%]"               <batterylevel>  (All, power)    { channel="mqtt:topic:mosquitto:power_control:state_of_charge"}
@@ -22,6 +22,6 @@ Switch  charger_control         "Charger Current Control"                   <pre
 Number  charger_setpoint        "Charger setpoint [%d A]"                   <pressure>      (All, power)    { channel="mqtt:topic:mosquitto:power_control:charger_setpoint",  autoupdate="false"} 
 
 //over arduino nodes
-Number  TI_PU_O                 "Temperature (Top)    [%.1f °C]"            <temperature>   (All, power)    { channel="mqtt:topic:mosquitto:arduino_nodes:TI_PU_O"} 
-Number  TI_PU_U                 "Temperature (Middle) [%.1f °C]"            <temperature>   (All, power)    { channel="mqtt:topic:mosquitto:arduino_nodes:TI_PU_U"} 
-
+Number  TI_PU_O                 "Temperature (Top)    [%.1f °C]"            <temperature>   (All, power, RS485_IN)    { autoupdate="false"}
+Number  TI_PU_U                 "Temperature (Middle) [%.1f °C]"            <temperature>   (All, power, RS485_IN)    { autoupdate="false"}
+Number  U_EL                    "Heating Setpoint [%.1f]"                  <pressure>       (All, power, RS485_IN)    { channel="mqtt:topic:mosquitto:arduino_nodes:U_EL",  autoupdate="false"} 

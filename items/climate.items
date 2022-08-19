@@ -19,66 +19,66 @@ Group humis_a 		        	(All)
 Number NULL_ITEM										                        (RS485_IN, All)
 
 /* Temp Sensor Errors */
-Number ETI_EG_WZ 	"Wohnzimmer Sensorfehler [%.0f]"		<error>     		(sensor_error, EG_WZ, RS485_IN)
-Number ETI_EG_KU 	"Küche Sensorfehler [%.0f]"			<error>     		(sensor_error, EG_KU, RS485_IN)
-Number ETI_EG_EZ 	"Esszimmer Sensorfehler [%.0f]"			<error> 	    	(sensor_error, EG_EZ, RS485_IN)
-Number ETI_EG_GA 	"Gang EG Sensorfehler [%.0f]"			<error> 	    	(sensor_error, EG_GA, RS485_IN)
+Number ETI_EG_WZ 	"Wohnzimmer Sensorfehler [%.0f]"		<error>     		(sensor_error, EG_WZ, RS485_IN)                        {autoupdate="false"}
+Number ETI_EG_KU 	"Küche Sensorfehler [%.0f]"			<error>     		(sensor_error, EG_KU, RS485_IN)                            {autoupdate="false"}
+Number ETI_EG_EZ 	"Esszimmer Sensorfehler [%.0f]"			<error> 	    	(sensor_error, EG_EZ, RS485_IN)                        {autoupdate="false"}
+Number ETI_EG_GA 	"Gang EG Sensorfehler [%.0f]"			<error> 	    	(sensor_error, EG_GA, RS485_IN)                        {autoupdate="false"}
 
-Number ETI_OG_BA 	"Badezimmer Sensorfehler [%.0f]"		<error> 	    	(sensor_error, OG_BA, RS485_IN)
-Number ETI_OG_KN 	"Leos Zimmer Sensorfehler [%.0f]"		<error>	 	    	(sensor_error, OG_KN, RS485_IN)
-Number ETI_OG_KS 	"Kurbis Zimmer Sensorfehler [%.0f]"		<error>		    	(sensor_error, OG_KS, RS485_IN)
-Number ETI_OG_SZ 	"Schlafzimmer Sensorfehler [%.0f]"		<error> 	    	(sensor_error, OG_SZ, RS485_IN)
-Number ETI_OG_GA 	"Gang OG Sensorfehler [%.0f]"			<error> 	    	(sensor_error, OG_GA, RS485_IN)
+Number ETI_OG_BA 	"Badezimmer Sensorfehler [%.0f]"		<error> 	    	(sensor_error, OG_BA, RS485_IN)                     {autoupdate="false"}
+Number ETI_OG_KN 	"Leos Zimmer Sensorfehler [%.0f]"		<error>	 	    	(sensor_error, OG_KN, RS485_IN)                     {autoupdate="false"}
+Number ETI_OG_KS 	"Kurbis Zimmer Sensorfehler [%.0f]"		<error>		    	(sensor_error, OG_KS, RS485_IN)                     {autoupdate="false"}
+Number ETI_OG_SZ 	"Schlafzimmer Sensorfehler [%.0f]"		<error> 	    	(sensor_error, OG_SZ, RS485_IN)                     {autoupdate="false"}
+Number ETI_OG_GA 	"Gang OG Sensorfehler [%.0f]"			<error> 	    	(sensor_error, OG_GA, RS485_IN)                     {autoupdate="false"}
 
-Number ETI_UG_HS 	"Hobby Süd Sensorfehler [%.0f]"			<error> 	     	(sensor_error, UG_HO, RS485_IN)
-Number ETI_UG_HN 	"Hobby Nord Sensorfehler [%.0f]"		<error>		    	(sensor_error, UG_HO, RS485_IN)
-Number ETI_UG_WK 	"Waschküche Sensorfehler [%.0f]"		<error>		    	(sensor_error, UG_WK, RS485_IN)
-Number ETI_UG_HK 	"Heizkeller Sensorfehler [%.0f]"		<error> 	    	(sensor_error, UG_HK, RS485_IN)
-Number ETI_UG_GA 	"Gang UG Sensorfehler [%.0f]"			<error>	 	    	(sensor_error, UG_GA, RS485_IN)
-Number ETI_UG_LA 	"Lager Sensorfehler [%.0f]"			<error>	 	    	(sensor_error, UG_LA, RS485_IN)
+Number ETI_UG_HS 	"Hobby Süd Sensorfehler [%.0f]"			<error> 	     	(sensor_error, UG_HO, RS485_IN)                   {autoupdate="false"}
+Number ETI_UG_HN 	"Hobby Nord Sensorfehler [%.0f]"		<error>		    	(sensor_error, UG_HO, RS485_IN)                   {autoupdate="false"}
+Number ETI_UG_WK 	"Waschküche Sensorfehler [%.0f]"		<error>		    	(sensor_error, UG_WK, RS485_IN)                   {autoupdate="false"}
+Number ETI_UG_HK 	"Heizkeller Sensorfehler [%.0f]"		<error> 	    	(sensor_error, UG_HK, RS485_IN)                   {autoupdate="false"}
+Number ETI_UG_GA 	"Gang UG Sensorfehler [%.0f]"			<error>	 	    	(sensor_error, UG_GA, RS485_IN)                   {autoupdate="false"}
+Number ETI_UG_LA 	"Lager Sensorfehler [%.0f]"			<error>	 	    	(sensor_error, UG_LA, RS485_IN)                       {autoupdate="false"}
 
-Number ETI_GR	 	"Garage Sensorfehler [%.0f]"			<error>	 	    	(sensor_error, Garage, RS485_IN)
-Number ETI_GR_A	 	"Aussen Sensorfehler [%.0f]"			<error>	 	    	(sensor_error, Aussen, RS485_IN)
+Number ETI_GR	 	"Garage Sensorfehler [%.0f]"			<error>	 	    	(sensor_error, Garage, RS485_IN)            {autoupdate="false"}
+Number ETI_GR_A	 	"Aussen Sensorfehler [%.0f]"			<error>	 	    	(sensor_error, Aussen, RS485_IN)            {autoupdate="false"}
 
 
 /* Indoor Temperatures */
-Number TI_EG_WZ 	"Temperatur Wohnzimmer [%.1f °C]"		<temperature> 		(Temperatur, EG_WZ, RS485_IN, temps_eg)
-Number TI_EG_KU 	"Temperatur Küche [%.1f °C]"			<temperature> 		(Temperatur, EG_KU, RS485_IN, temps_eg)
-Number TI_EG_EZ 	"Temperatur Esszimmer [%.1f °C]"		<temperature> 		(Temperatur, EG_EZ, RS485_IN, temps_eg)
-Number TI_EG_GA 	"Temperatur Gang EG [%.1f °C]"			<temperature> 		(Temperatur, EG_GA, RS485_IN, temps_eg)
+Number TI_EG_WZ 	"Temperatur Wohnzimmer [%.1f °C]"		<temperature> 		(Temperatur, EG_WZ, RS485_IN, temps_eg)                      {autoupdate="false"}
+Number TI_EG_KU 	"Temperatur Küche [%.1f °C]"			<temperature> 		(Temperatur, EG_KU, RS485_IN, temps_eg)                      {autoupdate="false"}
+Number TI_EG_EZ 	"Temperatur Esszimmer [%.1f °C]"		<temperature> 		(Temperatur, EG_EZ, RS485_IN, temps_eg)                      {autoupdate="false"}
+Number TI_EG_GA 	"Temperatur Gang EG [%.1f °C]"			<temperature> 		(Temperatur, EG_GA, RS485_IN, temps_eg)                      {autoupdate="false"}
 
-Number TI_OG_BA 	"Temperatur Badezimmer [%.1f °C]"		<temperature> 		(Temperatur, OG_BA, RS485_IN, temps_og)
-Number TI_OG_KN 	"Temperatur Leos Zimmer [%.1f °C]"		<temperature>	 	(Temperatur, OG_KN, RS485_IN, temps_og)
-Number TI_OG_KS 	"Temperatur Kurbis Zimmer [%.1f °C]"		<temperature>		(Temperatur, OG_KS, RS485_IN, temps_og)
-Number TI_OG_SZ 	"Temperatur Schlafzimmer [%.1f °C]"		<temperature> 		(Temperatur, OG_SZ, RS485_IN, temps_og)
-Number TI_OG_GA 	"Temperatur Gang OG [%.1f °C]"			<temperature> 		(Temperatur, OG_GA, RS485_IN, temps_og)
+Number TI_OG_BA 	"Temperatur Badezimmer [%.1f °C]"		<temperature> 		(Temperatur, OG_BA, RS485_IN, temps_og)                     {autoupdate="false"}
+Number TI_OG_KN 	"Temperatur Leos Zimmer [%.1f °C]"		<temperature>	 	(Temperatur, OG_KN, RS485_IN, temps_og)                     {autoupdate="false"}
+Number TI_OG_KS 	"Temperatur Kurbis Zimmer [%.1f °C]"		<temperature>		(Temperatur, OG_KS, RS485_IN, temps_og)                 {autoupdate="false"}
+Number TI_OG_SZ 	"Temperatur Schlafzimmer [%.1f °C]"		<temperature> 		(Temperatur, OG_SZ, RS485_IN, temps_og)                     {autoupdate="false"}
+Number TI_OG_GA 	"Temperatur Gang OG [%.1f °C]"			<temperature> 		(Temperatur, OG_GA, RS485_IN, temps_og)                     {autoupdate="false"}
 
-Number TI_UG_HS 	"Temperatur Hobby Süd [%.1f °C]"		<temperature> 	 	(Temperatur, UG_HO, RS485_IN, temps_ug)
-Number TI_UG_HN 	"Temperatur Hobby Nord[%.1f °C]"		<temperature>		(Temperatur, UG_HO, RS485_IN, temps_ug)
-Number TI_UG_WK 	"Temperatur Waschküche [%.1f °C]"		<temperature>		(Temperatur, UG_WK, RS485_IN, temps_ug)
-Number TI_UG_HK 	"Temperatur Heizkeller [%.1f °C]"		<temperature> 		(Temperatur, UG_HK, RS485_IN, temps_ug)
-Number TI_UG_GA 	"Temperatur Gang UG [%.1f °C]"			<temperature>	 	(Temperatur, UG_GA, RS485_IN, temps_ug)
-Number TI_UG_LA 	"Temperatur Lager [%.1f °C]"			<temperature>	 	(Temperatur, UG_LA, RS485_IN, temps_ug)
+Number TI_UG_HS 	"Temperatur Hobby Süd [%.1f °C]"		<temperature> 	 	(Temperatur, UG_HO, RS485_IN, temps_ug)            {autoupdate="false"}
+Number TI_UG_HN 	"Temperatur Hobby Nord[%.1f °C]"		<temperature>		(Temperatur, UG_HO, RS485_IN, temps_ug)            {autoupdate="false"}
+Number TI_UG_WK 	"Temperatur Waschküche [%.1f °C]"		<temperature>		(Temperatur, UG_WK, RS485_IN, temps_ug)            {autoupdate="false"}
+Number TI_UG_HK 	"Temperatur Heizkeller [%.1f °C]"		<temperature> 		(Temperatur, UG_HK, RS485_IN, temps_ug)            {autoupdate="false"}
+Number TI_UG_GA 	"Temperatur Gang UG [%.1f °C]"			<temperature>	 	(Temperatur, UG_GA, RS485_IN, temps_ug)            {autoupdate="false"}
+Number TI_UG_LA 	"Temperatur Lager [%.1f °C]"			<temperature>	 	(Temperatur, UG_LA, RS485_IN, temps_ug)            {autoupdate="false"}
 
-Number TI_GR	 	"Temperatur Garage [%.1f °C]"			<temperature>	 	(Temperatur, Garage, RS485_IN, temps_a)
-Number TI_GR_A	 	"Temperatur Aussen [%.1f °C]"			<temperature>	 	(Temperatur, Aussen, RS485_IN, temps_a)
+Number TI_GR	 	"Temperatur Garage [%.1f °C]"			<temperature>	 	(Temperatur, Garage, RS485_IN, temps_a)            {autoupdate="false"}
+Number TI_GR_A	 	"Temperatur Aussen [%.1f °C]"			<temperature>	 	(Temperatur, Aussen, RS485_IN, temps_a)            {autoupdate="false"}
 
 /* Calculated Temperatures for Heating Controllers */
 Number TI_UG_H1 	"Mittlere Temperatur Hobby [%.1f °C]"		<temperature> 	    	(Temperatur, UG_HO)
-Number TI_UG_H2 	"Mittlere Temperatur Hobby [%.1f °C]"		<temperature>	   	(Temperatur, UG_HO)
-Number TI_UG_H3 	"Mittlere Temperatur Hobby [%.1f °C]"		<temperature>	  	(Temperatur, UG_HO)
-Number TI_EG_E1  	"Temperatur Esszimmer [%.1f °C]"		<temperature>     	(Temperatur, EG_EZ)
-Number TI_EG_E2  	"Temperatur Esszimmer [%.1f °C]"		<temperature>	  	(Temperatur, EG_EZ)
-Number TI_EG_GR  	"Temperatur Gardarobe [%.1f °C]"		<temperature>	  	(Temperatur, EG_GR)
-Number TI_EG_WC  	"Temperatur WC [%.1f °C]"			<temperature>	  	(Temperatur, EG_WC)
+Number TI_UG_H2 	"Mittlere Temperatur Hobby [%.1f °C]"		<temperature>	   	(Temperatur, UG_HO)    
+Number TI_UG_H3 	"Mittlere Temperatur Hobby [%.1f °C]"		<temperature>	  	(Temperatur, UG_HO)    
+Number TI_EG_E1  	"Temperatur Esszimmer [%.1f °C]"		<temperature>     	(Temperatur, EG_EZ)        
+Number TI_EG_E2  	"Temperatur Esszimmer [%.1f °C]"		<temperature>	  	(Temperatur, EG_EZ)        
+Number TI_EG_GR  	"Temperatur Gardarobe [%.1f °C]"		<temperature>	  	(Temperatur, EG_GR)        
+Number TI_EG_WC  	"Temperatur WC [%.1f °C]"			<temperature>	  	(Temperatur, EG_WC)            
 
-Number ETI_UG_H1 	"Sensorfehler H1 [%.0f]"			<error>	 		(sensor_error, UG_HO)
-Number ETI_UG_H2 	"Sensorfehler H2 [%.0f]"			<error>	 		(sensor_error, UG_HO)
-Number ETI_UG_H3 	"Sensorfehler H3 [%.0f]"			<error>	 		(sensor_error, UG_HO)
-Number ETI_EG_E1  	"Sensorfehler E1 [%.0f]"			<error>	 		(sensor_error, EG_EZ)
-Number ETI_EG_E2  	"Sensorfehler E2 [%.0f]"			<error>	 		(sensor_error, EG_EZ)
-Number ETI_EG_GR  	"Sensorfehler GR [%.0f]"			<error>	 		(sensor_error, EG_GR)
-Number ETI_EG_WC  	"Sensorfehler WC [%.0f]"			<error>	 		(sensor_error, EG_WC)
+Number ETI_UG_H1 	"Sensorfehler H1 [%.0f]"			<error>	 		(sensor_error, UG_HO)           
+Number ETI_UG_H2 	"Sensorfehler H2 [%.0f]"			<error>	 		(sensor_error, UG_HO)           
+Number ETI_UG_H3 	"Sensorfehler H3 [%.0f]"			<error>	 		(sensor_error, UG_HO)           
+Number ETI_EG_E1  	"Sensorfehler E1 [%.0f]"			<error>	 		(sensor_error, EG_EZ)           
+Number ETI_EG_E2  	"Sensorfehler E2 [%.0f]"			<error>	 		(sensor_error, EG_EZ)           
+Number ETI_EG_GR  	"Sensorfehler GR [%.0f]"			<error>	 		(sensor_error, EG_GR)           
+Number ETI_EG_WC  	"Sensorfehler WC [%.0f]"			<error>	 		(sensor_error, EG_WC)           
 
 
 /* Indoor Temperatures (soll) */
@@ -105,26 +105,26 @@ Number TS_UG_LA 	"Soll-Temp. Lager [%.1f °C]"			<temperature>	 	(Temperatur_Sol
 
 
 /* Indoor Humidities */
-Number HI_EG_WZ 	"Feuchte Wohnzimmer [%.1f %%]"			<water> 		(Feuchtigkeit, EG_WZ, RS485_IN, humis_eg)
-Number HI_EG_KU 	"Feuchte Küche [%.1f %%]"			<water> 		(Feuchtigkeit, EG_KU, RS485_IN, humis_eg)
-Number HI_EG_EZ 	"Feuchte Esszimmer [%.1f %%]"			<water> 		(Feuchtigkeit, EG_EZ, RS485_IN, humis_eg)
-Number HI_EG_GA 	"Feuchte Gang EG [%.1f %%]"			<water> 		(Feuchtigkeit, EG_GA, RS485_IN, humis_eg)
+Number HI_EG_WZ 	"Feuchte Wohnzimmer [%.1f %%]"			<water> 		(Feuchtigkeit, EG_WZ, RS485_IN, humis_eg)            {autoupdate="false"}
+Number HI_EG_KU 	"Feuchte Küche [%.1f %%]"			<water> 		(Feuchtigkeit, EG_KU, RS485_IN, humis_eg)            {autoupdate="false"}
+Number HI_EG_EZ 	"Feuchte Esszimmer [%.1f %%]"			<water> 		(Feuchtigkeit, EG_EZ, RS485_IN, humis_eg)            {autoupdate="false"}
+Number HI_EG_GA 	"Feuchte Gang EG [%.1f %%]"			<water> 		(Feuchtigkeit, EG_GA, RS485_IN, humis_eg)            {autoupdate="false"}
 
-Number HI_OG_BA 	"Feuchte Badezimmer [%.1f %%]"			<water> 		(Feuchtigkeit, OG_BA, RS485_IN, humis_og)
-Number HI_OG_KN 	"Feuchte Leos Zimmer [%.1f %%]"			<water> 		(Feuchtigkeit, OG_KN, RS485_IN, humis_og)
-Number HI_OG_KS 	"Feuchte Kurbis Zimmer [%.1f %%]"		<water> 		(Feuchtigkeit, OG_KS, RS485_IN, humis_og)
-Number HI_OG_SZ 	"Feuchte Schlafzimmer [%.1f %%]"		<water> 		(Feuchtigkeit, OG_SZ, RS485_IN, humis_og)
-Number HI_OG_GA 	"Feuchte Gang OG [%.1f %%]"			<water> 		(Feuchtigkeit, OG_GA, RS485_IN, humis_og)
+Number HI_OG_BA 	"Feuchte Badezimmer [%.1f %%]"			<water> 		(Feuchtigkeit, OG_BA, RS485_IN, humis_og)            {autoupdate="false"}
+Number HI_OG_KN 	"Feuchte Leos Zimmer [%.1f %%]"			<water> 		(Feuchtigkeit, OG_KN, RS485_IN, humis_og)            {autoupdate="false"}
+Number HI_OG_KS 	"Feuchte Kurbis Zimmer [%.1f %%]"		<water> 		(Feuchtigkeit, OG_KS, RS485_IN, humis_og)            {autoupdate="false"}
+Number HI_OG_SZ 	"Feuchte Schlafzimmer [%.1f %%]"		<water> 		(Feuchtigkeit, OG_SZ, RS485_IN, humis_og)            {autoupdate="false"}
+Number HI_OG_GA 	"Feuchte Gang OG [%.1f %%]"			<water> 		(Feuchtigkeit, OG_GA, RS485_IN, humis_og)            {autoupdate="false"}
 
-Number HI_UG_HS 	"Feuchte Hobby Süd [%.1f %%]"			<water> 		(Feuchtigkeit, UG_HO, RS485_IN, humis_ug)
-Number HI_UG_HN 	"Feuchte Hobby Nord [%.1f %%]"			<water> 		(Feuchtigkeit, UG_HO, RS485_IN, humis_ug)
-Number HI_UG_WK 	"Feuchte Waschküche [%.1f %%]"			<water> 		(Feuchtigkeit, UG_WK, RS485_IN, humis_ug)
-Number HI_UG_HK 	"Feuchte Heizkeller [%.1f %%]"			<water> 		(Feuchtigkeit, UG_HK, RS485_IN, humis_ug)
-Number HI_UG_GA 	"Feuchte Gang UG [%.1f %%]"			<water> 		(Feuchtigkeit, UG_GA, RS485_IN, humis_ug)
-Number HI_UG_LA		"Feuchte Lager [%.1f %%]"			<water> 		(Feuchtigkeit, UG_LA, RS485_IN, humis_ug)
+Number HI_UG_HS 	"Feuchte Hobby Süd [%.1f %%]"			<water> 		(Feuchtigkeit, UG_HO, RS485_IN, humis_ug)            {autoupdate="false"}
+Number HI_UG_HN 	"Feuchte Hobby Nord [%.1f %%]"			<water> 		(Feuchtigkeit, UG_HO, RS485_IN, humis_ug)            {autoupdate="false"}
+Number HI_UG_WK 	"Feuchte Waschküche [%.1f %%]"			<water> 		(Feuchtigkeit, UG_WK, RS485_IN, humis_ug)            {autoupdate="false"}
+Number HI_UG_HK 	"Feuchte Heizkeller [%.1f %%]"			<water> 		(Feuchtigkeit, UG_HK, RS485_IN, humis_ug)            {autoupdate="false"}
+Number HI_UG_GA 	"Feuchte Gang UG [%.1f %%]"			<water> 		(Feuchtigkeit, UG_GA, RS485_IN, humis_ug)            {autoupdate="false"}
+Number HI_UG_LA		"Feuchte Lager [%.1f %%]"			<water> 		(Feuchtigkeit, UG_LA, RS485_IN, humis_ug)            {autoupdate="false"}
 
-Number HI_GR 		"Feuchte Garage [%.1f %%]"			<water>	 		(Feuchtigkeit, Garage, RS485_IN, humis_a)
-Number HI_GR_A	 	"Feuchte Aussen [%.1f %%]"			<water>			(Feuchtigkeit, Aussen, RS485_IN, humis_a)
+Number HI_GR 		"Feuchte Garage [%.1f %%]"			<water>	 		(Feuchtigkeit, Garage, RS485_IN, humis_a)            {autoupdate="false"}
+Number HI_GR_A	 	"Feuchte Aussen [%.1f %%]"			<water>			(Feuchtigkeit, Aussen, RS485_IN, humis_a)            {autoupdate="false"}
 
 
 /* Heating Setpoints */
