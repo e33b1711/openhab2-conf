@@ -134,7 +134,7 @@ end
 
 rule RuleUpdateSetpoints
 when
-	Member of heizung_stellwert received update
+	Member of heizung_stellwert received command
 then
 	//logInfo("RuleUpdateSetpoints", "The item " + triggeringItem.name + " received update " + triggeringItem.state)
 	val message = "!c!" + triggeringItem.name + String::format("!%1$01d$\n",(triggeringItem.state as DecimalType).intValue)
