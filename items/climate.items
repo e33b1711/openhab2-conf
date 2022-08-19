@@ -130,26 +130,26 @@ Number HI_GR_A	 	"Feuchte Aussen [%.1f %%]"			<water>			(Feuchtigkeit, Aussen, R
 /* Heating Setpoints */
 Switch Sommerbetrieb "Sommerbetrieb Heizung"				<heating>           	(All)               
 
-Number U_UG_H1 		"Ist-Stellwert Hobby 1 [%.1f]"			<heating> 		(heizung_stellwert, UG_HO, RS485_IN, RS485_OUT)
-Number U_UG_H2 		"Ist-Stellwert Hobby 2 [%.1f]"			<heating>		(heizung_stellwert, UG_HO, RS485_IN, RS485_OUT)
-Number U_UG_H3 		"Ist-Stellwert Hobby 3 [%.1f]"			<heating>		(heizung_stellwert, UG_HO, RS485_IN, RS485_OUT)
-Number U_UG_LA 		"Ist-Stellwert Lager [%.1f]"			<heating>		(heizung_stellwert, UG_LA, RS485_IN, RS485_OUT)
-Number U_UG_GA 		"Ist-Stellwert Gang UG [%.1f]"			<heating>		(heizung_stellwert, UG_GA, RS485_IN, RS485_OUT)
-Number U_UG_WK  	"Ist-Stellwert Waschküche [%.1f]"		<heating>		(heizung_stellwert, UG_WK, RS485_IN, RS485_OUT)
+Number U_UG_H1 		"Ist-Stellwert Hobby 1 [%.1f]"			<heating> 		(heizung_stellwert, UG_HO, RS485_IN, RS485_OUT)            {autoupdate="false"}
+Number U_UG_H2 		"Ist-Stellwert Hobby 2 [%.1f]"			<heating>		(heizung_stellwert, UG_HO, RS485_IN, RS485_OUT)            {autoupdate="false"}
+Number U_UG_H3 		"Ist-Stellwert Hobby 3 [%.1f]"			<heating>		(heizung_stellwert, UG_HO, RS485_IN, RS485_OUT)            {autoupdate="false"}
+Number U_UG_LA 		"Ist-Stellwert Lager [%.1f]"			<heating>		(heizung_stellwert, UG_LA, RS485_IN, RS485_OUT)            {autoupdate="false"}
+Number U_UG_GA 		"Ist-Stellwert Gang UG [%.1f]"			<heating>		(heizung_stellwert, UG_GA, RS485_IN, RS485_OUT)            {autoupdate="false"}
+Number U_UG_WK  	"Ist-Stellwert Waschküche [%.1f]"		<heating>		(heizung_stellwert, UG_WK, RS485_IN, RS485_OUT)            {autoupdate="false"}
 
-Number U_EG_KU  	"Ist-Stellwert Küche [%.1f]"			<heating>		(heizung_stellwert, EG_KU, RS485_IN, RS485_OUT)
-Number U_EG_E1  	"Ist-Stellwert Essen 1 [%.1f]"			<heating>   		(heizung_stellwert, EG_EZ, RS485_IN, RS485_OUT)
-Number U_EG_E2  	"Ist-Stellwert Essen 2 [%.1f]"			<heating>		(heizung_stellwert, EG_EZ, RS485_IN, RS485_OUT)
-Number U_EG_GA  	"Ist-Stellwert Gang EG [%.1f]"			<heating>		(heizung_stellwert, EG_GA, RS485_IN, RS485_OUT)
-Number U_EG_WZ  	"Ist-Stellwert Wohnzimmer [%.1f]"		<heating>		(heizung_stellwert, EG_WZ, RS485_IN, RS485_OUT)
-Number U_EG_GR  	"Ist-Stellwert Gardarobe [%.1f]"		<heating>		(heizung_stellwert, EG_GR, RS485_IN, RS485_OUT)
-Number U_EG_WC  	"Ist-Stellwert WC [%.1f]"			<heating>		(heizung_stellwert, EG_WC, RS485_IN, RS485_OUT)
+Number U_EG_KU  	"Ist-Stellwert Küche [%.1f]"			<heating>		(heizung_stellwert, EG_KU, RS485_IN, RS485_OUT)            {autoupdate="false"}
+Number U_EG_E1  	"Ist-Stellwert Essen 1 [%.1f]"			<heating>   		(heizung_stellwert, EG_EZ, RS485_IN, RS485_OUT)            {autoupdate="false"}
+Number U_EG_E2  	"Ist-Stellwert Essen 2 [%.1f]"			<heating>		(heizung_stellwert, EG_EZ, RS485_IN, RS485_OUT)            {autoupdate="false"}
+Number U_EG_GA  	"Ist-Stellwert Gang EG [%.1f]"			<heating>		(heizung_stellwert, EG_GA, RS485_IN, RS485_OUT)            {autoupdate="false"}
+Number U_EG_WZ  	"Ist-Stellwert Wohnzimmer [%.1f]"		<heating>		(heizung_stellwert, EG_WZ, RS485_IN, RS485_OUT)            {autoupdate="false"}
+Number U_EG_GR  	"Ist-Stellwert Gardarobe [%.1f]"		<heating>		(heizung_stellwert, EG_GR, RS485_IN, RS485_OUT)            {autoupdate="false"}
+Number U_EG_WC  	"Ist-Stellwert WC [%.1f]"			<heating>		(heizung_stellwert, EG_WC, RS485_IN, RS485_OUT)            {autoupdate="false"}
 
-Number U_OG_KS  	"Ist-Stellwert Kind Süd [%.1f]"			<heating>		(heizung_stellwert, OG_KS, RS485_IN, RS485_OUT)
-Number U_OG_KN  	"Ist-Stellwert Kind Nord [%.1f]"		<heating>		(heizung_stellwert, OG_KN, RS485_IN, RS485_OUT)
-Number U_OG_GA  	"Ist-Stellwert Gang OG [%.1f]"			<heating>		(heizung_stellwert, OG_GA, RS485_IN, RS485_OUT)
-Number U_OG_BA  	"Ist-Stellwert Badezimmer [%.1f]"		<heating>		(heizung_stellwert, OG_BA, RS485_IN, RS485_OUT)
-Number U_OG_SZ  	"Ist-Stellwert Schlafzimmer [%.1f]"		<heating>		(heizung_stellwert, OG_SZ, RS485_IN, RS485_OUT)
+Number U_OG_KS  	"Ist-Stellwert Kind Süd [%.1f]"			<heating>		(heizung_stellwert, OG_KS, RS485_IN, RS485_OUT)            {autoupdate="false"}
+Number U_OG_KN  	"Ist-Stellwert Kind Nord [%.1f]"		<heating>		(heizung_stellwert, OG_KN, RS485_IN, RS485_OUT)            {autoupdate="false"}
+Number U_OG_GA  	"Ist-Stellwert Gang OG [%.1f]"			<heating>		(heizung_stellwert, OG_GA, RS485_IN, RS485_OUT)            {autoupdate="false"}
+Number U_OG_BA  	"Ist-Stellwert Badezimmer [%.1f]"		<heating>		(heizung_stellwert, OG_BA, RS485_IN, RS485_OUT)            {autoupdate="false"}
+Number U_OG_SZ  	"Ist-Stellwert Schlafzimmer [%.1f]"		<heating>		(heizung_stellwert, OG_SZ, RS485_IN, RS485_OUT)            {autoupdate="false"}
 
 
 /* Heating default setpoints */

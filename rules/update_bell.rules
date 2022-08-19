@@ -2,7 +2,7 @@ rule BELL
 when
 	Item BELL received command
 then
-	sendCommand(RS485_Gateway_out, "!w!BELL!1$\n");
+	sendCommand(RS485_Gateway_out, "!c!BELL!1$\n");
 	postUpdate(BELL, ON);
 end
 
@@ -19,11 +19,11 @@ when
 	Item PUMP received command
 then
 	if (receivedCommand==OFF) {
-		sendCommand(RS485_Gateway_out, "!w!PUMP!0$\n");
+		sendCommand(RS485_Gateway_out, "!c!PUMP!0$\n");
 		postUpdate(PUMP, OFF);
 	}
 	if (receivedCommand==ON) {
-		sendCommand(RS485_Gateway_out, "!w!PUMP!1$\n");
+		sendCommand(RS485_Gateway_out, "!c!PUMP!1$\n");
 		postUpdate(PUMP, ON);
 	}
 end

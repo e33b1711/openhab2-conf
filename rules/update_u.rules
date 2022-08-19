@@ -137,7 +137,7 @@ when
 	Member of heizung_stellwert received update
 then
 	//logInfo("RuleUpdateSetpoints", "The item " + triggeringItem.name + " received update " + triggeringItem.state)
-	val message = "!w!" + triggeringItem.name + String::format("!%1$01d$\n",(triggeringItem.state as DecimalType).intValue)
+	val message = "!c!" + triggeringItem.name + String::format("!%1$01d$\n",(triggeringItem.state as DecimalType).intValue)
 	sendCommand(RS485_Gateway_out, message)  
 	//logInfo("RuleUpdateSetpoints", message)
 end

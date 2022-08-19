@@ -100,36 +100,36 @@ Switch ZE_GR_2	     	"Timer Außen" 				                (Timer, Garage, RS485_IN
 
 
 /* Klingel */
-Switch BELL 	    	"Klingel" 				                    (EG_GA, RS485_IN, RS485_OUT)                
+Switch BELL 	    	"Klingel" 				                    (EG_GA, RS485_IN, RS485_OUT)               {autoupdate="false"} 
 
 /* Klingel */
-Switch PUMP 		    "Zisternenpumpe" 			                (Aussen, RS485_IN, RS485_OUT)               
+Switch PUMP 		    "Zisternenpumpe" 			                (Aussen, RS485_IN, RS485_OUT)              {autoupdate="false"} 
 
 /* Timer */
-Switch ZE_EG_VH 	    "Vordach Timer"				                (Timer, Aussen, RS485_IN, RS485_OUT)                
+Switch ZE_EG_VH 	    "Vordach Timer"				                (Timer, Aussen, RS485_IN, RS485_OUT)        {autoupdate="false"}        
 
 /*Makros */
-Rollershutter VD_OG		"Verdunkelung OG"   		<settings>		(OG, RS485_IN, RS485_OUT)
+Rollershutter VD_OG		"Verdunkelung OG"   		<settings>		(OG, RS485_IN, RS485_OUT)                     
 
 
 /* Rollos, Verdunkelungen, Dachfenster */
-Rollershutter RO_EG_SU 	"Rollo Süd" 				                (Rollo, EG_EZ, RS485_IN, RS485_OUT) 
-Rollershutter RO_EG_WE 	"Rollo West" 			                	(Rollo, EG_EZ, RS485_IN, RS485_OUT)
+Rollershutter RO_EG_SU 	"Rollo Süd" 				                (Rollo, EG_EZ, RS485_IN, RS485_OUT)           {autoupdate="false"}
+Rollershutter RO_EG_WE 	"Rollo West" 			                	(Rollo, EG_EZ, RS485_IN, RS485_OUT)            {autoupdate="false"}
 
-Rollershutter RO_OG_BA 	"Rollo" 				                    (Rollo, OG_BA, RS485_IN, RS485_OUT) 
+Rollershutter RO_OG_BA 	"Rollo" 				                    (Rollo, OG_BA, RS485_IN, RS485_OUT)             {autoupdate="false"}
 
-Rollershutter DF_OG_GA	 "Dachfenster" 				                (Dachfenster, OG_GA, RS485_IN, RS485_OUT)
+Rollershutter DF_OG_GA	 "Dachfenster" 				                (Dachfenster, OG_GA, RS485_IN, RS485_OUT)            {autoupdate="false"}
 
-Rollershutter RO_OG_KN 	"Rollo" 				                    (Rollo, OG_KN, RS485_IN, RS485_OUT) 
-Rollershutter VD_OG_KN	"Verdunkelung Dachfenster" 	                (Verdunkelung, OG_KN, RS485_IN, RS485_OUT) 
-Rollershutter DF_OG_KN	"Dachfenster" 				                (Dachfenster, OG_KN, RS485_IN, RS485_OUT)
+Rollershutter RO_OG_KN 	"Rollo" 				                    (Rollo, OG_KN, RS485_IN, RS485_OUT)             {autoupdate="false"}
+Rollershutter VD_OG_KN	"Verdunkelung Dachfenster" 	                (Verdunkelung, OG_KN, RS485_IN, RS485_OUT)             {autoupdate="false"}
+Rollershutter DF_OG_KN	"Dachfenster" 				                (Dachfenster, OG_KN, RS485_IN, RS485_OUT)            {autoupdate="false"}
 
-Rollershutter RO_OG_KS 	"Rollo"  				                    (Rollo, OG_KS, RS485_IN, RS485_OUT) 
-Rollershutter VD_OG_KS	"Verdunkelung Dachfenster"	                (Verdunkelung,OG_KS, RS485_IN, RS485_OUT)
-Rollershutter DF_OG_KS	"Dachfenster" 				                (Dachfenster, OG_KS, RS485_IN, RS485_OUT) 
+Rollershutter RO_OG_KS 	"Rollo"  				                    (Rollo, OG_KS, RS485_IN, RS485_OUT)             {autoupdate="false"}
+Rollershutter VD_OG_KS	"Verdunkelung Dachfenster"	                (Verdunkelung,OG_KS, RS485_IN, RS485_OUT)            {autoupdate="false"}
+Rollershutter DF_OG_KS	"Dachfenster" 				                (Dachfenster, OG_KS, RS485_IN, RS485_OUT)             {autoupdate="false"}
 
-Rollershutter RO_OG_SZ 	"Rollo" 				                    (Rollo, OG_SZ, RS485_IN, RS485_OUT) 
-Rollershutter VD_OG_SZ	"Verdunkelung Dachfenster" 	                (Verdunkelung, OG_SZ, RS485_IN, RS485_OUT)
-Rollershutter DF_OG_SZ	"Dachfenster" 				                (Dachfenster, OG_SZ, RS485_IN, RS485_OUT)
+Rollershutter RO_OG_SZ 	"Rollo" 				                    (Rollo, OG_SZ, RS485_IN, RS485_OUT)             {autoupdate="false"}
+Rollershutter VD_OG_SZ	"Verdunkelung Dachfenster" 	                (Verdunkelung, OG_SZ, RS485_IN, RS485_OUT)            {autoupdate="false"}
+Rollershutter DF_OG_SZ	"Dachfenster" 				                (Dachfenster, OG_SZ, RS485_IN, RS485_OUT)            {autoupdate="false"}
 
 Rollershutter DO_GR	 	"Garagentor" 				                (Garage, RS485_IN, RS485_OUT)              					{autoupdate="false"}

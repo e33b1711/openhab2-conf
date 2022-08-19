@@ -5,16 +5,15 @@ then
     //logInfo("RuleUpdateRollerShuter", "The item " + triggeringItem.name + " received command " + receivedCommand)
     var String message=""
 	if (receivedCommand==STOP){
-        postUpdate(RO_EG_SU, 50) 
-        message="!w!" + triggeringItem.name + "!0$\n!w!" + triggeringItem.name + "_ON!0$\n!w!" + triggeringItem.name + "_DO!0$\n"
+        message="!c!" + triggeringItem.name + "!50$\n!"
     }
 	
     if (receivedCommand==UP){
-        message="!w!" + triggeringItem.name + "!1$\n"
+        message="!c!" + triggeringItem.name + "!0$\n"
     }
 
 	if (receivedCommand==DOWN){
-        message="!w!" + triggeringItem.name + "!-1$\n"
+        message="!c!" + triggeringItem.name + "!100$\n"
     }
     sendCommand(RS485_Gateway_out, message)
     //logInfo("RuleUpdateRollerShuter", message)
